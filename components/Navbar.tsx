@@ -26,18 +26,18 @@ export default function Navbar() {
 
   return (
     <header className="fixed top-4 left-0 right-0 z-50 px-4 pointer-events-none">
-      <div className="max-w-4xl mx-auto flex items-center justify-between pointer-events-auto rounded-full px-5 py-2.5 bg-[#070c18]/80 backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/80 transition-all duration-300">
+      <div className="max-w-4xl mx-auto flex items-center justify-between pointer-events-auto rounded-full px-5 py-2.5 bg-[#0e102b]/90 backdrop-blur-2xl border border-violet-500/30 shadow-[0_0_35px_rgba(124,58,237,0.25)] transition-all duration-300">
         {/* Brand */}
         <a href="#" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-400 via-teal-400 to-indigo-500 flex items-center justify-center font-mono font-bold text-slate-950 text-xs shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-violet-600 via-cyan-400 to-emerald-400 flex items-center justify-center font-mono font-black text-slate-950 text-xs shadow-md shadow-violet-500/30 group-hover:scale-105 transition-transform">
             ST
           </div>
           <div>
             <span className="font-bold text-xs tracking-tight text-white block group-hover:text-cyan-300 transition-colors">
               Srimanikandan T
             </span>
-            <span className="text-[10px] text-slate-400 block font-medium">
-              AI Systems Lead
+            <span className="text-[10px] text-cyan-400 block font-medium">
+              AI Automation &amp; Systems Lead
             </span>
           </div>
         </a>
@@ -48,7 +48,7 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-xs font-medium text-slate-300 hover:text-white transition-colors"
+              className="text-xs font-semibold text-slate-300 hover:text-white transition-colors"
             >
               {link.name}
             </a>
@@ -61,7 +61,7 @@ export default function Navbar() {
             href="/Srimanikandan_Resume_Professional.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3.5 py-1.5 rounded-full border border-white/10 hover:border-cyan-500/40 text-slate-300 hover:text-white font-medium text-xs transition flex items-center gap-1.5 bg-white/[0.03]"
+            className="px-3.5 py-1.5 rounded-full border border-white/10 hover:border-violet-500/40 text-slate-200 hover:text-white font-medium text-xs transition flex items-center gap-1.5 bg-white/[0.04]"
           >
             <Download className="w-3.5 h-3.5 text-cyan-400" />
             <span>Resume</span>
@@ -69,7 +69,7 @@ export default function Navbar() {
 
           <a
             href="#contact"
-            className="px-4 py-1.5 rounded-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold text-xs shadow-md shadow-cyan-400/20 transition flex items-center gap-1.5"
+            className="px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-400 via-teal-400 to-indigo-500 hover:opacity-95 text-slate-950 font-black text-xs shadow-lg shadow-cyan-500/25 transition-all flex items-center gap-1.5"
           >
             <span>Let's Talk</span>
             <ArrowRight className="w-3 h-3 text-slate-950" />
@@ -79,7 +79,7 @@ export default function Navbar() {
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-1.5 rounded-full bg-white/5 text-slate-300"
+          className="md:hidden p-1.5 rounded-full bg-white/10 text-slate-300"
         >
           {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
         </button>
@@ -87,7 +87,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden mt-2 max-w-sm mx-auto bg-[#070c18]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-5 space-y-3 pointer-events-auto shadow-2xl">
+        <div className="md:hidden mt-2 max-w-sm mx-auto bg-[#0e102b]/98 backdrop-blur-2xl border border-violet-500/30 rounded-3xl p-5 space-y-3 pointer-events-auto shadow-2xl shadow-violet-950/80">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <a
@@ -115,7 +115,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-2 rounded-xl bg-cyan-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-2"
+              className="w-full py-2 rounded-xl bg-gradient-to-r from-cyan-400 to-indigo-500 text-slate-950 font-bold text-xs flex items-center justify-center gap-2"
             >
               <span>Get in Touch</span>
               <ArrowRight className="w-3.5 h-3.5" />

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ExternalLink, CheckCircle2, TrendingUp, Layers, ShoppingBag, Utensils, Cpu, Film, Sparkles, ArrowUpRight, Flame, Zap, ShieldCheck } from "lucide-react";
+import { ExternalLink, CheckCircle2, TrendingUp, Layers, ShoppingBag, Utensils, Cpu, Film, Sparkles, ArrowUpRight, Flame, Zap, ShieldCheck, Star } from "lucide-react";
 import { GithubIcon } from "./Icons";
 import FadeIn from "./FadeIn";
 
@@ -11,11 +11,13 @@ interface ProjectItem {
   title: string;
   subtitle: string;
   badge: string;
-  badgeColor: "emerald" | "cyan" | "indigo" | "purple" | "amber";
+  badgeGradient: string;
+  headerGradient: string;
+  glowColor: string;
   featured?: boolean;
   description: string;
-  highlights: string[];
-  metrics: { label: string; value: string }[];
+  architecturePills: string[];
+  metrics: { label: string; value: string; color?: string }[];
   stack: string[];
   githubUrl?: string;
   liveUrl?: string;
@@ -27,25 +29,26 @@ const PROJECTS: ProjectItem[] = [
     category: "FLAGSHIP ENTERPRISE AI PLATFORM",
     title: "Sri AI Business OS",
     subtitle: "Autonomous multi-tenant operating system for enterprise intake, triage and governance",
-    badge: "CURRENT FLAGSHIP • PRODUCTION READY",
-    badgeColor: "indigo",
+    badge: "🔥 CURRENT FLAGSHIP • PRODUCTION READY",
+    badgeGradient: "from-violet-500 to-fuchsia-500",
+    headerGradient: "from-violet-600/30 via-indigo-600/20 to-transparent",
+    glowColor: "hover:border-violet-500/50 hover:shadow-violet-500/20",
     featured: true,
     description:
       "End-to-end multi-tenant business operating system architected with FastAPI, Neon Cloud PostgreSQL, and Next.js Turbopack. Ingests raw unstructured business messages through Gemini Flash, enforces human-in-the-loop triage governance, and automates operational milestones across client organizations.",
-    highlights: [
-      "Multi-tenant hierarchy with strict data isolation: Organizations -> Workspaces -> Projects -> Tasks.",
-      "Deterministic AI request intake pipeline extracting structured objectives, SLA deadlines, and urgency.",
-      "Executive Command Center dashboard with live audit logging, velocity progress tracking, and Cmd+K quick search.",
-      "Developer Gateway with secret API keys, rate limits, and cryptographic HMAC-SHA256 webhook dispatch.",
-      "Tested and verified across all routes with zero build errors and sub-50ms cloud database latency.",
+    architecturePills: [
+      "FastAPI Gateway & Gemini Flash Parser",
+      "Multi-Tenant Isolation: Org ➔ Workspace ➔ Project",
+      "Human-in-the-Loop Review Queue Gating",
+      "Cryptographic HMAC-SHA256 Webhook Dispatch",
     ],
     metrics: [
-      { label: "API Latency", value: "< 45ms" },
-      { label: "Intake Accuracy", value: "99.2%" },
-      { label: "Security", value: "HMAC-SHA256" },
-      { label: "Architecture", value: "Multi-Tenant" },
+      { label: "API Latency", value: "< 45ms", color: "text-emerald-400" },
+      { label: "AI Accuracy", value: "99.2%", color: "text-cyan-400" },
+      { label: "Security", value: "HMAC-SHA256", color: "text-violet-300" },
+      { label: "Database", value: "Neon Cloud", color: "text-amber-400" },
     ],
-    stack: ["FastAPI", "Python 3.12", "Neon Cloud PostgreSQL", "Next.js 16", "TypeScript", "TailwindCSS", "Gemini Flash"],
+    stack: ["FastAPI", "Python 3.12", "Neon PostgreSQL", "Next.js 16", "TypeScript", "TailwindCSS", "Gemini Flash"],
     githubUrl: "https://github.com/Srimani26/Sri-AI-Business-OS",
   },
   {
@@ -53,22 +56,24 @@ const PROJECTS: ProjectItem[] = [
     category: "AI & MARKETING INTELLIGENCE",
     title: "AI-Powered Google Ads Auditor (v5.0 — Live)",
     subtitle: "Autonomous daily keyword performance auditor & wasted spend mitigation engine",
-    badge: "LIVE IN PRODUCTION",
-    badgeColor: "emerald",
+    badge: "🟢 LIVE 6:00 AM CRON • ZERO COST INFRA",
+    badgeGradient: "from-emerald-500 to-teal-500",
+    headerGradient: "from-emerald-600/30 via-teal-600/20 to-transparent",
+    glowColor: "hover:border-emerald-500/50 hover:shadow-emerald-500/20",
     featured: true,
     description:
-      "Production-grade AI pipeline that executes at 6:00 AM IST daily via Google Apps Script, pulls 285+ real search queries, evaluates 7-day conversion and CTR performance with Gemini AI, and dispatches a color-coded STOP/SCALE/FIX HTML audit report directly to management by 7:00 AM IST.",
-    highlights: [
-      "Identified ₹14,952 in wasted ad spend (97% of ₹15,113 tracked) within 8 days of deployment.",
-      "Engineered dual Gemini API key architecture with retry logic, 503 backoff, and static fallbacks.",
-      "Zero monthly operating cost utilizing free-tier AI quotas and compressed payload staging.",
-      "Eliminated 100% of manual query auditing, providing autonomous recommendations before daily ad spend starts.",
+      "Production AI pipeline that runs daily at 6:00 AM IST via Google Apps Script. Pulls 285+ real search queries, evaluates 7-day conversion and CTR metrics using Gemini AI, and dispatches a color-coded STOP/SCALE/FIX HTML audit report directly to management by 7:00 AM IST.",
+    architecturePills: [
+      "Identified ₹14,952 in wasted spend (97% of ₹15,113 tracked) in 8 days",
+      "Dual Gemini API key failover with exponential 503 backoff",
+      "Google Sheets data warehouse staging with 7-day lookback",
+      "Color-coded STOP/SCALE/FIX HTML email dispatched via Gmail API",
     ],
     metrics: [
-      { label: "Wasted Spend Flagged", value: "₹14,952 (97%)" },
-      { label: "Daily Queries Tracked", value: "285+" },
-      { label: "Report Delivery", value: "07:00 AM IST" },
-      { label: "Operating Cost", value: "₹0 / mo" },
+      { label: "Ad Waste Caught", value: "₹14,952 (97%)", color: "text-rose-400" },
+      { label: "Daily Queries", value: "285+ Audited", color: "text-cyan-400" },
+      { label: "Delivery", value: "07:00 AM IST", color: "text-indigo-300" },
+      { label: "Run Cost", value: "₹0 / mo", color: "text-emerald-400" },
     ],
     stack: ["Google Apps Script", "Google Ads Script API", "Gemini AI", "Google Sheets Warehouse", "Gmail API"],
     githubUrl: "https://github.com/Srimani26",
@@ -78,22 +83,24 @@ const PROJECTS: ProjectItem[] = [
     category: "ENTERPRISE WORKFLOW AUTOMATION",
     title: "Zoho CRM Quotation Automation Platform",
     subtitle: "4-Layer enterprise proposal generator & media sync engine for Standard Roofs",
-    badge: "95% DEPLOYED • TECH LEAD",
-    badgeColor: "cyan",
+    badge: "⚡ 95% DEPLOYED • TECH LEAD",
+    badgeGradient: "from-amber-500 to-rose-500",
+    headerGradient: "from-amber-600/30 via-orange-600/20 to-transparent",
+    glowColor: "hover:border-amber-500/50 hover:shadow-amber-500/20",
     featured: true,
     description:
       "Complete CRM automation overhaul replacing error-prone multi-step quotation drafting with a 4-layer technical stack (Workflow Rules, Deluge Backend, Client Script JS, Zoho Writer API). Slashes proposal generation time from over 30 minutes to under 1 minute with guaranteed pricing precision.",
-    highlights: [
-      "Reduced quote generation time to under 1 minute with zero manual calculation errors.",
-      "Automated 30+ CRM fields across 14+ workflow rules including serial number indexing and roofing specifications.",
-      "Dynamic Cloudinary media integration syncing product images based on customer color selections.",
-      "Automated Zoho Writer API document synthesis and auto-attachment to client CRM deal records.",
+    architecturePills: [
+      "Layer 1: Workflow rules & mandatory roofing parameter gates",
+      "Layer 2: Deluge business logic for square footage & vendor margins",
+      "Layer 3: Client Script (JS) real-time Cloudinary asset sync",
+      "Layer 4: Zoho Writer API compiling branded client PDFs in 48s",
     ],
     metrics: [
-      { label: "Quote Time", value: "< 1 min" },
-      { label: "CRM Fields", value: "30+ Automated" },
-      { label: "Workflow Rules", value: "14+ Active" },
-      { label: "Manual Errors", value: "0%" },
+      { label: "Quote Speed", value: "< 1 min (48s)", color: "text-emerald-400" },
+      { label: "CRM Fields", value: "30+ Automated", color: "text-cyan-400" },
+      { label: "Workflow Rules", value: "14+ Active", color: "text-amber-400" },
+      { label: "Manual Errors", value: "0%", color: "text-emerald-400" },
     ],
     stack: ["Zoho CRM Enterprise", "Deluge Functions", "Client Script (JS)", "Zoho Writer API", "Cloudinary"],
   },
@@ -102,20 +109,22 @@ const PROJECTS: ProjectItem[] = [
     category: "COMMERCE & FRONT-END LEADERSHIP",
     title: "Shopify E-Commerce Storefront Development",
     subtitle: "Industrial theme customization, conversion UX & performance at Standard Roofs",
-    badge: "LIVE STOREFRONT",
-    badgeColor: "emerald",
+    badge: "🛍️ LIVE STOREFRONT • HIGH-CONVERSION",
+    badgeGradient: "from-teal-400 to-emerald-500",
+    headerGradient: "from-teal-600/30 to-transparent",
+    glowColor: "hover:border-teal-500/50 hover:shadow-teal-500/20",
     description:
       "Led front-end development for a live commercial Shopify storefront for Standard Roofs. Created customized Liquid themes, responsive component structures, and conversion-optimized checkout pathways for industrial and residential roofing customers.",
-    highlights: [
-      "Custom Shopify Liquid theme development tailored for high-ticket roofing inquiries.",
-      "Optimized mobile Core Web Vitals to deliver sub-2s initial load and maximize buyer conversion.",
-      "Direct collaboration with executive stakeholders to map operational inquiries into automated sales pipelines.",
+    architecturePills: [
+      "Custom Shopify Liquid theme tailored for high-ticket roofing leads",
+      "Optimized mobile Core Web Vitals to deliver sub-2s initial loads",
+      "Collaborated with executive stakeholders to map buyer inquiries",
     ],
     metrics: [
-      { label: "Storefront", value: "Live Online" },
-      { label: "Role", value: "Front-End Lead" },
-      { label: "Architecture", value: "Shopify Liquid" },
-      { label: "UX Focus", value: "High-Conversion" },
+      { label: "Storefront", value: "Live Online", color: "text-emerald-400" },
+      { label: "Role", value: "Front-End Lead", color: "text-cyan-400" },
+      { label: "Architecture", value: "Shopify Liquid", color: "text-teal-300" },
+      { label: "UX Metric", value: "Sub-2s CWV", color: "text-emerald-400" },
     ],
     stack: ["Shopify Liquid", "Theme Development", "JavaScript", "CSS3", "Conversion UX"],
   },
@@ -124,20 +133,22 @@ const PROJECTS: ProjectItem[] = [
     category: "REAL-TIME WEB APPLICATION",
     title: "MonsterFoods Real-Time Food Ordering Portal",
     subtitle: "Vue.js food ordering platform engineered at Macincode Technologies",
-    badge: "PRODUCTION DEPLOYED",
-    badgeColor: "cyan",
+    badge: "🍕 PRODUCTION DEPLOYED • VUE.JS",
+    badgeGradient: "from-rose-500 to-pink-500",
+    headerGradient: "from-rose-600/30 to-transparent",
+    glowColor: "hover:border-rose-500/50 hover:shadow-rose-500/20",
     description:
       "Built and deployed the front-end of MonsterFoods — a live, real-time food ordering web application — utilizing Vue.js, component-based state architecture, and responsive UI engineering during tenure at Macincode Technologies (Clops AI).",
-    highlights: [
-      "Engineered reactive menu navigation, real-time cart state management, and checkout flows.",
-      "Translated high-fidelity UI/UX design mockups into accessible, cross-device front-end code.",
-      "Collaborated with back-end teams to test REST API endpoints and error-handling boundaries.",
+    architecturePills: [
+      "Reactive menu navigation & real-time cart state management",
+      "Translated high-fidelity UI/UX design mockups into accessible code",
+      "Integrated REST API endpoints and error-handling boundaries",
     ],
     metrics: [
-      { label: "Framework", value: "Vue.js" },
-      { label: "Type", value: "Real-time Web App" },
-      { label: "Role", value: "Front-End Dev" },
-      { label: "Status", value: "Deployed" },
+      { label: "Framework", value: "Vue.js", color: "text-rose-400" },
+      { label: "Type", value: "Real-time Portal", color: "text-pink-300" },
+      { label: "Role", value: "Front-End Dev", color: "text-cyan-400" },
+      { label: "Status", value: "Deployed", color: "text-emerald-400" },
     ],
     stack: ["Vue.js", "JavaScript", "HTML5", "CSS3", "REST API Integration", "State Management"],
   },
@@ -146,20 +157,22 @@ const PROJECTS: ProjectItem[] = [
     category: "FRONTEND & REST API INTEGRATION",
     title: "Movie Explorer & Discovery Web App",
     subtitle: "Interactive React.js application with real-time movie search & dynamic filtering",
-    badge: "FEATURED WEB APP",
-    badgeColor: "amber",
+    badge: "🎬 FEATURED WEB APP • REACT.JS",
+    badgeGradient: "from-amber-400 to-violet-500",
+    headerGradient: "from-amber-600/30 to-transparent",
+    glowColor: "hover:border-amber-500/50 hover:shadow-amber-500/20",
     description:
       "Responsive React application for real-time movie search, discovery, and rating inspection. Emphasizes clean reusable component architecture, loading skeleton states, custom hooks, and robust error handling against third-party REST APIs.",
-    highlights: [
-      "Real-time search debouncing and genre filtering for responsive catalogue navigation.",
-      "Modular component hierarchy with custom React hooks for API data fetching and state management.",
-      "Graceful handling of empty states, network degradation, and rate limiting.",
+    architecturePills: [
+      "Real-time search debouncing and multi-genre filtering",
+      "Modular component hierarchy with custom React data hooks",
+      "Graceful handling of empty states and network rate limiting",
     ],
     metrics: [
-      { label: "Framework", value: "React.js" },
-      { label: "Data Source", value: "REST APIs" },
-      { label: "Architecture", value: "Custom Hooks" },
-      { label: "UI", value: "Responsive" },
+      { label: "Framework", value: "React.js", color: "text-amber-400" },
+      { label: "Data Source", value: "REST APIs", color: "text-cyan-400" },
+      { label: "Architecture", value: "Custom Hooks", color: "text-violet-300" },
+      { label: "UI", value: "Responsive", color: "text-emerald-400" },
     ],
     stack: ["React.js", "JavaScript", "REST APIs", "Custom Hooks", "CSS3"],
     githubUrl: "https://github.com/Srimani26",
@@ -169,20 +182,22 @@ const PROJECTS: ProjectItem[] = [
     category: "COMPUTER VISION & IOT",
     title: "Smart Magical Mirror with Image Processing",
     subtitle: "Real-time computer vision & personalized information overlay system",
-    badge: "IMAGE PROCESSING • PYTHON",
-    badgeColor: "purple",
+    badge: "🪞 COMPUTER VISION • PYTHON",
+    badgeGradient: "from-cyan-400 to-blue-600",
+    headerGradient: "from-cyan-600/30 to-transparent",
+    glowColor: "hover:border-cyan-500/50 hover:shadow-cyan-500/20",
     description:
       "Academic engineering project combining Python image processing and hardware interfacing. Senses user presence through computer vision, facial landmark tracking, and renders personalized contextual overlays (news, weather, calendar schedules) on reflective two-way glass.",
-    highlights: [
-      "Computer vision pipeline detecting user face presence and proximity in real-time.",
-      "Dynamic widget renderer displaying contextual schedules, weather telemetry, and daily updates.",
-      "Engineered with Python, OpenCV image processing algorithms, and modular visual widgets.",
+    architecturePills: [
+      "Computer vision pipeline detecting user face presence in real-time",
+      "Dynamic widget renderer displaying contextual schedules & weather",
+      "Engineered with Python, OpenCV image processing, and visual widgets",
     ],
     metrics: [
-      { label: "Core Language", value: "Python" },
-      { label: "Vision", value: "Image Processing" },
-      { label: "Hardware", value: "Two-Way Glass" },
-      { label: "Period", value: "Academic Project" },
+      { label: "Language", value: "Python", color: "text-cyan-400" },
+      { label: "Vision", value: "OpenCV", color: "text-blue-400" },
+      { label: "Display", value: "Two-Way Glass", color: "text-indigo-300" },
+      { label: "Period", value: "Academic Project", color: "text-slate-300" },
     ],
     stack: ["Python", "OpenCV", "Image Processing", "IoT Display", "Computer Vision"],
   },
@@ -201,20 +216,20 @@ export default function Projects() {
       });
 
   return (
-    <section id="projects" className="py-24 bg-[#030712] text-white relative">
+    <section id="projects" className="py-24 bg-[#08091a] text-white relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <FadeIn>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 border-b border-white/10 pb-8">
             <div>
-              <p className="text-cyan-400 uppercase tracking-[0.25em] text-xs font-mono font-bold flex items-center gap-2">
+              <p className="text-cyan-400 uppercase tracking-widest text-xs font-bold flex items-center gap-2">
                 <Flame className="w-3.5 h-3.5 text-rose-400" />
-                VERIFIED ENGINEERING PORTFOLIO &bull; ZERO FLUFF
+                VERIFIED PRODUCTION PORTFOLIO &bull; ZERO FLUFF
               </p>
-              <h2 className="mt-2 text-3xl sm:text-5xl font-black tracking-tight text-white">
-                Production Systems &amp; Flagship Projects
+              <h2 className="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+                Featured Systems &amp; Engineering Builds
               </h2>
-              <p className="mt-3 max-w-2xl text-sm sm:text-base text-slate-300">
-                Showcase of 7 production-grade AI systems, CRM automation platforms, and scalable web applications engineered for real business revenue and ops.
+              <p className="mt-3 max-w-2xl text-sm sm:text-base text-slate-300 font-normal">
+                7 production-grade AI systems, enterprise workflow automation platforms, and scalable web apps built for tangible business impact.
               </p>
             </div>
 
@@ -224,10 +239,10 @@ export default function Projects() {
                 <button
                   key={filter}
                   onClick={() => setSelectedFilter(filter)}
-                  className={`px-4 py-2 rounded-xl text-xs font-black transition uppercase font-mono cursor-pointer ${
+                  className={`px-4 py-2 rounded-full text-xs font-bold transition font-mono cursor-pointer ${
                     selectedFilter === filter
-                      ? "bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/25"
-                      : "bg-[#091020] text-slate-400 hover:text-white border border-white/5"
+                      ? "bg-gradient-to-r from-cyan-400 to-indigo-500 text-slate-950 shadow-lg shadow-cyan-400/25"
+                      : "bg-white/[0.04] text-slate-400 hover:text-white border border-white/10"
                   }`}
                 >
                   {filter}
@@ -237,65 +252,61 @@ export default function Projects() {
           </div>
         </FadeIn>
 
-        {/* Projects Grid with Holographic Cyber-Cards */}
+        {/* Dynamic Colorful Bento Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
             <FadeIn key={project.id}>
-              <div className="h-full rounded-3xl border border-white/10 bg-[#070c18]/90 hover:border-cyan-500/40 transition-all duration-300 p-6 flex flex-col justify-between group shadow-xl hover:shadow-cyan-500/10 hover:-translate-y-1">
-                <div>
+              <div
+                className={`h-full rounded-3xl vibrant-card p-6 flex flex-col justify-between group relative overflow-hidden transition-all duration-300 ${project.glowColor}`}
+              >
+                {/* Visual Gradient Header Strip */}
+                <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${project.badgeGradient}`} />
+                <div className={`absolute top-0 left-0 right-0 h-32 bg-gradient-to-b ${project.headerGradient} opacity-60 pointer-events-none`} />
+
+                <div className="relative z-10">
                   {/* Category & Badge */}
                   <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider font-mono">
                       {project.category}
                     </span>
                     <span
-                      className={`text-[9px] font-mono font-bold px-2.5 py-0.5 rounded-full border whitespace-nowrap ${
-                        project.badgeColor === "emerald"
-                          ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
-                          : project.badgeColor === "cyan"
-                          ? "bg-cyan-500/10 text-cyan-400 border-cyan-500/30"
-                          : project.badgeColor === "indigo"
-                          ? "bg-indigo-500/10 text-indigo-400 border-indigo-500/30"
-                          : project.badgeColor === "purple"
-                          ? "bg-purple-500/10 text-purple-400 border-purple-500/30"
-                          : "bg-amber-500/10 text-amber-400 border-amber-500/30"
-                      }`}
+                      className={`text-[10px] font-bold px-3 py-1 rounded-full text-white bg-gradient-to-r ${project.badgeGradient} shadow-md shadow-black/40`}
                     >
                       {project.badge}
                     </span>
                   </div>
 
                   {/* Title & Subtitle */}
-                  <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors tracking-tight">
                     {project.title}
                   </h3>
-                  <p className="text-xs text-slate-400 font-mono mt-1">
+                  <p className="text-xs text-slate-300 font-medium mt-1">
                     {project.subtitle}
                   </p>
 
                   {/* Description */}
-                  <p className="text-xs text-slate-300 leading-relaxed mt-4">
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-4 font-normal">
                     {project.description}
                   </p>
 
-                  {/* Highlights */}
+                  {/* Architecture & Highlights Pills */}
                   <div className="mt-4 space-y-1.5">
-                    {project.highlights.slice(0, 3).map((hl, i) => (
-                      <div key={i} className="flex items-start gap-2 text-[11px] text-slate-300">
+                    {project.architecturePills.map((pill, i) => (
+                      <div key={i} className="flex items-start gap-2 text-xs text-slate-300">
                         <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                        <span>{hl}</span>
+                        <span>{pill}</span>
                       </div>
                     ))}
                   </div>
 
-                  {/* Key Metrics Grid */}
-                  <div className="grid grid-cols-2 gap-2 mt-5 p-3 rounded-2xl bg-[#030611] border border-white/5">
+                  {/* Key Metrics Grid with Vibrant Numbers */}
+                  <div className="grid grid-cols-2 gap-2 mt-5 p-3.5 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md">
                     {project.metrics.map((m, idx) => (
                       <div key={idx}>
-                        <span className="text-[10px] text-slate-500 font-mono block">
+                        <span className="text-[10px] text-slate-400 font-mono block">
                           {m.label}
                         </span>
-                        <span className="text-xs font-bold text-white">
+                        <span className={`text-xs sm:text-sm font-extrabold font-mono ${m.color || "text-white"}`}>
                           {m.value}
                         </span>
                       </div>
@@ -304,13 +315,13 @@ export default function Projects() {
                 </div>
 
                 {/* Bottom: Stack & Links */}
-                <div className="mt-6 pt-4 border-t border-white/10 space-y-4">
+                <div className="mt-6 pt-4 border-t border-white/10 space-y-4 relative z-10">
                   {/* Tech Stack Pills */}
                   <div className="flex flex-wrap gap-1.5">
                     {project.stack.map((t) => (
                       <span
                         key={t}
-                        className="px-2 py-0.5 rounded-md bg-[#0d1424] text-[10px] font-mono text-slate-300 border border-white/5"
+                        className="px-2.5 py-1 rounded-lg bg-white/[0.05] text-[11px] font-mono text-slate-300 border border-white/5"
                       >
                         {t}
                       </span>
@@ -318,16 +329,16 @@ export default function Projects() {
                   </div>
 
                   {/* Actions */}
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-4">
                     {project.githubUrl && (
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs font-mono text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors"
+                        className="text-xs font-semibold text-slate-300 hover:text-white flex items-center gap-1.5 transition-colors"
                       >
-                        <GithubIcon className="w-3.5 h-3.5" />
-                        <span>Code</span>
+                        <GithubIcon className="w-4 h-4 text-cyan-400" />
+                        <span>View Repository</span>
                       </a>
                     )}
                     {project.liveUrl && (
@@ -335,9 +346,9 @@ export default function Projects() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition-colors"
+                        className="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition-colors"
                       >
-                        <ExternalLink className="w-3.5 h-3.5" />
+                        <ExternalLink className="w-4 h-4" />
                         <span>Live Demo</span>
                       </a>
                     )}
