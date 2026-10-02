@@ -21,7 +21,7 @@ const SKILL_GROUPS = [
     ],
   },
   {
-    title: "Programming Languages & Backend",
+    title: "Programming & Backend",
     icon: <Code2 className="w-5 h-5 text-indigo-400" />,
     skills: [
       "Python 3.12",
@@ -90,18 +90,18 @@ const SKILL_GROUPS = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 bg-[#050816] text-white relative">
+    <section id="skills" className="py-24 bg-[#030712] text-white relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <FadeIn>
           <div className="mb-14 border-b border-white/10 pb-8 text-center max-w-3xl mx-auto">
-            <p className="text-cyan-400 uppercase tracking-[0.25em] text-xs font-mono font-bold flex items-center justify-center gap-2">
+            <p className="text-cyan-400 uppercase tracking-widest text-xs font-semibold flex items-center justify-center gap-2">
               <Zap className="w-3.5 h-3.5 text-cyan-400" />
               FULL-STACK SKILLS MATRIX
             </p>
-            <h2 className="mt-2 text-3xl sm:text-5xl font-black tracking-tight text-white">
+            <h2 className="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
               Technical Arsenal &amp; Capabilities
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-slate-300">
+            <p className="mt-3 text-sm sm:text-base text-slate-300 font-normal">
               Battle-tested tools and frameworks used daily to engineer resilient AI pipelines, CRM engines, and production web apps.
             </p>
           </div>
@@ -110,12 +110,12 @@ export default function Skills() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {SKILL_GROUPS.map((group) => (
             <FadeIn key={group.title}>
-              <div className="h-full rounded-3xl border border-white/10 bg-[#091020]/90 hover:border-cyan-500/35 transition-all p-6 space-y-4 shadow-xl">
+              <div className="h-full rounded-3xl bento-card p-6 space-y-4">
                 <div className="flex items-center gap-3 border-b border-white/10 pb-3">
-                  <div className="p-2 rounded-xl bg-[#060a14] border border-white/5">
+                  <div className="p-2 rounded-2xl bg-white/[0.04] border border-white/10">
                     {group.icon}
                   </div>
-                  <h3 className="text-base font-bold text-white">
+                  <h3 className="text-base font-bold text-white tracking-tight">
                     {group.title}
                   </h3>
                 </div>
@@ -124,7 +124,7 @@ export default function Skills() {
                   {group.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1.5 rounded-xl bg-[#060a14] text-xs font-mono text-slate-300 border border-white/5 hover:border-cyan-500/30 hover:text-cyan-300 transition-colors"
+                      className="px-3 py-1.5 rounded-xl bg-white/[0.03] text-xs font-mono text-slate-300 border border-white/5 hover:border-cyan-500/30 hover:text-cyan-300 transition-colors"
                     >
                       {skill}
                     </span>

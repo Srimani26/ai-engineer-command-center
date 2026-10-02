@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Terminal, Download, Menu, X, ArrowRight, ShieldCheck, Flame, Zap } from "lucide-react";
+import { Download, Menu, X, ArrowRight, Zap, Sparkles } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./Icons";
 
 export default function Navbar() {
@@ -25,36 +25,30 @@ export default function Navbar() {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#050816]/90 backdrop-blur-xl border-b border-cyan-500/20 py-3 shadow-xl shadow-cyan-950/20"
-          : "bg-transparent py-5"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
+    <header className="fixed top-4 left-0 right-0 z-50 px-4 pointer-events-none">
+      <div className="max-w-4xl mx-auto flex items-center justify-between pointer-events-auto rounded-full px-5 py-2.5 bg-[#070c18]/80 backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/80 transition-all duration-300">
         {/* Brand */}
         <a href="#" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center font-mono font-black text-slate-950 text-sm shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-400 via-teal-400 to-indigo-500 flex items-center justify-center font-mono font-bold text-slate-950 text-xs shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
             ST
           </div>
           <div>
-            <span className="font-extrabold text-sm tracking-tight text-white block group-hover:text-cyan-300 transition-colors">
-              SRIMANIKANDAN T
+            <span className="font-bold text-xs tracking-tight text-white block group-hover:text-cyan-300 transition-colors">
+              Srimanikandan T
             </span>
-            <span className="text-[10px] font-mono text-cyan-400 block font-semibold">
-              AI SYSTEMS ENGINEER
+            <span className="text-[10px] text-slate-400 block font-medium">
+              AI Systems Lead
             </span>
           </div>
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-5">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-xs font-mono font-semibold text-slate-300 hover:text-cyan-400 transition-colors"
+              className="text-xs font-medium text-slate-300 hover:text-white transition-colors"
             >
               {link.name}
             </a>
@@ -62,68 +56,68 @@ export default function Navbar() {
         </nav>
 
         {/* Action Button */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-2.5">
           <a
             href="/Srimanikandan_Resume_Professional.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-2 rounded-xl border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 font-mono text-xs font-bold transition flex items-center gap-2"
+            className="px-3.5 py-1.5 rounded-full border border-white/10 hover:border-cyan-500/40 text-slate-300 hover:text-white font-medium text-xs transition flex items-center gap-1.5 bg-white/[0.03]"
           >
-            <Download className="w-3.5 h-3.5" />
+            <Download className="w-3.5 h-3.5 text-cyan-400" />
             <span>Resume</span>
           </a>
 
           <a
             href="#contact"
-            className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold text-xs shadow-md shadow-cyan-500/20 transition flex items-center gap-1.5"
+            className="px-4 py-1.5 rounded-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold text-xs shadow-md shadow-cyan-400/20 transition flex items-center gap-1.5"
           >
             <span>Let's Talk</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-3 h-3 text-slate-950" />
           </a>
         </div>
 
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-xl bg-[#091020] border border-white/10 text-slate-300"
+          className="md:hidden p-1.5 rounded-full bg-white/5 text-slate-300"
         >
-          {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
         </button>
       </div>
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#050816]/98 backdrop-blur-2xl border-b border-cyan-500/20 px-6 py-6 space-y-4">
-          <div className="flex flex-col space-y-3">
+        <div className="md:hidden mt-2 max-w-sm mx-auto bg-[#070c18]/95 backdrop-blur-2xl border border-white/10 rounded-3xl p-5 space-y-3 pointer-events-auto shadow-2xl">
+          <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-mono font-semibold text-slate-300 hover:text-cyan-400 py-1"
+                className="text-xs font-semibold text-slate-300 hover:text-cyan-400 py-1"
               >
                 {link.name}
               </a>
             ))}
           </div>
 
-          <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
+          <div className="pt-3 border-t border-white/10 flex flex-col gap-2">
             <a
               href="/Srimanikandan_Resume_Professional.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-2.5 rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 font-mono text-xs font-bold flex items-center justify-center gap-2"
+              className="w-full py-2 rounded-xl border border-white/10 text-slate-200 text-xs font-medium flex items-center justify-center gap-2"
             >
               <Download className="w-3.5 h-3.5" />
-              <span>Download Resume (PDF)</span>
+              <span>Resume (PDF)</span>
             </a>
 
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold text-xs flex items-center justify-center gap-2"
+              className="w-full py-2 rounded-xl bg-cyan-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-2"
             >
-              <span>Contact Srimanikandan</span>
+              <span>Get in Touch</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>

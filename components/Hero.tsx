@@ -11,7 +11,7 @@ export default function Hero() {
 
   const [tickerIndex, setTickerIndex] = useState(0);
   const tickers = [
-    "Crushed 30-min CRM quotes to < 48 seconds",
+    "Crushed 30-min CRM quotes down to < 48 seconds",
     "Flagged ₹14,952 in wasted ad spend (97% burn)",
     "Audited 285+ live search queries daily @ ₹0/mo",
     "Engineered multi-tenant autonomous AI systems",
@@ -57,38 +57,38 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-[94vh] flex items-center pt-28 pb-16 bg-[#030712] text-white overflow-hidden">
+    <section className="relative min-h-[92vh] flex items-center pt-32 pb-16 bg-[#030712] text-white overflow-hidden">
       {/* Background Gradients & Grid */}
-      <div className="absolute inset-0 bg-grid-cyber opacity-40 pointer-events-none" />
-      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 w-[700px] h-[450px] bg-cyan-500/12 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[550px] h-[350px] bg-indigo-600/18 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-cyber opacity-35 pointer-events-none" />
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 w-[700px] h-[450px] bg-cyan-500/10 blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[550px] h-[350px] bg-indigo-600/15 blur-[150px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Bio & Value Proposition */}
           <div className="lg:col-span-7 space-y-6">
             <FadeIn>
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-cyan-500/40 bg-cyan-950/50 text-cyan-300 text-xs font-mono font-bold backdrop-blur-xl shadow-lg shadow-cyan-950/40">
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span>TECH LEAD &bull; FIRST TECHNICAL HIRE @ STANDARD ROOFS</span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-slate-300 text-xs font-medium backdrop-blur-xl shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-slate-200">Tech Lead &bull; First Technical Hire @ Standard Roofs</span>
               </div>
             </FadeIn>
 
             <FadeIn>
-              <div className="space-y-2">
-                <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-white leading-[1.05]">
-                  Architecting{" "}
-                  <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
-                    Autonomous AI Systems
+              <div className="space-y-3">
+                <h1 className="text-4xl sm:text-6xl font-extrabold tracking-[-0.03em] text-white leading-[1.08]">
+                  Building autonomous{" "}
+                  <span className="bg-gradient-to-r from-cyan-300 via-teal-200 to-indigo-300 bg-clip-text text-transparent">
+                    AI systems &amp; pipelines
                   </span>{" "}
-                  That Move Real Revenue
+                  that move real revenue.
                 </h1>
                 
                 {/* Dynamic animated ticker */}
-                <div className="h-8 flex items-center gap-2 font-mono text-xs sm:text-sm text-cyan-300">
-                  <Sparkles className="w-4 h-4 text-cyan-400 shrink-0 animate-spin" />
-                  <span className="text-slate-400">Verified Impact:</span>
-                  <span className="font-bold text-white transition-all duration-300 underline decoration-cyan-500/50 underline-offset-4">
+                <div className="h-7 flex items-center gap-2 text-xs sm:text-sm text-cyan-300">
+                  <Sparkles className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  <span className="text-slate-400 font-normal">Proven impact:</span>
+                  <span className="font-semibold text-white transition-all duration-300 underline decoration-cyan-500/40 underline-offset-4">
                     {tickers[tickerIndex]}
                   </span>
                 </div>
@@ -96,72 +96,72 @@ export default function Hero() {
             </FadeIn>
 
             <FadeIn>
-              <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
-                Zero wrapper demos, zero fluff. I design and ship high-reliability AI pipelines that eliminate operational drag: 
-                obliterated <strong className="text-rose-400 font-bold">₹14,952 in wasted ad spend</strong>, collapsed 30-minute CRM quotation workflows down to <strong className="text-emerald-400 font-bold">&lt; 48 seconds</strong>, and run business intelligence pipelines on a <strong className="text-cyan-300 font-bold">₹0/mo cloud stack</strong>.
+              <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed font-normal">
+                I design and ship production-grade AI automation that eliminates operational drag: 
+                obliterated <strong className="text-rose-400 font-semibold">₹14,952 in wasted ad spend</strong>, collapsed 30-minute CRM quotation workflows down to <strong className="text-emerald-400 font-semibold">&lt; 48 seconds</strong>, and run business intelligence pipelines on a <strong className="text-cyan-300 font-semibold">₹0/mo cloud stack</strong>.
               </p>
             </FadeIn>
 
-            {/* Quick Metrics Badges */}
+            {/* Modern Bento Quick Metrics */}
             <FadeIn>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-                <div className="p-3.5 rounded-2xl bg-[#091020]/90 border border-cyan-500/25 hover:border-cyan-500/50 transition-all shadow-lg glow-cyan">
+                <div className="p-3.5 rounded-2xl bento-card">
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-2xl font-black text-rose-400">₹14,952</span>
+                    <span className="text-xl sm:text-2xl font-extrabold text-rose-400 font-mono tracking-tight">₹14,952</span>
                     <Flame className="w-4 h-4 text-rose-400" />
                   </div>
-                  <span className="text-[11px] text-slate-200 font-bold block">Ad Waste Flagged</span>
-                  <span className="text-[10px] text-slate-400 font-mono">97% burn rate caught</span>
+                  <span className="text-xs text-slate-200 font-semibold block">Ad Waste Flagged</span>
+                  <span className="text-[11px] text-slate-400">97% burn rate caught</span>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-[#091020]/90 border border-cyan-500/25 hover:border-cyan-500/50 transition-all shadow-lg glow-cyan">
+                <div className="p-3.5 rounded-2xl bento-card">
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-2xl font-black text-cyan-400">&lt; 1 min</span>
+                    <span className="text-xl sm:text-2xl font-extrabold text-cyan-400 font-mono tracking-tight">&lt; 1 min</span>
                     <Zap className="w-4 h-4 text-cyan-400" />
                   </div>
-                  <span className="text-[11px] text-slate-200 font-bold block">Quote Creation</span>
-                  <span className="text-[10px] text-slate-400 font-mono">30+ CRM fields synced</span>
+                  <span className="text-xs text-slate-200 font-semibold block">Quote Creation</span>
+                  <span className="text-[11px] text-slate-400">30+ CRM fields synced</span>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-[#091020]/90 border border-cyan-500/25 hover:border-cyan-500/50 transition-all shadow-lg glow-cyan">
+                <div className="p-3.5 rounded-2xl bento-card">
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-2xl font-black text-indigo-300">285+</span>
+                    <span className="text-xl sm:text-2xl font-extrabold text-indigo-300 font-mono tracking-tight">285+</span>
                     <Activity className="w-4 h-4 text-indigo-400" />
                   </div>
-                  <span className="text-[11px] text-slate-200 font-bold block">Daily Queries</span>
-                  <span className="text-[10px] text-slate-400 font-mono">Audited at 6:00 AM</span>
+                  <span className="text-xs text-slate-200 font-semibold block">Daily Queries</span>
+                  <span className="text-[11px] text-slate-400">Audited at 6:00 AM</span>
                 </div>
 
-                <div className="p-3.5 rounded-2xl bg-[#091020]/90 border border-cyan-500/25 hover:border-cyan-500/50 transition-all shadow-lg glow-cyan">
+                <div className="p-3.5 rounded-2xl bento-card">
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-2xl font-black text-emerald-400">₹0 / mo</span>
+                    <span className="text-xl sm:text-2xl font-extrabold text-emerald-400 font-mono tracking-tight">₹0 / mo</span>
                     <ShieldCheck className="w-4 h-4 text-emerald-400" />
                   </div>
-                  <span className="text-[11px] text-slate-200 font-bold block">Operating Cost</span>
-                  <span className="text-[10px] text-slate-400 font-mono">Dual-key failover</span>
+                  <span className="text-xs text-slate-200 font-semibold block">Operating Cost</span>
+                  <span className="text-[11px] text-slate-400">Dual-key failover</span>
                 </div>
               </div>
             </FadeIn>
 
             {/* Action Buttons */}
             <FadeIn>
-              <div className="flex flex-wrap items-center gap-4 pt-3">
+              <div className="flex flex-wrap items-center gap-3 pt-2">
                 <a
                   href="#command-center"
-                  className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-cyan-400 via-teal-400 to-indigo-500 hover:from-cyan-300 hover:to-indigo-400 text-slate-950 font-black text-xs shadow-xl shadow-cyan-500/25 transition-all flex items-center gap-2 group cursor-pointer tracking-wider uppercase"
+                  className="px-6 py-3 rounded-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold text-xs shadow-lg shadow-cyan-400/20 transition-all flex items-center gap-2 group cursor-pointer"
                 >
                   <Terminal className="w-4 h-4 text-slate-950" />
                   <span>Launch Systems HUD</span>
-                  <ArrowRight className="w-4 h-4 text-slate-950 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3.5 h-3.5 text-slate-950 group-hover:translate-x-0.5 transition-transform" />
                 </a>
 
                 <a
                   href="/Srimanikandan_Resume_Professional.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-3.5 rounded-2xl border border-white/10 bg-[#0d1424]/90 hover:bg-[#121c32] text-slate-200 font-bold text-xs transition flex items-center gap-2 shadow-md"
+                  className="px-5 py-3 rounded-full border border-white/10 hover:border-white/20 bg-white/[0.03] text-slate-200 font-semibold text-xs transition flex items-center gap-2 shadow-sm"
                 >
-                  <Download className="w-4 h-4 text-cyan-400" />
+                  <Download className="w-3.5 h-3.5 text-cyan-400" />
                   <span>Resume (PDF)</span>
                 </a>
 
@@ -169,7 +169,7 @@ export default function Hero() {
                   href="https://github.com/Srimani26"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 rounded-2xl border border-white/10 bg-[#0d1424]/90 hover:bg-[#121c32] text-slate-400 hover:text-white transition shadow-md"
+                  className="p-3 rounded-full border border-white/10 hover:border-white/20 bg-white/[0.03] text-slate-400 hover:text-white transition shadow-sm"
                   title="GitHub Profile"
                 >
                   <GithubIcon className="w-4 h-4" />
@@ -179,7 +179,7 @@ export default function Hero() {
                   href="https://www.linkedin.com/in/srimanikandan-t-942693246/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 rounded-2xl border border-white/10 bg-[#0d1424]/90 hover:bg-[#121c32] text-slate-400 hover:text-white transition shadow-md"
+                  className="p-3 rounded-full border border-white/10 hover:border-white/20 bg-white/[0.03] text-slate-400 hover:text-white transition shadow-sm"
                   title="LinkedIn Profile"
                 >
                   <LinkedinIcon className="w-4 h-4" />
@@ -191,18 +191,18 @@ export default function Hero() {
           {/* Right Column: Live Interactive Telemetry Terminal HUD */}
           <div className="lg:col-span-5">
             <FadeIn>
-              <div className="rounded-3xl border border-cyan-500/35 bg-[#070c18]/95 backdrop-blur-2xl p-6 shadow-2xl shadow-cyan-950/60 relative overflow-hidden">
+              <div className="rounded-3xl border border-white/10 bg-[#070c18]/90 backdrop-blur-2xl p-6 shadow-2xl relative overflow-hidden bento-card">
                 {/* Terminal Header */}
                 <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
                   <div className="flex items-center gap-2">
                     <span className="w-3 h-3 rounded-full bg-rose-500/80" />
                     <span className="w-3 h-3 rounded-full bg-amber-500/80" />
                     <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                    <span className="ml-2 font-mono text-xs text-slate-300 font-bold">
+                    <span className="ml-2 font-mono text-xs text-slate-300 font-semibold">
                       sri@ai-telemetry-hud:~
                     </span>
                   </div>
-                  <span className="font-mono text-[10px] text-emerald-400 font-black bg-emerald-950/60 px-2.5 py-0.5 rounded-full border border-emerald-500/40 flex items-center gap-1.5">
+                  <span className="font-mono text-[10px] text-emerald-400 font-bold bg-emerald-950/50 px-2.5 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     PROD ONLINE
                   </span>
@@ -210,13 +210,13 @@ export default function Hero() {
 
                 {/* Subtitle / Telemetry Info */}
                 <div className="space-y-1 mb-4">
-                  <div className="flex items-center justify-between text-[11px] font-mono text-slate-400">
+                  <div className="flex items-center justify-between text-xs font-mono text-slate-400">
                     <span>HOST: STANDARD_ROOFS_CLOUD</span>
                     <span className="text-emerald-400 font-bold">UPTIME: 99.98%</span>
                   </div>
-                  <div className="text-[11px] font-mono text-cyan-400/90 flex items-center gap-1.5">
-                    <Activity className="w-3.5 h-3.5 text-cyan-400 animate-spin" />
-                    SELECT SYSTEM PROBE TO RUN TELEMETRY:
+                  <div className="text-xs text-slate-400 flex items-center gap-1.5">
+                    <Activity className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>Select real-time probe to execute:</span>
                   </div>
                 </div>
 
@@ -224,22 +224,22 @@ export default function Hero() {
                 <div className="grid grid-cols-3 gap-2 mb-4">
                   <button
                     onClick={() => handleRunProbe("ads")}
-                    className={`py-2 px-2.5 rounded-xl font-mono text-[11px] font-bold transition flex items-center justify-center gap-1.5 cursor-pointer ${
+                    className={`py-2 px-2.5 rounded-xl text-xs font-semibold transition flex items-center justify-center gap-1.5 cursor-pointer ${
                       activeProbe === "ads"
-                        ? "bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/25"
-                        : "bg-[#040814] text-slate-400 hover:text-white border border-white/5"
+                        ? "bg-cyan-400 text-slate-950 font-bold shadow-md shadow-cyan-400/20"
+                        : "bg-white/[0.03] text-slate-400 hover:text-white border border-white/5"
                     }`}
                   >
                     <Flame className="w-3 h-3 text-rose-400" />
-                    <span>Ads AI Probe</span>
+                    <span>Ads Probe</span>
                   </button>
 
                   <button
                     onClick={() => handleRunProbe("zoho")}
-                    className={`py-2 px-2.5 rounded-xl font-mono text-[11px] font-bold transition flex items-center justify-center gap-1.5 cursor-pointer ${
+                    className={`py-2 px-2.5 rounded-xl text-xs font-semibold transition flex items-center justify-center gap-1.5 cursor-pointer ${
                       activeProbe === "zoho"
-                        ? "bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/25"
-                        : "bg-[#040814] text-slate-400 hover:text-white border border-white/5"
+                        ? "bg-cyan-400 text-slate-950 font-bold shadow-md shadow-cyan-400/20"
+                        : "bg-white/[0.03] text-slate-400 hover:text-white border border-white/5"
                     }`}
                   >
                     <Zap className="w-3 h-3 text-cyan-400" />
@@ -248,10 +248,10 @@ export default function Hero() {
 
                   <button
                     onClick={() => handleRunProbe("business")}
-                    className={`py-2 px-2.5 rounded-xl font-mono text-[11px] font-bold transition flex items-center justify-center gap-1.5 cursor-pointer ${
+                    className={`py-2 px-2.5 rounded-xl text-xs font-semibold transition flex items-center justify-center gap-1.5 cursor-pointer ${
                       activeProbe === "business"
-                        ? "bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/25"
-                        : "bg-[#040814] text-slate-400 hover:text-white border border-white/5"
+                        ? "bg-cyan-400 text-slate-950 font-bold shadow-md shadow-cyan-400/20"
+                        : "bg-white/[0.03] text-slate-400 hover:text-white border border-white/5"
                     }`}
                   >
                     <ShieldCheck className="w-3 h-3 text-indigo-400" />
@@ -283,12 +283,12 @@ export default function Hero() {
                 </div>
 
                 {/* Live stream ticker */}
-                <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-slate-400">
                   <span className="flex items-center gap-1.5 text-cyan-300">
                     <Activity className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
                     Live Cron: Daily 6:00 AM IST
                   </span>
-                  <span className="text-emerald-400 font-bold">100% Autonomous</span>
+                  <span className="text-emerald-400 font-bold font-mono">100% Autonomous</span>
                 </div>
               </div>
             </FadeIn>

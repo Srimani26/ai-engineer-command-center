@@ -34,18 +34,18 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#050816] text-white relative">
+    <section id="contact" className="py-24 bg-[#030712] text-white relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <FadeIn>
           <div className="mb-14 border-b border-white/10 pb-8 text-center max-w-3xl mx-auto">
-            <p className="text-cyan-400 uppercase tracking-[0.25em] text-xs font-mono font-bold flex items-center justify-center gap-2">
+            <p className="text-cyan-400 uppercase tracking-widest text-xs font-semibold flex items-center justify-center gap-2">
               <Zap className="w-3.5 h-3.5 text-cyan-400" />
               LET'S BUILD USEFUL SYSTEMS
             </p>
-            <h2 className="mt-2 text-3xl sm:text-5xl font-black tracking-tight text-white">
+            <h2 className="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
               Ready to Ship? Get in Touch
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-slate-300">
+            <p className="mt-3 text-sm sm:text-base text-slate-300 font-normal">
               Open to high-impact AI Automation Engineer roles, enterprise CRM workflow projects,
               and AI pipeline consultations. No endless meetings — just high-velocity shipping.
             </p>
@@ -57,14 +57,14 @@ export default function Contact() {
           <div className="lg:col-span-5 space-y-4">
             <FadeIn>
               {/* Email Card with Copy button */}
-              <div className="p-6 rounded-3xl border border-white/10 bg-[#091020]/90 space-y-2 shadow-xl">
+              <div className="p-6 rounded-3xl bento-card space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+                    <div className="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-mono text-slate-400 uppercase block font-semibold">
+                      <span className="text-[10px] uppercase block font-semibold text-slate-400">
                         DIRECT EMAIL
                       </span>
                       <a
@@ -78,7 +78,7 @@ export default function Contact() {
 
                   <button
                     onClick={handleCopyEmail}
-                    className="p-2 rounded-xl bg-[#060a14] border border-white/10 hover:border-cyan-500/40 text-slate-400 hover:text-cyan-300 transition-all cursor-pointer"
+                    className="p-2 rounded-xl bg-white/[0.04] border border-white/10 hover:border-cyan-500/40 text-slate-400 hover:text-cyan-300 transition-all cursor-pointer"
                     title="Copy Email"
                   >
                     {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
@@ -89,14 +89,14 @@ export default function Contact() {
 
             <FadeIn>
               {/* Phone Card with Copy button */}
-              <div className="p-6 rounded-3xl border border-white/10 bg-[#091020]/90 space-y-2 shadow-xl">
+              <div className="p-6 rounded-3xl bento-card space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                    <div className="w-10 h-10 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
                       <Phone className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-mono text-slate-400 uppercase block font-semibold">
+                      <span className="text-[10px] uppercase block font-semibold text-slate-400">
                         PHONE / WHATSAPP
                       </span>
                       <a
@@ -110,7 +110,7 @@ export default function Contact() {
 
                   <button
                     onClick={handleCopyPhone}
-                    className="p-2 rounded-xl bg-[#060a14] border border-white/10 hover:border-indigo-500/40 text-slate-400 hover:text-indigo-300 transition-all cursor-pointer"
+                    className="p-2 rounded-xl bg-white/[0.04] border border-white/10 hover:border-indigo-500/40 text-slate-400 hover:text-indigo-300 transition-all cursor-pointer"
                     title="Copy Phone"
                   >
                     {copiedPhone ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
@@ -121,12 +121,12 @@ export default function Contact() {
 
             <FadeIn>
               {/* Location Card */}
-              <div className="p-6 rounded-3xl border border-white/10 bg-[#091020]/90 flex items-center gap-3 shadow-xl">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+              <div className="p-6 rounded-3xl bento-card flex items-center gap-3">
+                <div className="w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[10px] font-mono text-slate-400 uppercase block font-semibold">
+                  <span className="text-[10px] uppercase block font-semibold text-slate-400">
                     CURRENT BASE
                   </span>
                   <span className="text-sm font-bold text-white">
@@ -143,7 +143,7 @@ export default function Contact() {
                   href="https://github.com/Srimani26"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 rounded-2xl border border-white/10 bg-[#091020]/90 hover:border-cyan-500/40 text-slate-300 hover:text-white transition flex items-center justify-center gap-2 text-xs font-mono font-bold"
+                  className="p-4 rounded-2xl bento-card text-slate-300 hover:text-white transition flex items-center justify-center gap-2 text-xs font-semibold"
                 >
                   <GithubIcon className="w-4 h-4 text-cyan-400" />
                   <span>GitHub Profile</span>
@@ -153,7 +153,7 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/srimanikandan-t-942693246/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 rounded-2xl border border-white/10 bg-[#091020]/90 hover:border-cyan-500/40 text-slate-300 hover:text-white transition flex items-center justify-center gap-2 text-xs font-mono font-bold"
+                  className="p-4 rounded-2xl bento-card text-slate-300 hover:text-white transition flex items-center justify-center gap-2 text-xs font-semibold"
                 >
                   <LinkedinIcon className="w-4 h-4 text-indigo-400" />
                   <span>LinkedIn Profile</span>
@@ -167,20 +167,20 @@ export default function Contact() {
             <FadeIn>
               <form
                 onSubmit={handleSendMessage}
-                className="p-8 rounded-3xl border border-white/10 bg-[#091020]/90 space-y-4 shadow-xl"
+                className="p-8 rounded-3xl bento-card space-y-4"
               >
                 <div className="border-b border-white/10 pb-4 mb-2">
-                  <h3 className="text-lg font-bold text-white">
+                  <h3 className="text-lg font-bold text-white tracking-tight">
                     Send Direct Message
                   </h3>
-                  <p className="text-xs text-slate-400 mt-0.5">
+                  <p className="text-xs text-slate-400 mt-0.5 font-normal">
                     Prepares a verified mail dispatch directly to Srimanikandan's inbox.
                   </p>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-xs font-mono text-slate-400 block mb-1">
+                    <label className="text-xs font-medium text-slate-300 block mb-1">
                       Your Name
                     </label>
                     <input
@@ -189,12 +189,12 @@ export default function Contact() {
                       onChange={(e) => setName(e.target.value)}
                       placeholder="e.g. Alex Morgan"
                       required
-                      className="w-full px-4 py-2.5 rounded-xl bg-[#060a14] border border-white/10 text-white text-xs focus:border-cyan-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white text-xs focus:border-cyan-400 focus:outline-none transition-colors"
                     />
                   </div>
 
                   <div>
-                    <label className="text-xs font-mono text-slate-400 block mb-1">
+                    <label className="text-xs font-medium text-slate-300 block mb-1">
                       Your Email
                     </label>
                     <input
@@ -203,13 +203,13 @@ export default function Contact() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="e.g. alex@company.com"
                       required
-                      className="w-full px-4 py-2.5 rounded-xl bg-[#060a14] border border-white/10 text-white text-xs focus:border-cyan-500 focus:outline-none transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white text-xs focus:border-cyan-400 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-xs font-mono text-slate-400 block mb-1">
+                  <label className="text-xs font-medium text-slate-300 block mb-1">
                     Project Scope / Role Details
                   </label>
                   <textarea
@@ -218,13 +218,13 @@ export default function Contact() {
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Describe your AI automation requirements, systems challenge, or open engineering role..."
                     required
-                    className="w-full px-4 py-2.5 rounded-xl bg-[#060a14] border border-white/10 text-white text-xs focus:border-cyan-500 focus:outline-none transition-colors resize-none"
+                    className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white text-xs focus:border-cyan-400 focus:outline-none transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-teal-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 font-black text-xs transition flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-cyan-500/20 uppercase tracking-wider"
+                  className="w-full py-3.5 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-cyan-400/20"
                 >
                   <Send className="w-4 h-4 text-slate-950" />
                   <span>Send Message via Email Client</span>

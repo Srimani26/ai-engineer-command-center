@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Briefcase, Calendar, MapPin, CheckCircle2, GraduationCap, Flame, Award } from "lucide-react";
+import { Briefcase, Calendar, MapPin, CheckCircle2, GraduationCap, Award } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 interface ExperienceItem {
@@ -67,18 +67,18 @@ const EXPERIENCES: ExperienceItem[] = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-[#050816] text-white relative">
+    <section id="experience" className="py-24 bg-[#030712] text-white relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <FadeIn>
           <div className="mb-14 border-b border-white/10 pb-8">
-            <p className="text-cyan-400 uppercase tracking-[0.25em] text-xs font-mono font-bold flex items-center gap-2">
+            <p className="text-cyan-400 uppercase tracking-widest text-xs font-semibold flex items-center gap-2">
               <Award className="w-3.5 h-3.5 text-cyan-400" />
               CAREER TRAJECTORY &amp; LEADERSHIP
             </p>
-            <h2 className="mt-2 text-3xl sm:text-5xl font-black tracking-tight text-white">
+            <h2 className="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
               Work Experience &amp; Impact
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-slate-300">
+            <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-2xl font-normal">
               Track record of building, shipping, and leading production engineering initiatives with tangible business outcomes.
             </p>
           </div>
@@ -86,20 +86,20 @@ export default function Experience() {
 
         <div className="space-y-8 relative">
           {/* Vertical timeline line */}
-          <div className="absolute top-4 bottom-4 left-4 sm:left-6 w-0.5 bg-gradient-to-b from-cyan-500/50 via-indigo-500/30 to-transparent hidden md:block" />
+          <div className="absolute top-4 bottom-4 left-4 sm:left-6 w-0.5 bg-gradient-to-b from-cyan-500/40 via-indigo-500/20 to-transparent hidden md:block" />
 
           {EXPERIENCES.map((exp) => (
             <FadeIn key={exp.company}>
-              <div className="md:ml-12 rounded-3xl border border-white/10 bg-[#091020]/90 hover:border-cyan-500/35 transition-all p-6 sm:p-8 space-y-4 shadow-xl">
+              <div className="md:ml-12 rounded-3xl bento-card p-6 sm:p-8 space-y-4">
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4">
                   <div>
                     <div className="flex items-center gap-2.5 flex-wrap">
-                      <h3 className="text-xl font-bold text-white">
+                      <h3 className="text-xl font-bold text-white tracking-tight">
                         {exp.role}
                       </h3>
                       {exp.badge && (
-                        <span className="text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">
+                        <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">
                           {exp.badge}
                         </span>
                       )}
@@ -109,7 +109,7 @@ export default function Experience() {
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-4 text-xs font-mono text-slate-400">
+                  <div className="flex items-center gap-4 text-xs text-slate-400 font-medium">
                     <span className="flex items-center gap-1.5">
                       <Calendar className="w-3.5 h-3.5 text-cyan-400" />
                       {exp.period}
@@ -121,15 +121,15 @@ export default function Experience() {
                   </div>
                 </div>
 
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="text-sm text-slate-300 leading-relaxed font-normal">
                   {exp.description}
                 </p>
 
                 {/* Bullets */}
                 <div className="space-y-2 pt-2">
                   {exp.bullets.map((bullet, i) => (
-                    <div key={i} className="flex items-start gap-2.5 text-xs text-slate-300 leading-relaxed">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                       <span>{bullet}</span>
                     </div>
                   ))}
@@ -140,7 +140,7 @@ export default function Experience() {
                   {exp.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-2.5 py-1 rounded-lg bg-[#060a14] text-[11px] font-mono text-slate-300 border border-white/5"
+                      className="px-2.5 py-1 rounded-lg bg-white/[0.03] text-xs font-mono text-slate-300 border border-white/5"
                     >
                       {skill}
                     </span>
@@ -152,17 +152,17 @@ export default function Experience() {
 
           {/* Education Card */}
           <FadeIn>
-            <div className="md:ml-12 rounded-3xl border border-white/10 bg-[#091020]/90 p-6 sm:p-8 space-y-3 shadow-xl">
+            <div className="md:ml-12 rounded-3xl bento-card p-6 sm:p-8 space-y-3">
               <div className="flex items-center justify-between border-b border-white/10 pb-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                  <div className="w-10 h-10 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
                     <GraduationCap className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-white">
+                    <h3 className="text-base font-bold text-white tracking-tight">
                       B.E. in Electronics &amp; Communication Engineering
                     </h3>
-                    <span className="text-xs text-slate-400 font-mono">
+                    <span className="text-xs text-slate-400">
                       M.P.Nachimuthu M.Jaganathan Engineering College &bull; Erode, TN
                     </span>
                   </div>
@@ -171,7 +171,7 @@ export default function Experience() {
                   Graduated 2021
                 </span>
               </div>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
                 Core foundation in digital signal processing, computing architecture, embedded systems, and software engineering principles.
               </p>
             </div>
