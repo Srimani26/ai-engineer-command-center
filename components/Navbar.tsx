@@ -1,85 +1,91 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
-import { Terminal, Download, Mail, Menu, X } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Terminal, Download, Menu, X, ArrowRight, ShieldCheck, Flame, Zap } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "./Icons";
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: "Command HUD", href: "#command-center" },
+    { name: "Projects", href: "#projects" },
+    { name: "Experience", href: "#experience" },
+    { name: "Skills", href: "#skills" },
+    { name: "Contact", href: "#contact" },
+  ];
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#050816]/85 border-b border-cyan-500/20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#050816]/90 backdrop-blur-xl border-b border-cyan-500/20 py-3 shadow-xl shadow-cyan-950/20"
+          : "bg-transparent py-5"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
         {/* Brand */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-tr from-cyan-600 via-cyan-500 to-indigo-600 text-white font-bold text-sm shadow-lg shadow-cyan-500/25 group-hover:scale-105 transition-transform">
-            SK
+        <a href="#" className="flex items-center gap-2.5 group">
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center font-mono font-black text-slate-950 text-sm shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+            ST
           </div>
           <div>
-            <div className="flex items-center gap-2">
-              <span className="font-extrabold text-white text-base tracking-tight group-hover:text-cyan-300 transition-colors">
-                Srimanikandan K
-              </span>
-              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                ONLINE
-              </span>
-            </div>
-            <p className="text-[11px] font-mono text-cyan-400/90 tracking-wider uppercase">
-              AI Automation Engineer
-            </p>
+            <span className="font-extrabold text-sm tracking-tight text-white block group-hover:text-cyan-300 transition-colors">
+              SRIMANIKANDAN T
+            </span>
+            <span className="text-[10px] font-mono text-cyan-400 block font-semibold">
+              AI SYSTEMS ENGINEER
+            </span>
           </div>
-        </Link>
+        </a>
 
-        {/* Desktop Nav Links */}
-        <div className="hidden lg:flex items-center gap-8 text-xs font-semibold text-slate-300">
-          <a href="#command-center" className="hover:text-cyan-400 transition-colors flex items-center gap-1.5">
-            <span className="text-cyan-500 font-mono text-[10px]">01</span>
-            <span>Command Center</span>
-          </a>
-          <a href="#projects" className="hover:text-cyan-400 transition-colors flex items-center gap-1.5">
-            <span className="text-cyan-500 font-mono text-[10px]">02</span>
-            <span>Projects</span>
-          </a>
-          <a href="#experience" className="hover:text-cyan-400 transition-colors flex items-center gap-1.5">
-            <span className="text-cyan-500 font-mono text-[10px]">03</span>
-            <span>Experience</span>
-          </a>
-          <a href="#skills" className="hover:text-cyan-400 transition-colors flex items-center gap-1.5">
-            <span className="text-cyan-500 font-mono text-[10px]">04</span>
-            <span>Skills</span>
-          </a>
-          <a href="#contact" className="hover:text-cyan-400 transition-colors flex items-center gap-1.5">
-            <span className="text-cyan-500 font-mono text-[10px]">05</span>
-            <span>Contact</span>
-          </a>
-        </div>
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-6">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="text-xs font-mono font-semibold text-slate-300 hover:text-cyan-400 transition-colors"
+            >
+              {link.name}
+            </a>
+          ))}
+        </nav>
 
-        {/* Actions */}
-        <div className="hidden sm:flex items-center gap-3">
+        {/* Action Button */}
+        <div className="hidden md:flex items-center gap-3">
           <a
             href="/Srimanikandan_Resume_Professional.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 text-xs font-bold transition shadow-sm"
+            className="px-4 py-2 rounded-xl border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 font-mono text-xs font-bold transition flex items-center gap-2"
           >
             <Download className="w-3.5 h-3.5" />
             <span>Resume</span>
           </a>
+
           <a
             href="#contact"
-            className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white text-xs font-bold shadow-lg shadow-cyan-500/25 transition"
+            className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold text-xs shadow-md shadow-cyan-500/20 transition flex items-center gap-1.5"
           >
-            <Mail className="w-3.5 h-3.5" />
-            <span>Hire Me</span>
+            <span>Let's Talk</span>
+            <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </div>
 
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 rounded-xl border border-white/10 text-slate-300 hover:text-white"
-          aria-label="Toggle navigation menu"
+          className="md:hidden p-2 rounded-xl bg-[#091020] border border-white/10 text-slate-300"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -87,55 +93,42 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0a0e1a]/95 border-b border-cyan-500/20 px-6 py-6 space-y-4 text-sm font-semibold">
-          <a
-            href="#command-center"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-slate-300 hover:text-cyan-400"
-          >
-            01. Command Center
-          </a>
-          <a
-            href="#projects"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-slate-300 hover:text-cyan-400"
-          >
-            02. Production Projects
-          </a>
-          <a
-            href="#experience"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-slate-300 hover:text-cyan-400"
-          >
-            03. Experience
-          </a>
-          <a
-            href="#skills"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-slate-300 hover:text-cyan-400"
-          >
-            04. Skills
-          </a>
-          <a
-            href="#contact"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-slate-300 hover:text-cyan-400"
-          >
-            05. Contact
-          </a>
+        <div className="md:hidden bg-[#050816]/98 backdrop-blur-2xl border-b border-cyan-500/20 px-6 py-6 space-y-4">
+          <div className="flex flex-col space-y-3">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-sm font-mono font-semibold text-slate-300 hover:text-cyan-400 py-1"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+
           <div className="pt-4 border-t border-white/10 flex flex-col gap-3">
             <a
               href="/Srimanikandan_Resume_Professional.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 py-2.5 rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-xs font-bold"
+              className="w-full py-2.5 rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 font-mono text-xs font-bold flex items-center justify-center gap-2"
             >
-              <Download className="w-4 h-4" />
-              <span>Download Resume PDF</span>
+              <Download className="w-3.5 h-3.5" />
+              <span>Download Resume (PDF)</span>
+            </a>
+
+            <a
+              href="#contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold text-xs flex items-center justify-center gap-2"
+            >
+              <span>Contact Srimanikandan</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

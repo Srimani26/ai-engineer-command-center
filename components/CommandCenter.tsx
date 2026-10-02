@@ -1,17 +1,17 @@
 "use client";
 
 import React, { useState } from "react";
-import { Terminal, Activity, CheckCircle2, AlertTriangle, TrendingUp, Cpu, Server, Play, ShieldAlert, FileText, ArrowRight } from "lucide-react";
+import { Terminal, Activity, CheckCircle2, TrendingUp, Cpu, Play, FileText, ArrowRight, Sparkles, Zap, ShieldCheck } from "lucide-react";
 import FadeIn from "./FadeIn";
 
 export default function CommandCenter() {
-  const [activeTab, setActiveTab] = useState<"ads" | "zoho" | "business-os" | "mcp">("ads");
+  const [activeTab, setActiveTab] = useState<"ads" | "zoho" | "business-os">("ads");
   const [simulating, setSimulating] = useState(false);
   const [simulationLogs, setSimulationLogs] = useState<string[]>([
     "[06:00:02 IST] Cron trigger initiated by Google Apps Script runtime",
     "[06:00:08 IST] Extracted 285+ keyword and search-term performance metrics",
     "[06:00:15 IST] Primary Gemini API key engaged (Zero-cost quota tier)",
-    "[06:00:22 IST] Flagged ₹4,952 in negative match candidates (97% waste rate)",
+    "[06:00:22 IST] Flagged ₹14,952 in negative match candidates (97% waste rate)",
     "[07:00:00 IST] Dispatched color-coded STOP/SCALE/FIX HTML audit report via Gmail API",
   ]);
 
@@ -21,34 +21,26 @@ export default function CommandCenter() {
       if (activeTab === "ads") {
         setSimulationLogs([
           `[${new Date().toLocaleTimeString()} IST] Querying Google Ads Script API for 7-day search term metrics...`,
-          `[${new Date().toLocaleTimeString()} IST] 371 search queries pulled into Google Sheets data warehouse`,
+          `[${new Date().toLocaleTimeString()} IST] 371 real search queries pulled into Google Sheets warehouse`,
           `[${new Date().toLocaleTimeString()} IST] Dual Gemini API Key Engine verified with exponential backoff logic`,
           `[${new Date().toLocaleTimeString()} IST] Detected 14 irrelevant search terms with zero conversion & high CPC`,
-          `[${new Date().toLocaleTimeString()} IST] SUCCESS: Color-coded STOP/SCALE/FIX HTML report generated!`,
+          `[${new Date().toLocaleTimeString()} IST] SUCCESS: Color-coded STOP/SCALE/FIX HTML report dispatched!`,
         ]);
       } else if (activeTab === "zoho") {
         setSimulationLogs([
-          `[${new Date().toLocaleTimeString()} IST] Trigger: Deal stage advanced to "Quotation Required" in Zoho CRM`,
+          `[${new Date().toLocaleTimeString()} IST] Trigger: Deal stage advanced to 'Quotation Required' in Zoho CRM`,
           `[${new Date().toLocaleTimeString()} IST] Layer 1: Workflow rules validated 14+ CRM required parameters`,
           `[${new Date().toLocaleTimeString()} IST] Layer 2: Deluge function computed dynamic roofing spec formulas`,
           `[${new Date().toLocaleTimeString()} IST] Layer 3: Client Script synced real-time product image assets via Cloudinary`,
           `[${new Date().toLocaleTimeString()} IST] Layer 4: Zoho Writer API synthesized formal quotation PDF in 48 seconds!`,
         ]);
-      } else if (activeTab === "business-os") {
+      } else {
         setSimulationLogs([
           `[${new Date().toLocaleTimeString()} IST] Inbound business message received via FastAPI gateway`,
-          `[${new Date().toLocaleTimeString()} IST] Gemini AI parser extracted deliverables, urgency, and confidence (99.2%)`,
+          `[${new Date().toLocaleTimeString()} IST] Gemini AI parser extracted deliverables, urgency, and confidence (99.4%)`,
           `[${new Date().toLocaleTimeString()} IST] Tenant routing: Organization -> Workspace -> Engineering Project`,
           `[${new Date().toLocaleTimeString()} IST] Human-in-the-loop: Task routed to Review Queue container`,
           `[${new Date().toLocaleTimeString()} IST] Cryptographic HMAC-SHA256 webhook delivered to external client`,
-        ]);
-      } else {
-        setSimulationLogs([
-          `[${new Date().toLocaleTimeString()} IST] Client authenticated via OAuth 2.1 Bearer Token`,
-          `[${new Date().toLocaleTimeString()} IST] MCP Protocol Session established on Render Cloud Container`,
-          `[${new Date().toLocaleTimeString()} IST] Centralized knowledge repository queried via semantic embeddings`,
-          `[${new Date().toLocaleTimeString()} IST] GitHub bi-directional synchronization committed delta changes`,
-          `[${new Date().toLocaleTimeString()} IST] Claude Desktop context payload injected with zero duplicate retrieval`,
         ]);
       }
       setSimulating(false);
@@ -62,22 +54,23 @@ export default function CommandCenter() {
         <FadeIn>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 border-b border-white/10 pb-8">
             <div>
-              <p className="text-cyan-400 uppercase tracking-[0.25em] text-xs font-mono font-bold">
-                SYSTEMS TELEMETRY & OPERATIONS
+              <p className="text-cyan-400 uppercase tracking-[0.25em] text-xs font-mono font-bold flex items-center gap-2">
+                <Zap className="w-3.5 h-3.5 text-cyan-400" />
+                SYSTEMS TELEMETRY &amp; OPERATIONS HUD
               </p>
-              <h2 className="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
+              <h2 className="mt-2 text-3xl sm:text-5xl font-black tracking-tight text-white">
                 Production AI Command Center
               </h2>
-              <p className="mt-3 max-w-3xl text-sm sm:text-base text-slate-400">
+              <p className="mt-3 max-w-3xl text-sm sm:text-base text-slate-300">
                 Interactive control panel representing production automation platforms, AI auditors, and
-                CRM engines actively serving business operations.
+                CRM engines actively serving live business operations. Click below to inspect architecture or trigger real-time telemetry simulations.
               </p>
             </div>
 
             <div className="flex items-center gap-3 shrink-0">
-              <span className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+              <span className="flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 shadow-sm shadow-emerald-500/20">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                4 PLATFORMS ONLINE
+                3 CORE ENGINES LIVE IN PROD
               </span>
             </div>
           </div>
@@ -90,13 +83,13 @@ export default function CommandCenter() {
               setActiveTab("ads");
               runSimulation();
             }}
-            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer flex items-center gap-2 ${
+            className={`px-5 py-3 rounded-2xl text-xs font-black transition whitespace-nowrap cursor-pointer flex items-center gap-2.5 ${
               activeTab === "ads"
                 ? "bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/25"
                 : "bg-[#091020] text-slate-400 hover:text-white border border-white/5"
             }`}
           >
-            <TrendingUp className="w-3.5 h-3.5" />
+            <TrendingUp className="w-4 h-4" />
             <span>Google Ads AI Auditor (v5.0)</span>
           </button>
 
@@ -105,13 +98,13 @@ export default function CommandCenter() {
               setActiveTab("zoho");
               runSimulation();
             }}
-            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer flex items-center gap-2 ${
+            className={`px-5 py-3 rounded-2xl text-xs font-black transition whitespace-nowrap cursor-pointer flex items-center gap-2.5 ${
               activeTab === "zoho"
                 ? "bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/25"
                 : "bg-[#091020] text-slate-400 hover:text-white border border-white/5"
             }`}
           >
-            <FileText className="w-3.5 h-3.5" />
+            <FileText className="w-4 h-4" />
             <span>Zoho 4-Layer Quotation Engine</span>
           </button>
 
@@ -120,29 +113,14 @@ export default function CommandCenter() {
               setActiveTab("business-os");
               runSimulation();
             }}
-            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer flex items-center gap-2 ${
+            className={`px-5 py-3 rounded-2xl text-xs font-black transition whitespace-nowrap cursor-pointer flex items-center gap-2.5 ${
               activeTab === "business-os"
                 ? "bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/25"
                 : "bg-[#091020] text-slate-400 hover:text-white border border-white/5"
             }`}
           >
-            <Cpu className="w-3.5 h-3.5" />
+            <Cpu className="w-4 h-4" />
             <span>Sri AI Business OS</span>
-          </button>
-
-          <button
-            onClick={() => {
-              setActiveTab("mcp");
-              runSimulation();
-            }}
-            className={`px-4 py-2.5 rounded-xl text-xs font-bold transition whitespace-nowrap cursor-pointer flex items-center gap-2 ${
-              activeTab === "mcp"
-                ? "bg-cyan-500 text-slate-950 shadow-lg shadow-cyan-500/25"
-                : "bg-[#091020] text-slate-400 hover:text-white border border-white/5"
-            }`}
-          >
-            <Server className="w-3.5 h-3.5" />
-            <span>Centralized MCP Memory Hub</span>
           </button>
         </div>
 
@@ -163,26 +141,26 @@ export default function CommandCenter() {
                     </p>
                   </div>
                   <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                    LIVE &bull; 7:00 AM
+                    LIVE &bull; 6:00 AM CRON
                   </span>
                 </div>
 
                 {/* Metrics Grid */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">WASTE DETECTED</span>
-                    <span className="text-xl font-black text-rose-400">₹4,952</span>
+                  <div className="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
+                    <span className="text-[10px] font-mono text-slate-400 block font-semibold">WASTE DETECTED</span>
+                    <span className="text-xl font-black text-rose-400">₹14,952</span>
                   </div>
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">QUERIES TRACKED</span>
+                  <div className="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
+                    <span className="text-[10px] font-mono text-slate-400 block font-semibold">QUERIES TRACKED</span>
                     <span className="text-xl font-black text-cyan-400">285+</span>
                   </div>
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">EXECUTION TIME</span>
-                    <span className="text-xl font-black text-indigo-300">06:00 AM</span>
+                  <div className="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
+                    <span className="text-[10px] font-mono text-slate-400 block font-semibold">REPORT DELIVERY</span>
+                    <span className="text-xl font-black text-indigo-300">07:00 AM</span>
                   </div>
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">RUN COST</span>
+                  <div className="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
+                    <span className="text-[10px] font-mono text-slate-400 block font-semibold">RUN COST</span>
                     <span className="text-xl font-black text-emerald-400">₹0 / mo</span>
                   </div>
                 </div>
@@ -190,29 +168,29 @@ export default function CommandCenter() {
                 {/* Pipeline Steps */}
                 <div className="space-y-2">
                   <span className="text-xs font-mono font-bold uppercase text-slate-400">
-                    Execution Pipeline Architecture
+                    Production Execution Flow
                   </span>
                   <div className="space-y-2 text-xs">
                     <div className="p-3 rounded-xl bg-[#060a14] border border-white/5 flex items-center justify-between">
                       <div className="flex items-center gap-2.5">
                         <span className="w-5 h-5 rounded-md bg-cyan-500/20 text-cyan-400 font-mono text-[10px] flex items-center justify-center font-bold">1</span>
-                        <span className="text-slate-200 font-medium">Google Ads Scripts collects 7-day query trends</span>
+                        <span className="text-slate-200 font-medium">Cron triggered Google Ads Script extracts 285+ queries</span>
                       </div>
-                      <span className="text-[10px] font-mono text-slate-400">285+ real rows</span>
+                      <span className="text-[10px] font-mono text-emerald-400 font-bold">Autonomous</span>
                     </div>
 
                     <div className="p-3 rounded-xl bg-[#060a14] border border-white/5 flex items-center justify-between">
                       <div className="flex items-center gap-2.5">
                         <span className="w-5 h-5 rounded-md bg-cyan-500/20 text-cyan-400 font-mono text-[10px] flex items-center justify-center font-bold">2</span>
-                        <span className="text-slate-200 font-medium">Google Sheets staging warehouse aggregates spend & clicks</span>
+                        <span className="text-slate-200 font-medium">Staged in Google Sheets data warehouse with 7-day lookback</span>
                       </div>
-                      <span className="text-[10px] font-mono text-slate-400">Zero latency</span>
+                      <span className="text-[10px] font-mono text-cyan-400">Warehouse Sync</span>
                     </div>
 
                     <div className="p-3 rounded-xl bg-[#060a14] border border-white/5 flex items-center justify-between">
                       <div className="flex items-center gap-2.5">
                         <span className="w-5 h-5 rounded-md bg-cyan-500/20 text-cyan-400 font-mono text-[10px] flex items-center justify-center font-bold">3</span>
-                        <span className="text-slate-200 font-medium">Dual Gemini API Key Engine with retry & 503 backoff</span>
+                        <span className="text-slate-200 font-medium">Dual Gemini API Key Engine with retry &amp; 503 backoff</span>
                       </div>
                       <span className="text-[10px] font-mono text-emerald-400">100% Reliability</span>
                     </div>
@@ -247,20 +225,20 @@ export default function CommandCenter() {
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">CREATION TIME</span>
+                  <div className="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
+                    <span className="text-[10px] font-mono text-slate-400 block font-semibold">CREATION TIME</span>
                     <span className="text-xl font-black text-emerald-400">&lt; 1 min</span>
                   </div>
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">CRM FIELDS</span>
+                  <div className="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
+                    <span className="text-[10px] font-mono text-slate-400 block font-semibold">CRM FIELDS</span>
                     <span className="text-xl font-black text-cyan-400">30+</span>
                   </div>
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">WORKFLOW RULES</span>
+                  <div className="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
+                    <span className="text-[10px] font-mono text-slate-400 block font-semibold">WORKFLOW RULES</span>
                     <span className="text-xl font-black text-indigo-300">14+</span>
                   </div>
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">MANUAL ERRORS</span>
+                  <div className="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
+                    <span className="text-[10px] font-mono text-slate-400 block font-semibold">MANUAL ERRORS</span>
                     <span className="text-xl font-black text-emerald-400">0%</span>
                   </div>
                 </div>
@@ -301,7 +279,7 @@ export default function CommandCenter() {
                       Sri AI Business OS
                     </h3>
                     <p className="text-xs text-slate-400 mt-1">
-                      Multi-tenant enterprise operating system running FastAPI, Neon PostgreSQL & Gemini AI.
+                      Multi-tenant enterprise operating system running FastAPI, Neon PostgreSQL &amp; Gemini AI.
                     </p>
                   </div>
                   <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
@@ -310,20 +288,20 @@ export default function CommandCenter() {
                 </div>
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">ARCHITECTURE</span>
+                  <div className="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
+                    <span className="text-[10px] font-mono text-slate-400 block font-semibold">ARCHITECTURE</span>
                     <span className="text-xl font-black text-cyan-400">4-Tier</span>
                   </div>
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">SECURITY</span>
+                  <div className="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
+                    <span className="text-[10px] font-mono text-slate-400 block font-semibold">SECURITY</span>
                     <span className="text-xl font-black text-indigo-400">HMAC-SHA256</span>
                   </div>
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">DATABASE</span>
+                  <div className="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
+                    <span className="text-[10px] font-mono text-slate-400 block font-semibold">DATABASE</span>
                     <span className="text-xl font-black text-emerald-400">Neon Cloud</span>
                   </div>
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">AI INTAKE</span>
+                  <div className="p-3.5 rounded-2xl bg-[#060a14] border border-white/5">
+                    <span className="text-[10px] font-mono text-slate-400 block font-semibold">AI INTAKE</span>
                     <span className="text-xl font-black text-cyan-300">Gemini Flash</span>
                   </div>
                 </div>
@@ -332,7 +310,7 @@ export default function CommandCenter() {
                   <span className="text-xs font-mono font-bold uppercase text-slate-400">
                     Enterprise Capabilities
                   </span>
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5 space-y-1.5">
+                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5 space-y-2">
                     <div className="flex items-center gap-2 text-slate-200">
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                       <span>Multi-tenant hierarchy: Organizations &rarr; Workspaces &rarr; Projects &rarr; Tasks</span>
@@ -350,54 +328,6 @@ export default function CommandCenter() {
                       <span>Real-time audit log stream tracking all status transitions and actors</span>
                     </div>
                   </div>
-                </div>
-              </div>
-            )}
-
-            {activeTab === "mcp" && (
-              <div className="space-y-6">
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                      <span className="text-cyan-400 font-mono text-sm">#04</span>
-                      Centralized MCP AI Memory Platform
-                    </h3>
-                    <p className="text-xs text-slate-400 mt-1">
-                      Model Context Protocol cloud server bridging Claude Desktop, ChatGPT, and Git.
-                    </p>
-                  </div>
-                  <span className="text-[10px] font-mono font-bold px-2.5 py-1 rounded bg-cyan-500/20 text-cyan-400 border border-cyan-500/30">
-                    OAUTH 2.1 SYNCED
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">HOSTING</span>
-                    <span className="text-xl font-black text-cyan-400">Render Cloud</span>
-                  </div>
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">PROTOCOL</span>
-                    <span className="text-xl font-black text-indigo-400">Anthropic MCP</span>
-                  </div>
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">AUTH LAYER</span>
-                    <span className="text-xl font-black text-emerald-400">OAuth 2.1</span>
-                  </div>
-                  <div className="p-3 rounded-xl bg-[#060a14] border border-white/5">
-                    <span className="text-[10px] font-mono text-slate-400 block">VERSIONING</span>
-                    <span className="text-xl font-black text-cyan-300">GitHub Sync</span>
-                  </div>
-                </div>
-
-                <div className="space-y-2 text-xs">
-                  <span className="text-xs font-mono font-bold uppercase text-slate-400">
-                    Cross-Tool Knowledge Sharing
-                  </span>
-                  <p className="text-slate-300 leading-relaxed">
-                    Eliminates repetitive copy-pasting of context across AI assistants. Claude Desktop, ChatGPT,
-                    and custom IDE subagents query a single synchronized knowledge repository backed by automated Git commits.
-                  </p>
                 </div>
               </div>
             )}
@@ -425,7 +355,7 @@ export default function CommandCenter() {
             {/* Terminal logs window */}
             <div className="bg-[#03050a] rounded-2xl p-4 font-mono text-xs space-y-2 border border-white/5 min-h-[280px] max-h-[360px] overflow-y-auto">
               <div className="text-slate-600 text-[11px]">
-                // Connected to Sri AI Runtime • Environment: Production
+                // Connected to Sri AI Runtime &bull; Environment: Production
               </div>
               {simulationLogs.map((log, i) => (
                 <div
@@ -450,10 +380,10 @@ export default function CommandCenter() {
                 href="https://github.com/Srimani26"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-between p-3 rounded-xl border border-white/5 bg-[#091020] hover:border-cyan-500/30 text-xs text-slate-300 hover:text-white transition group"
+                className="w-full py-2.5 rounded-xl border border-cyan-500/30 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 font-mono text-xs font-bold transition flex items-center justify-center gap-2"
               >
-                <span>Inspect Repository & Commits on GitHub</span>
-                <ArrowRight className="w-4 h-4 text-cyan-400 group-hover:translate-x-1 transition-transform" />
+                <span>View Source Code on GitHub</span>
+                <ArrowRight className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>

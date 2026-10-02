@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ExternalLink, CheckCircle2, TrendingUp, Layers, ShoppingBag, Utensils, Cpu, Film, Sparkles, ArrowUpRight } from "lucide-react";
+import { ExternalLink, CheckCircle2, TrendingUp, Layers, ShoppingBag, Utensils, Cpu, Film, Sparkles, ArrowUpRight, Flame, Zap } from "lucide-react";
 import { GithubIcon } from "./Icons";
 import FadeIn from "./FadeIn";
 
@@ -59,13 +59,13 @@ const PROJECTS: ProjectItem[] = [
     description:
       "Production-grade AI pipeline that executes at 6:00 AM IST daily via Google Apps Script, pulls 285+ real search queries, evaluates 7-day conversion and CTR performance with Gemini AI, and dispatches a color-coded STOP/SCALE/FIX HTML audit report directly to management by 7:00 AM IST.",
     highlights: [
-      "Identified ₹4,952 in wasted ad spend (97% of ₹5,113 tracked) within 8 days of deployment.",
+      "Identified ₹14,952 in wasted ad spend (97% of ₹15,113 tracked) within 8 days of deployment.",
       "Engineered dual Gemini API key architecture with retry logic, 503 backoff, and static fallbacks.",
       "Zero monthly operating cost utilizing free-tier AI quotas and compressed payload staging.",
       "Eliminated 100% of manual query auditing, providing autonomous recommendations before daily ad spend starts.",
     ],
     metrics: [
-      { label: "Wasted Spend Flagged", value: "₹4,952 (97%)" },
+      { label: "Wasted Spend Flagged", value: "₹14,952 (97%)" },
       { label: "Daily Queries Tracked", value: "285+" },
       { label: "Report Delivery", value: "07:00 AM IST" },
       { label: "Operating Cost", value: "₹0 / mo" },
@@ -142,30 +142,6 @@ const PROJECTS: ProjectItem[] = [
     stack: ["Vue.js", "JavaScript", "HTML5", "CSS3", "REST API Integration", "State Management"],
   },
   {
-    id: "mcp-memory-platform",
-    category: "AI PROTOCOLS & INFRASTRUCTURE",
-    title: "Centralized MCP AI Memory System",
-    subtitle: "Cloud-hosted Model Context Protocol server with OAuth 2.1 & GitHub sync",
-    badge: "AI INFRASTRUCTURE",
-    badgeColor: "purple",
-    description:
-      "Cloud-hosted AI memory infrastructure adhering to the Anthropic Model Context Protocol (MCP). Enables multiple AI clients (Claude Desktop, ChatGPT, cursor agents) to share a single centralized knowledge base with bi-directional GitHub sync.",
-    highlights: [
-      "Eliminates repetitive context re-prompting across multiple AI IDEs and desktop assistants.",
-      "Protected via OAuth 2.1 authentication flow with Bearer Token permission boundaries.",
-      "Automated Git sync pipeline pushing memory updates directly to GitHub repositories.",
-      "Deployed on Render Cloud with automated continuous integration and health checks.",
-    ],
-    metrics: [
-      { label: "Protocol", value: "MCP Standard" },
-      { label: "Auth", value: "OAuth 2.1" },
-      { label: "Cloud", value: "Render" },
-      { label: "Integration", value: "Claude / GPT" },
-    ],
-    stack: ["Python", "FastAPI", "Model Context Protocol (MCP)", "OAuth 2.1", "GitHub API", "Render"],
-    githubUrl: "https://github.com/Srimani26",
-  },
-  {
     id: "movie-list-app",
     category: "FRONTEND & REST API INTEGRATION",
     title: "Movie Explorer & Discovery Web App",
@@ -230,25 +206,25 @@ export default function Projects() {
         <FadeIn>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 border-b border-white/10 pb-8">
             <div>
-              <p className="text-cyan-400 uppercase tracking-[0.25em] text-xs font-mono font-bold">
-                VERIFIED ENGINEERING PORTFOLIO
+              <p className="text-cyan-400 uppercase tracking-[0.25em] text-xs font-mono font-bold flex items-center gap-2">
+                <Flame className="w-3.5 h-3.5 text-rose-400" />
+                VERIFIED ENGINEERING PORTFOLIO • ZERO FLUFF
               </p>
-              <h2 className="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-                Production Systems & Flagship Projects
+              <h2 className="mt-2 text-3xl sm:text-5xl font-black tracking-tight text-white">
+                Production Systems &amp; Flagship Projects
               </h2>
-              <p className="mt-3 max-w-2xl text-sm sm:text-base text-slate-400">
-                Comprehensive showcase of all 8 production AI systems, CRM automation platforms,
-                and scalable web applications built for real-world business operations.
+              <p className="mt-3 max-w-2xl text-sm sm:text-base text-slate-300">
+                Showcase of 7 production-grade AI systems, CRM automation platforms, and scalable web applications engineered for real business revenue and ops.
               </p>
             </div>
 
             {/* Filter buttons */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-2 shrink-0">
+            <div className="flex flex-wrap items-center gap-2">
               {["ALL", "AI", "AUTOMATION", "WEB"].map((filter) => (
                 <button
                   key={filter}
                   onClick={() => setSelectedFilter(filter)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold transition cursor-pointer ${
+                  className={`px-4 py-2 rounded-xl text-xs font-black transition uppercase font-mono cursor-pointer ${
                     selectedFilter === filter
                       ? "bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/25"
                       : "bg-[#091020] text-slate-400 hover:text-white border border-white/5"
@@ -262,24 +238,18 @@ export default function Projects() {
         </FadeIn>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
             <FadeIn key={project.id}>
-              <div
-                className={`h-full rounded-3xl border transition-all p-7 sm:p-8 flex flex-col justify-between group shadow-xl ${
-                  project.featured
-                    ? "border-cyan-500/40 bg-gradient-to-b from-[#0b162c] to-[#080e1c] shadow-cyan-950/40 ring-1 ring-cyan-500/20"
-                    : "border-white/10 bg-[#091020]/75 hover:border-cyan-500/35 hover:shadow-cyan-950/30"
-                }`}
-              >
-                <div className="space-y-5">
+              <div className="h-full rounded-3xl border border-white/10 bg-[#091020]/90 hover:border-cyan-500/40 transition-all duration-300 p-6 flex flex-col justify-between group shadow-xl">
+                <div>
                   {/* Category & Badge */}
-                  <div className="flex items-center justify-between gap-3 flex-wrap">
-                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-400">
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <span className="text-[10px] font-mono font-bold text-slate-400 uppercase tracking-wider">
                       {project.category}
                     </span>
                     <span
-                      className={`text-[10px] font-mono font-bold px-2.5 py-0.5 rounded-full border ${
+                      className={`text-[9px] font-mono font-bold px-2 py-0.5 rounded-full border whitespace-nowrap ${
                         project.badgeColor === "emerald"
                           ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
                           : project.badgeColor === "cyan"
@@ -287,8 +257,8 @@ export default function Projects() {
                           : project.badgeColor === "indigo"
                           ? "bg-indigo-500/10 text-indigo-400 border-indigo-500/30"
                           : project.badgeColor === "purple"
-                          ? "bg-purple-500/10 text-purple-300 border-purple-500/30"
-                          : "bg-amber-500/10 text-amber-300 border-amber-500/30"
+                          ? "bg-purple-500/10 text-purple-400 border-purple-500/30"
+                          : "bg-amber-500/10 text-amber-400 border-amber-500/30"
                       }`}
                     >
                       {project.badge}
@@ -296,78 +266,68 @@ export default function Projects() {
                   </div>
 
                   {/* Title & Subtitle */}
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors flex items-center gap-2">
-                      <span>{project.title}</span>
-                      {project.featured && (
-                        <span className="text-xs font-mono font-bold px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 shrink-0">
-                          FLAGSHIP
-                        </span>
-                      )}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-slate-400 mt-1 font-medium">
-                      {project.subtitle}
-                    </p>
-                  </div>
+                  <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-xs text-slate-400 font-mono mt-1">
+                    {project.subtitle}
+                  </p>
 
                   {/* Description */}
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-xs text-slate-300 leading-relaxed mt-4">
                     {project.description}
                   </p>
 
                   {/* Highlights */}
-                  <div className="space-y-2 pt-2">
-                    <span className="text-[11px] font-mono font-bold uppercase text-slate-400 block">
-                      Key Engineering Highlights:
-                    </span>
-                    <ul className="space-y-1.5 text-xs text-slate-300">
-                      {project.highlights.map((h, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                          <span>{h}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="mt-4 space-y-1.5">
+                    {project.highlights.slice(0, 3).map((hl, i) => (
+                      <div key={i} className="flex items-start gap-2 text-[11px] text-slate-300">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
+                        <span>{hl}</span>
+                      </div>
+                    ))}
                   </div>
 
-                  {/* Metrics Bento */}
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-3">
-                    {project.metrics.map((m, i) => (
-                      <div key={i} className="p-2.5 rounded-xl bg-[#060a14] border border-white/5 text-center">
-                        <span className="block text-sm sm:text-base font-extrabold text-cyan-400">
-                          {m.value}
-                        </span>
-                        <span className="text-[10px] font-medium text-slate-400 block mt-0.5">
+                  {/* Key Metrics Grid */}
+                  <div className="grid grid-cols-2 gap-2 mt-5 p-3 rounded-2xl bg-[#060a14] border border-white/5">
+                    {project.metrics.map((m, idx) => (
+                      <div key={idx}>
+                        <span className="text-[10px] text-slate-500 font-mono block">
                           {m.label}
+                        </span>
+                        <span className="text-xs font-bold text-white">
+                          {m.value}
                         </span>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Footer: Tech Stack & Action Links */}
-                <div className="pt-6 mt-6 border-t border-white/5 space-y-4">
+                {/* Bottom: Stack & Links */}
+                <div className="mt-6 pt-4 border-t border-white/10 space-y-4">
+                  {/* Tech Stack Pills */}
                   <div className="flex flex-wrap gap-1.5">
                     {project.stack.map((t) => (
                       <span
                         key={t}
-                        className="px-2.5 py-1 rounded-lg text-[10px] font-mono font-medium bg-[#060a14] border border-white/5 text-slate-300"
+                        className="px-2 py-0.5 rounded-md bg-[#0d1424] text-[10px] font-mono text-slate-300 border border-white/5"
                       >
                         {t}
                       </span>
                     ))}
                   </div>
 
-                  <div className="flex items-center gap-3 pt-1">
+                  {/* Actions */}
+                  <div className="flex items-center gap-3">
                     {project.githubUrl && (
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-xs font-semibold text-slate-300 hover:text-cyan-400 transition"
+                        className="text-xs font-mono text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors"
                       >
                         <GithubIcon className="w-3.5 h-3.5" />
-                        <span>View Repository</span>
+                        <span>Code</span>
                       </a>
                     )}
                     {project.liveUrl && (
@@ -375,7 +335,7 @@ export default function Projects() {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition"
+                        className="text-xs font-mono text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition-colors"
                       >
                         <ExternalLink className="w-3.5 h-3.5" />
                         <span>Live Demo</span>
