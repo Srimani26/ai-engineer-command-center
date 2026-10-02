@@ -1,138 +1,124 @@
 "use client";
 
 import React from "react";
-import { Cpu, Code2, Globe, Database, Users, ShieldCheck } from "lucide-react";
-import FadeIn from "./FadeIn";
+import { Cpu, Database, Server, Layout, ShieldCheck, Zap } from "lucide-react";
 
-const SKILL_GROUPS = [
+interface SkillCategory {
+  title: string;
+  icon: any;
+  color: string;
+  borderColor: string;
+  skills: { name: string; level: string }[];
+}
+
+const skillCategories: SkillCategory[] = [
   {
-    title: "AI & Automation Engineering",
-    icon: <Cpu className="w-5 h-5 text-cyan-400" />,
+    title: "AI & Autonomous Systems",
+    icon: Cpu,
+    color: "from-cyan-400 to-blue-500",
+    borderColor: "border-cyan-500/30",
     skills: [
-      "Gemini AI Integration (Flash & Pro)",
-      "Zoho Deluge (Enterprise)",
-      "Google Apps Script",
-      "Google Ads Script API",
-      "Autonomous AI Pipelines & RAG",
-      "Agentic Tool Calling",
-      "Workflow Automation",
-      "Chrome Extensions",
-      "Low-Code / Vibe Coding",
+      { name: "Gemini 1.5 / 2.0 API", level: "Production" },
+      { name: "Claude 3.5 / OpenAI GPT-4o", level: "Advanced" },
+      { name: "Multi-Agent Swarm Logic", level: "Specialist" },
+      { name: "Self-Correcting Prompt Chains", level: "Architect" },
+      { name: "RAG & Vector Retrieval", level: "Production" },
+      { name: "Pydantic Deterministic Schemas", level: "Advanced" },
     ],
   },
   {
-    title: "Backend & Cloud Architecture",
-    icon: <Code2 className="w-5 h-5 text-indigo-400" />,
+    title: "Enterprise CRM & Automation",
+    icon: Zap,
+    color: "from-purple-400 to-fuchsia-500",
+    borderColor: "border-purple-500/30",
     skills: [
-      "Python 3.12",
-      "FastAPI",
-      "JavaScript (ES6+)",
-      "TypeScript",
-      "Java",
-      "RESTful API Architecture",
-      "OAuth 2.1 Security",
-      "HMAC-SHA256 Webhooks",
+      { name: "Zoho Deluge Scripting", level: "Architect" },
+      { name: "Zoho CRM REST APIs", level: "Production" },
+      { name: "Google Ads API & Scripts", level: "Specialist" },
+      { name: "n8n Autonomous Workflows", level: "Advanced" },
+      { name: "BOM Calculation Engines", level: "Specialist" },
+      { name: "Automated Webhooks / Cron", level: "Production" },
     ],
   },
   {
-    title: "Frontend & Modern Web",
-    icon: <Globe className="w-5 h-5 text-teal-400" />,
+    title: "Backend & Systems",
+    icon: Server,
+    color: "from-pink-400 to-rose-500",
+    borderColor: "border-pink-500/30",
     skills: [
-      "React.js",
-      "Next.js (App Router)",
-      "Vue.js",
-      "Shopify Liquid & Themes",
-      "TailwindCSS",
-      "HTML5 / Modern CSS3",
-      "Component Architecture",
-      "State Management",
+      { name: "Python 3.12 / FastAPI", level: "Architect" },
+      { name: "Node.js / Express", level: "Advanced" },
+      { name: "PostgreSQL & SQLite", level: "Production" },
+      { name: "Docker Containerization", level: "Production" },
+      { name: "RESTful & SSE Streaming", level: "Advanced" },
+      { name: "Linux Administration", level: "Proficient" },
     ],
   },
   {
-    title: "CRM, Cloud & Media APIs",
-    icon: <Database className="w-5 h-5 text-amber-400" />,
+    title: "Frontend Engineering",
+    icon: Layout,
+    color: "from-emerald-400 to-teal-500",
+    borderColor: "border-emerald-500/30",
     skills: [
-      "Zoho CRM (Enterprise)",
-      "Zoho Writer API",
-      "Cloudinary Media Sync",
-      "PostgreSQL (Neon Cloud)",
-      "Google Sheets API",
-      "Git & GitHub Versioning",
-      "Render Cloud Hosting",
-      "Gmail API Automation",
-    ],
-  },
-  {
-    title: "Leadership & Agency",
-    icon: <Users className="w-5 h-5 text-rose-400" />,
-    skills: [
-      "Tech Team Leadership (2 Engineers)",
-      "First Technical Hire Agency",
-      "Operational Requirements Intake",
-      "Product Troubleshooting",
-      "Stakeholder Communication",
-      "Rapid Prototyping & MVP Shipping",
-    ],
-  },
-  {
-    title: "Reliability & Security",
-    icon: <ShieldCheck className="w-5 h-5 text-emerald-400" />,
-    skills: [
-      "Dual-API Failover Logic",
-      "Exponential Backoff & 503 Retry",
-      "Multi-Tenant Isolation",
-      "Role-Based Access Control",
-      "Zero-Cost Architecture Design",
-      "Automated Audit Logging",
+      { name: "Next.js 16 (App Router)", level: "Production" },
+      { name: "React 19 & TypeScript", level: "Advanced" },
+      { name: "Tailwind CSS & Vanilla CSS", level: "Specialist" },
+      { name: "Shopify Liquid Engineering", level: "Advanced" },
+      { name: "Vue.js 3 & Pinia", level: "Production" },
+      { name: "Turbopack & Web Performance", level: "Advanced" },
     ],
   },
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-28 bg-[#050713] text-white relative border-t border-white/5">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <FadeIn>
-          <div className="mb-14 border-b border-white/10 pb-8 text-center max-w-3xl mx-auto">
-            <p className="text-xs font-mono font-bold uppercase tracking-widest text-cyan-400">
-              TECHNICAL ARSENAL
-            </p>
-            <h2 className="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-              Skills Matrix &amp; Frameworks
-            </h2>
-            <p className="mt-3 text-sm sm:text-base text-slate-400 font-normal">
-              Battle-tested tools and frameworks used daily to engineer resilient AI pipelines, CRM engines, and production web apps.
-            </p>
-          </div>
-        </FadeIn>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SKILL_GROUPS.map((group) => (
-            <FadeIn key={group.title}>
-              <div className="h-full rounded-3xl premium-card p-6 space-y-4">
-                <div className="flex items-center gap-3 border-b border-white/10 pb-3">
-                  <div className="p-2 rounded-2xl bg-white/[0.04] border border-white/10">
-                    {group.icon}
-                  </div>
-                  <h3 className="text-base font-bold text-white tracking-tight">
-                    {group.title}
-                  </h3>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {group.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1.5 rounded-full bg-white/[0.03] text-xs font-mono text-slate-300 border border-white/5 hover:border-cyan-500/30 hover:text-cyan-300 transition-colors"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </FadeIn>
-          ))}
+    <section id="skills" className="py-24 px-4 md:px-8 max-w-6xl mx-auto relative z-10">
+      <div className="text-center mb-16">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-semibold uppercase mb-3">
+          <Cpu className="w-3.5 h-3.5" />
+          <span>Silicon Valley Stack</span>
         </div>
+        <h2 className="text-3xl sm:text-5xl font-heading font-black text-white tracking-tight">
+          Verified <span className="text-gradient-vibrant">Technical Matrix</span>
+        </h2>
+        <p className="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl mx-auto">
+          Production competencies honed through real commercial deployments and high-volume systems.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {skillCategories.map((cat, idx) => {
+          const Icon = cat.icon;
+          return (
+            <div
+              key={cat.title}
+              className={`mnc-card rounded-3xl p-6 sm:p-8 border ${cat.borderColor} relative overflow-hidden`}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div
+                  className={`w-10 h-10 rounded-xl bg-gradient-to-tr ${cat.color} flex items-center justify-center text-white shadow-lg`}
+                >
+                  <Icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-xl font-heading font-bold text-white">{cat.title}</h3>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {cat.skills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="p-3 rounded-xl bg-white/[0.02] border border-white/[0.06] flex items-center justify-between"
+                  >
+                    <span className="text-xs font-medium text-slate-200">{skill.name}</span>
+                    <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-white/5 text-cyan-300 border border-white/10">
+                      {skill.level}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

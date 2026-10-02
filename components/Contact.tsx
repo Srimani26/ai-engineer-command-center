@@ -1,232 +1,85 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, Phone, MapPin, Download, Copy, Check, Send, ArrowRight } from "lucide-react";
-import { GithubIcon, LinkedinIcon } from "./Icons";
-import FadeIn from "./FadeIn";
+import { Mail, Phone, MapPin, Send, CheckCircle2, ArrowRight, Sparkles } from "lucide-react";
+import { LinkedinIcon, GithubIcon } from "./Icons";
 
 export default function Contact() {
-  const [copiedEmail, setCopiedEmail] = useState(false);
-  const [copiedPhone, setCopiedPhone] = useState(false);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [copied, setCopied] = useState(false);
 
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText("srimanikandanece2000@gmail.com");
-    setCopiedEmail(true);
-    setTimeout(() => setCopiedEmail(false), 2000);
-  };
-
-  const handleCopyPhone = () => {
-    navigator.clipboard.writeText("+916382121634");
-    setCopiedPhone(true);
-    setTimeout(() => setCopiedPhone(false), 2000);
-  };
-
-  const handleSendMessage = (e: React.FormEvent) => {
-    e.preventDefault();
-    const subject = encodeURIComponent(`AI Engineering Project Inquiry from ${name || "Business Lead"}`);
-    const body = encodeURIComponent(
-      `Hello Srimanikandan,\n\nMy name is ${name} (${email}).\n\nProject Details:\n${message}\n\nBest regards,\n${name}`
-    );
-    window.location.href = `mailto:srimanikandanece2000@gmail.com?subject=${subject}&body=${body}`;
+  const copyEmail = () => {
+    navigator.clipboard.writeText("srimanikandan.swe@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
   };
 
   return (
-    <section id="contact" className="py-28 bg-[#050713] text-white relative border-t border-white/5">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <FadeIn>
-          <div className="mb-14 border-b border-white/10 pb-8 text-center max-w-3xl mx-auto">
-            <p className="text-xs font-mono font-bold uppercase tracking-widest text-cyan-400">
-              LET'S BUILD SOMETHING RESILIENT
-            </p>
-            <h2 className="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-              Get in Touch
+    <section id="contact" className="py-24 px-4 md:px-8 max-w-5xl mx-auto relative z-10">
+      <div className="mnc-card rounded-3xl p-8 sm:p-12 relative overflow-hidden border border-cyan-500/30 glow-cyan">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div className="md:col-span-7 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-semibold uppercase">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Direct Executive Gateway</span>
+            </div>
+            <h2 className="text-3xl sm:text-5xl font-heading font-black text-white tracking-tight">
+              Ready to Build <span className="text-gradient-vibrant">Autonomous AI</span> Systems?
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-slate-400 font-normal">
-              Open to high-impact AI Automation Engineer roles, enterprise CRM workflow projects,
-              and AI pipeline consultations. No endless meetings — just high-velocity shipping.
+            <p className="text-slate-300 text-sm leading-relaxed">
+              Whether you are an engineering director looking for a Tech Lead to orchestrate multi-agent architectures, or an enterprise scaling automated operations, let's talk directly.
             </p>
-          </div>
-        </FadeIn>
 
-        <div className="grid lg:grid-cols-12 gap-8 items-start">
-          {/* Left Column: Contact Cards */}
-          <div className="lg:col-span-5 space-y-4">
-            <FadeIn>
-              <div className="p-6 rounded-3xl premium-card space-y-2">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
-                      <Mail className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <span className="text-[10px] uppercase block font-semibold text-slate-400">
-                        DIRECT EMAIL
-                      </span>
-                      <a
-                        href="mailto:srimanikandanece2000@gmail.com"
-                        className="text-sm font-bold text-white hover:text-cyan-300 transition-colors"
-                      >
-                        srimanikandanece2000@gmail.com
-                      </a>
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={handleCopyEmail}
-                    className="p-2 rounded-xl bg-white/[0.04] border border-white/10 hover:border-cyan-500/40 text-slate-400 hover:text-cyan-300 transition-all cursor-pointer"
-                    title="Copy Email"
-                  >
-                    {copiedEmail ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
-                  </button>
-                </div>
+            <div className="space-y-2.5 pt-2 text-xs text-slate-300">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                <span>Response SLA: Within 2 Hours Guaranteed</span>
               </div>
-            </FadeIn>
-
-            <FadeIn>
-              <div className="p-6 rounded-3xl premium-card space-y-2">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
-                      <Phone className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <span className="text-[10px] uppercase block font-semibold text-slate-400">
-                        PHONE / WHATSAPP
-                      </span>
-                      <a
-                        href="tel:+916382121634"
-                        className="text-sm font-bold text-white hover:text-indigo-300 transition-colors"
-                      >
-                        +91 63821 21634
-                      </a>
-                    </div>
-                  </div>
-
-                  <button
-                    onClick={handleCopyPhone}
-                    className="p-2 rounded-xl bg-white/[0.04] border border-white/10 hover:border-indigo-500/40 text-slate-400 hover:text-indigo-300 transition-all cursor-pointer"
-                    title="Copy Phone"
-                  >
-                    {copiedPhone ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
-                  </button>
-                </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-cyan-400" />
+                <span>Available for Full-Time Lead Roles, Fractional Architecture & Advisory</span>
               </div>
-            </FadeIn>
-
-            <FadeIn>
-              <div className="p-6 rounded-3xl premium-card flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] uppercase block font-semibold text-slate-400">
-                    CURRENT BASE
-                  </span>
-                  <span className="text-sm font-bold text-white">
-                    Erode, Tamil Nadu, India (Open to Remote &amp; Relocation)
-                  </span>
-                </div>
-              </div>
-            </FadeIn>
-
-            {/* Social Links */}
-            <FadeIn>
-              <div className="grid grid-cols-2 gap-3 pt-2">
-                <a
-                  href="https://github.com/Srimani26"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 rounded-2xl premium-card text-slate-300 hover:text-white transition flex items-center justify-center gap-2 text-xs font-semibold"
-                >
-                  <GithubIcon className="w-4 h-4 text-cyan-400" />
-                  <span>GitHub Profile</span>
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/srimanikandan-t-942693246/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-4 rounded-2xl premium-card text-slate-300 hover:text-white transition flex items-center justify-center gap-2 text-xs font-semibold"
-                >
-                  <LinkedinIcon className="w-4 h-4 text-indigo-400" />
-                  <span>LinkedIn Profile</span>
-                </a>
-              </div>
-            </FadeIn>
+            </div>
           </div>
 
-          {/* Right Column: Direct Message Form */}
-          <div className="lg:col-span-7">
-            <FadeIn>
-              <form
-                onSubmit={handleSendMessage}
-                className="p-8 rounded-3xl premium-card space-y-4"
-              >
-                <div className="border-b border-white/10 pb-4 mb-2">
-                  <h3 className="text-lg font-bold text-white tracking-tight">
-                    Send Direct Message
-                  </h3>
-                  <p className="text-xs text-slate-400 mt-0.5 font-normal">
-                    Prepares a verified mail dispatch directly to Srimanikandan's inbox.
-                  </p>
-                </div>
+          <div className="md:col-span-5 space-y-3">
+            <a
+              href="https://wa.me/919361626177?text=Hi%20Srimanikandan,%20I%20reviewed%20your%20portfolio%20and%20want%20to%20discuss%20an%20opportunity."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-xs sm:text-sm flex items-center justify-between shadow-xl shadow-emerald-500/20 hover:opacity-95 transition"
+            >
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4" />
+                <span>Chat on WhatsApp (+91 9361626177)</span>
+              </div>
+              <ArrowRight className="w-4 h-4" />
+            </a>
 
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-xs font-medium text-slate-300 block mb-1">
-                      Your Name
-                    </label>
-                    <input
-                      type="text"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      placeholder="e.g. Alex Morgan"
-                      required
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white text-xs focus:border-white focus:outline-none transition-colors"
-                    />
-                  </div>
+            <button
+              onClick={copyEmail}
+              className="w-full py-3.5 px-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-bold text-xs sm:text-sm flex items-center justify-between transition"
+            >
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-cyan-400" />
+                <span>srimanikandan.swe@gmail.com</span>
+              </div>
+              <span className="text-[11px] font-mono text-cyan-300">
+                {copied ? "Copied!" : "Click to Copy"}
+              </span>
+            </button>
 
-                  <div>
-                    <label className="text-xs font-medium text-slate-300 block mb-1">
-                      Your Email
-                    </label>
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="e.g. alex@company.com"
-                      required
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white text-xs focus:border-white focus:outline-none transition-colors"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="text-xs font-medium text-slate-300 block mb-1">
-                    Project Scope / Role Details
-                  </label>
-                  <textarea
-                    rows={4}
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Describe your AI automation requirements, CRM systems challenge, or open engineering role..."
-                    required
-                    className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white text-xs focus:border-white focus:outline-none transition-colors resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full py-3.5 rounded-xl bg-white hover:bg-slate-200 text-slate-950 font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-white/10"
-                >
-                  <Send className="w-4 h-4 text-slate-950" />
-                  <span>Send Message via Email Client</span>
-                </button>
-              </form>
-            </FadeIn>
+            <a
+              href="https://www.linkedin.com/in/srimanikandan-t-swe"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-3.5 px-5 rounded-2xl bg-[#0077b5]/20 hover:bg-[#0077b5]/30 border border-[#0077b5]/40 text-cyan-100 font-bold text-xs sm:text-sm flex items-center justify-between transition"
+            >
+              <div className="flex items-center gap-2.5">
+                <LinkedinIcon className="w-4 h-4 text-[#0077b5]" />
+                <span>Connect on LinkedIn</span>
+              </div>
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </div>

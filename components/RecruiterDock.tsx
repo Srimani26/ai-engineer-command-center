@@ -1,0 +1,127 @@
+"use client";
+
+import React, { useState } from "react";
+import { Download, Phone, Mail, X, Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
+import { LinkedinIcon } from "./Icons";
+
+export default function RecruiterDock() {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  return (
+    <>
+      {/* Floating Recruiter Dock */}
+      <div className="fixed bottom-6 right-6 z-40">
+        <button
+          onClick={() => setModalOpen(true)}
+          className="group relative flex items-center gap-3 px-5 py-3 rounded-full bg-[#0a0a24]/90 hover:bg-[#0f0f35] border border-cyan-400/40 hover:border-cyan-300 shadow-2xl shadow-cyan-500/20 backdrop-blur-2xl transition-all duration-300 hover:scale-105"
+        >
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+          <span className="text-xs font-mono font-bold text-white tracking-wide flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+            <span>Recruiter Quick-Pass</span>
+          </span>
+          <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-gradient-to-r from-cyan-400 to-fuchsia-500 text-white">
+            60s Brief
+          </span>
+        </button>
+      </div>
+
+      {/* Recruiter Quick-Pass Modal */}
+      {modalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl">
+          <div className="relative w-full max-w-xl rounded-3xl bg-[#090924] border border-white/15 p-6 sm:p-8 shadow-2xl shadow-black overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+            {/* Close Button */}
+            <button
+              onClick={() => setModalOpen(false)}
+              className="absolute top-5 right-5 p-2 rounded-full bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="flex items-center gap-2 mb-2">
+              <span className="px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-mono font-bold border border-cyan-500/30">
+                EXECUTIVE CANDIDATE BRIEF
+              </span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-heading font-black text-white">
+              Why Hire Srimanikandan T
+            </h3>
+            <p className="text-xs sm:text-sm text-cyan-300 font-medium mt-1">
+              Tech Lead &bull; Autonomous AI Systems & Production Quotation Engines
+            </p>
+
+            {/* Quick Metrics */}
+            <div className="grid grid-cols-3 gap-3 my-6 text-center">
+              <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+                <div className="text-xl font-heading font-black text-cyan-400">$120K+</div>
+                <div className="text-[10px] text-slate-400">SaaS Saved</div>
+              </div>
+              <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+                <div className="text-xl font-heading font-black text-purple-400">100%</div>
+                <div className="text-[10px] text-slate-400">Delivery Rate</div>
+              </div>
+              <div className="p-3 rounded-xl bg-white/[0.03] border border-white/[0.08]">
+                <div className="text-xl font-heading font-black text-pink-400">5 Live</div>
+                <div className="text-[10px] text-slate-400">Production Deployments</div>
+              </div>
+            </div>
+
+            {/* Core Superpowers */}
+            <div className="space-y-2.5 text-xs text-slate-300 mb-6">
+              <div className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>
+                  <strong>First Technical Hire:</strong> Spearheaded company-wide digitalization at Standard Roofs; built multi-crore mathematical quote engines from zero.
+                </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                <span>
+                  <strong>Full-Cycle Engineering:</strong> Proficient from low-level Deluge scripts and Python FastAPI to Next.js 16 and Gemini/Claude LLM agents.
+                </span>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
+                <span>
+                  <strong>Immediate Availability:</strong> Open to Senior AI Engineer, Automation Lead, and Full-Stack Architect roles (Remote or Relocation).
+                </span>
+              </div>
+            </div>
+
+            {/* Fast Actions */}
+            <div className="space-y-3 pt-4 border-t border-white/[0.08]">
+              <a
+                href="/Srimanikandan_Resume_Professional.pdf"
+                download="Srimanikandan_Resume_Professional.pdf"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-400 via-violet-500 to-fuchsia-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20"
+              >
+                <Download className="w-4 h-4" />
+                <span>Download Official Resume (PDF)</span>
+              </a>
+
+              <div className="grid grid-cols-2 gap-3">
+                <a
+                  href="https://wa.me/919361626177?text=Hi%20Srimanikandan,%20let's%20connect%20about%20a%20role."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/30 text-emerald-300 text-xs font-semibold flex items-center justify-center gap-2 transition"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>WhatsApp (+91 9361626177)</span>
+                </a>
+
+                <a
+                  href="mailto:srimanikandan.swe@gmail.com"
+                  className="py-2.5 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/30 text-cyan-300 text-xs font-semibold flex items-center justify-center gap-2 transition"
+                >
+                  <Mail className="w-3.5 h-3.5" />
+                  <span>Direct Email</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}

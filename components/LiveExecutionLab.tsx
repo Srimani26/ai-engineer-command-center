@@ -1,209 +1,194 @@
 "use client";
 
 import React, { useState } from "react";
-import { Terminal, Activity, TrendingUp, Cpu, FileText, ArrowRight, Sparkles, Sliders, CheckCircle2 } from "lucide-react";
-import FadeIn from "./FadeIn";
+import { Terminal, Play, RotateCcw, CheckCircle2, AlertTriangle, ShieldCheck, Zap } from "lucide-react";
+
+interface LogEntry {
+  timestamp: string;
+  type: "info" | "success" | "warn" | "accent";
+  message: string;
+}
 
 export default function LiveExecutionLab() {
-  const [activeTab, setActiveTab] = useState<"ads" | "zoho">("ads");
-  
-  // Interactive Google Ads Query Simulator State
-  const [selectedQuery, setSelectedQuery] = useState<number>(0);
-  const sampleQueries = [
+  const [activeSimulation, setActiveSimulation] = useState<"ads" | "quote" | "whoami">("ads");
+  const [isRunning, setIsRunning] = useState(false);
+  const [logs, setLogs] = useState<LogEntry[]>([
     {
-      query: "best aluminium roofing sheet manufacturers erode",
-      spend: "₹180",
-      intent: "Commercial Purchase Lead",
-      verdict: "SCALE BID",
-      verdictColor: "emerald",
-      reason: "High commercial intent with localized geo-modifier. Matches Standard Roofs core high-ticket buyer profile.",
+      timestamp: "17:20:01.104",
+      type: "info",
+      message: "[SYSTEM BOOT] AI Systems Command Terminal Initialized.",
     },
     {
-      query: "free pdf download roofing sheet design ideas youtube",
-      spend: "₹420",
-      intent: "Informational (Zero Commercial Intent)",
-      verdict: "STOP & NEGATIVE MATCH",
-      verdictColor: "rose",
-      reason: "Wasted consumer browsing traffic. Added to negative match list. Saved ₹420 immediately.",
+      timestamp: "17:20:01.218",
+      type: "accent",
+      message: "[READY] Select an autonomous pipeline above to trigger live diagnostic execution.",
     },
-    {
-      query: "used tin sheet scrap buyers near me",
-      spend: "₹310",
-      intent: "Scrap Seller (Irrelevant Intent)",
-      verdict: "STOP & NEGATIVE MATCH",
-      verdictColor: "rose",
-      reason: "User looking to sell scrap metal, not buy premium roofing sheets. Flagged and eliminated.",
-    },
-    {
-      query: "heavy duty factory shed roofing contractor quote",
-      spend: "₹240",
-      intent: "Enterprise RFQ Lead",
-      verdict: "SCALE BID",
-      verdictColor: "emerald",
-      reason: "Direct RFQ terminology matching Standard Roofs high-margin industrial project offerings.",
-    },
-  ];
+  ]);
 
-  // Interactive Zoho CRM Quote Simulator State
-  const [sqft, setSqft] = useState<number>(8500);
-  const estimatedPricing = Math.round(sqft * 142);
-  const gst = Math.round(estimatedPricing * 0.18);
-  const total = estimatedPricing + gst;
+  const runAdsAuditSimulation = () => {
+    setIsRunning(true);
+    setLogs([
+      { timestamp: "17:20:04.012", type: "info", message: "[TRIGGER] Ingesting Google Ads script telemetry..." },
+    ]);
+
+    setTimeout(() => {
+      setLogs((prev) => [
+        ...prev,
+        { timestamp: "17:20:04.421", type: "info", message: "• Extracted 1,482 search term queries across 12 ad groups." },
+        { timestamp: "17:20:04.750", type: "warn", message: "• Anomaly Detected: 34 broad match queries triggering zero-intent spend ($420/wk leakage)." },
+      ]);
+    }, 400);
+
+    setTimeout(() => {
+      setLogs((prev) => [
+        ...prev,
+        { timestamp: "17:20:05.310", type: "info", message: "[LLM REASONING] Gemini 1.5 Pro executing multi-tier negative keyword mapping..." },
+        { timestamp: "17:20:05.980", type: "success", message: "• Generated 18 verified negative exact keywords." },
+        { timestamp: "17:20:06.410", type: "success", message: "[COMPLETE] Projected Monthly Budget Savings: $1,680 (32.4% Optimization)." },
+      ]);
+      setIsRunning(false);
+    }, 1100);
+  };
+
+  const runQuoteEngineSimulation = () => {
+    setIsRunning(true);
+    setLogs([
+      { timestamp: "17:20:08.102", type: "info", message: "[TRIGGER] Ingesting Civil Engineering Roof BOM specifications..." },
+    ]);
+
+    setTimeout(() => {
+      setLogs((prev) => [
+        ...prev,
+        { timestamp: "17:20:08.380", type: "info", message: "• Parameters: 14,200 sq.ft industrial shed | 12° pitch | 0.50mm Galvalume profile." },
+        { timestamp: "17:20:08.710", type: "info", message: "• Layer 2 Calculation: 420 trapezoidal sheets, 1,680 self-drilling fasteners, 84 ridge caps." },
+      ]);
+    }, 400);
+
+    setTimeout(() => {
+      setLogs((prev) => [
+        ...prev,
+        { timestamp: "17:20:09.250", type: "accent", message: "• Layer 3 Pricing Index: Applying live steel raw-material index (₹78.50/kg) + 14% target margin." },
+        { timestamp: "17:20:09.890", type: "success", message: "• Layer 4 Zoho Sync: Deal quote generated: ₹18,42,650 (All taxes & transport included)." },
+        { timestamp: "17:20:10.120", type: "success", message: "[COMPLETE] Client PDF dispatched to Zoho CRM deal record in 0.82 seconds." },
+      ]);
+      setIsRunning(false);
+    }, 1100);
+  };
+
+  const runWhoamiSimulation = () => {
+    setIsRunning(true);
+    setLogs([
+      { timestamp: "17:20:12.001", type: "info", message: "Querying Engineer Profile & Credentials..." },
+    ]);
+
+    setTimeout(() => {
+      setLogs((prev) => [
+        ...prev,
+        { timestamp: "17:20:12.300", type: "accent", message: "NAME: Srimanikandan T" },
+        { timestamp: "17:20:12.450", type: "accent", message: "ROLE: First Technical Hire & Tech Lead @ Standard Roofs" },
+        { timestamp: "17:20:12.600", type: "info", message: "SUPERPOWER: Autonomous AI pipelines, mathematical pricing engines, and zero-cost business OS." },
+        { timestamp: "17:20:12.800", type: "success", message: "STATUS: Available for Senior AI / Full-Stack Leadership opportunities." },
+        { timestamp: "17:20:12.950", type: "success", message: "CONTACT: srimanikandan.swe@gmail.com | +91 9361626177" },
+      ]);
+      setIsRunning(false);
+    }, 500);
+  };
 
   return (
-    <section id="systems-lab" className="py-28 bg-[#050713] text-white relative border-t border-white/5">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <FadeIn>
-          <div className="mb-14 border-b border-white/10 pb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
-            <div>
-              <p className="text-xs font-mono font-bold uppercase tracking-widest text-cyan-400">
-                INTERACTIVE SYSTEMS SANDBOX
-              </p>
-              <h2 className="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-                Live Execution Lab
-              </h2>
-              <p className="mt-3 text-sm sm:text-base text-slate-400 max-w-2xl font-normal">
-                Test the actual algorithms and business logic powering Srimanikandan's production deployments.
-              </p>
-            </div>
+    <section id="terminal" className="py-20 px-4 md:px-8 max-w-5xl mx-auto relative z-10">
+      <div className="text-center mb-8">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-mono font-semibold uppercase mb-3">
+          <Terminal className="w-3.5 h-3.5" />
+          <span>Interactive MNC Terminal</span>
+        </div>
+        <h2 className="text-3xl sm:text-4xl font-heading font-black text-white">
+          Live AI Automation <span className="text-gradient-vibrant">Diagnostic Console</span>
+        </h2>
+        <p className="text-slate-400 text-xs sm:text-sm mt-1">
+          Execute simulated runs of Srimanikandan's production pipelines directly in your browser.
+        </p>
+      </div>
 
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => setActiveTab("ads")}
-                className={`px-4 py-2 rounded-full text-xs font-semibold transition cursor-pointer ${
-                  activeTab === "ads"
-                    ? "bg-white text-slate-950 font-bold"
-                    : "bg-white/[0.04] text-slate-400 hover:text-white"
-                }`}
-              >
-                Ads AI Classifier
-              </button>
-              <button
-                onClick={() => setActiveTab("zoho")}
-                className={`px-4 py-2 rounded-full text-xs font-semibold transition cursor-pointer ${
-                  activeTab === "zoho"
-                    ? "bg-white text-slate-950 font-bold"
-                    : "bg-white/[0.04] text-slate-400 hover:text-white"
-                }`}
-              >
-                Deluge Quotation Engine
-              </button>
-            </div>
+      {/* Terminal Window */}
+      <div className="rounded-3xl bg-[#050518]/95 border border-white/10 shadow-2xl shadow-black overflow-hidden backdrop-blur-2xl">
+        {/* Terminal Title Bar */}
+        <div className="px-5 py-3 bg-[#0a0a24] border-b border-white/[0.08] flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="w-3 h-3 rounded-full bg-rose-500/80" />
+            <span className="w-3 h-3 rounded-full bg-amber-500/80" />
+            <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
+            <span className="ml-2 text-xs font-mono text-slate-400">
+              sri@ai-command-center:~ v5.0-prod
+            </span>
           </div>
-        </FadeIn>
 
-        {/* Interactive Lab Display */}
-        <FadeIn>
-          <div className="rounded-3xl premium-card p-6 sm:p-10">
-            {activeTab === "ads" ? (
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-bold text-white tracking-tight">
-                    Google Ads AI Keyword Intent Classifier
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-400 mt-1 font-normal">
-                    Click any real search query below to view how Gemini AI evaluates commercial intent and eliminates ad waste.
-                  </p>
-                </div>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => {
+                setActiveSimulation("ads");
+                runAdsAuditSimulation();
+              }}
+              disabled={isRunning}
+              className="px-3 py-1 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold transition flex items-center gap-1.5"
+            >
+              <Play className="w-3 h-3" />
+              <span>run audit-ads</span>
+            </button>
 
-                {/* Query Cards */}
-                <div className="grid md:grid-cols-2 gap-3">
-                  {sampleQueries.map((q, idx) => (
-                    <div
-                      key={idx}
-                      onClick={() => setSelectedQuery(idx)}
-                      className={`p-4 rounded-2xl border transition-all cursor-pointer ${
-                        selectedQuery === idx
-                          ? "bg-white/[0.06] border-cyan-400 shadow-md shadow-cyan-500/10"
-                          : "bg-black/30 border-white/5 hover:border-white/10"
-                      }`}
-                    >
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="text-xs font-bold text-white font-mono">
-                          "{q.query}"
-                        </span>
-                        <span
-                          className={`text-[10px] font-bold px-2.5 py-0.5 rounded-full border font-mono ${
-                            q.verdictColor === "rose"
-                              ? "bg-rose-500/10 text-rose-400 border-rose-500/30"
-                              : "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
-                          }`}
-                        >
-                          {q.verdict}
-                        </span>
-                      </div>
-                      <div className="mt-2 text-xs text-slate-400 font-mono">
-                        Spend: <strong className="text-white">{q.spend}</strong> &bull; Intent: {q.intent}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+            <button
+              onClick={() => {
+                setActiveSimulation("quote");
+                runQuoteEngineSimulation();
+              }}
+              disabled={isRunning}
+              className="px-3 py-1 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 text-purple-300 text-xs font-mono font-bold transition flex items-center gap-1.5"
+            >
+              <Play className="w-3 h-3" />
+              <span>run quote-engine</span>
+            </button>
 
-                {/* AI Reasoning Output Box */}
-                <div className="p-5 rounded-2xl bg-black/50 border border-white/10 space-y-2">
-                  <div className="flex items-center justify-between text-xs font-mono text-cyan-400">
-                    <span className="flex items-center gap-1.5">
-                      <Sparkles className="w-3.5 h-3.5" />
-                      Gemini Flash Reasoning Breakdown:
-                    </span>
-                    <span className="text-slate-500">Latency: 0.04s &bull; Cost: ₹0.00</span>
-                  </div>
-                  <p className="text-sm text-slate-200 leading-relaxed font-normal">
-                    {sampleQueries[selectedQuery].reason}
-                  </p>
-                </div>
-              </div>
-            ) : (
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-bold text-white tracking-tight">
-                    Deluge 4-Layer Dynamic Roofing Calculation Engine
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-400 mt-1 font-normal">
-                    Adjust the square footage slider below to inspect the dynamic Deluge formulas computing material pricing, tax slabs, and Zoho Writer PDF output.
-                  </p>
-                </div>
-
-                <div className="space-y-4 max-w-xl">
-                  <div className="flex justify-between items-center text-xs font-mono">
-                    <span className="text-slate-400">Roof Area Specification:</span>
-                    <span className="text-cyan-400 font-bold text-sm">{sqft.toLocaleString()} sq.ft.</span>
-                  </div>
-
-                  <input
-                    type="range"
-                    min="1000"
-                    max="30000"
-                    step="500"
-                    value={sqft}
-                    onChange={(e) => setSqft(Number(e.target.value))}
-                    className="w-full accent-cyan-400 cursor-pointer"
-                  />
-
-                  {/* Calculated breakdown */}
-                  <div className="p-4 rounded-2xl bg-black/50 border border-white/10 space-y-2 text-xs font-mono">
-                    <div className="flex justify-between text-slate-400">
-                      <span>Base Material Formulation:</span>
-                      <span className="text-white font-bold">₹{estimatedPricing.toLocaleString()}</span>
-                    </div>
-                    <div className="flex justify-between text-slate-400">
-                      <span>Applicable GST (18% Slab):</span>
-                      <span className="text-white font-bold">₹{gst.toLocaleString()}</span>
-                    </div>
-                    <div className="border-t border-white/10 pt-2 flex justify-between text-sm font-bold">
-                      <span className="text-cyan-300">Total Client Proposal:</span>
-                      <span className="text-emerald-400 text-base">₹{total.toLocaleString()}</span>
-                    </div>
-                  </div>
-
-                  <p className="text-xs text-slate-400 leading-relaxed font-normal">
-                    ✓ Formulas execute in Zoho CRM Deluge backend, syncing with Cloudinary product color assets and auto-attaching a branded PDF via Zoho Writer API in &lt; 48s.
-                  </p>
-                </div>
-              </div>
-            )}
+            <button
+              onClick={() => {
+                setActiveSimulation("whoami");
+                runWhoamiSimulation();
+              }}
+              disabled={isRunning}
+              className="px-3 py-1 rounded-lg bg-pink-500/20 hover:bg-pink-500/30 border border-pink-500/30 text-pink-300 text-xs font-mono font-bold transition flex items-center gap-1.5"
+            >
+              <Play className="w-3 h-3" />
+              <span>whoami</span>
+            </button>
           </div>
-        </FadeIn>
+        </div>
+
+        {/* Console Log Area */}
+        <div className="p-6 font-mono text-xs sm:text-sm space-y-2.5 min-h-[260px] max-h-[380px] overflow-y-auto">
+          {logs.map((log, lIdx) => (
+            <div key={lIdx} className="flex items-start gap-3">
+              <span className="text-slate-500 text-[11px] shrink-0">{log.timestamp}</span>
+              <span
+                className={
+                  log.type === "success"
+                    ? "text-emerald-400"
+                    : log.type === "warn"
+                    ? "text-amber-400"
+                    : log.type === "accent"
+                    ? "text-cyan-300 font-bold"
+                    : "text-slate-300"
+                }
+              >
+                {log.message}
+              </span>
+            </div>
+          ))}
+
+          {isRunning && (
+            <div className="flex items-center gap-2 text-cyan-400 pt-2 animate-pulse">
+              <span className="w-2 h-2 rounded-full bg-cyan-400" />
+              <span>Streaming pipeline telemetry...</span>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
