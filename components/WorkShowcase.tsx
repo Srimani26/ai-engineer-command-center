@@ -9,14 +9,16 @@ interface RealWork {
   id: string;
   category: string;
   badge: string;
-  badgeType: "emerald" | "rose" | "indigo" | "teal";
+  badgeColor: string;
+  gradientHeader: string;
+  borderColor: string;
   title: string;
   subtitle: string;
   company: string;
   problem: string;
   solution: string;
   architecture: { step: string; detail: string }[];
-  impactMetrics: { label: string; value: string; highlight?: boolean }[];
+  impactMetrics: { label: string; value: string; color: string }[];
   stack: string[];
   githubUrl?: string;
   liveUrl?: string;
@@ -27,7 +29,9 @@ const REAL_WORKS: RealWork[] = [
     id: "google-ads-auditor",
     category: "MARKETING AI & AUTOMATED AUDITING",
     badge: "LIVE IN PRODUCTION • DAILY CRON",
-    badgeType: "emerald",
+    badgeColor: "from-emerald-400 to-teal-500",
+    gradientHeader: "from-emerald-500 via-teal-500 to-cyan-500",
+    borderColor: "hover:border-emerald-400 hover:shadow-emerald-500/25",
     title: "AI-Powered Google Ads Auditor (v5.0)",
     subtitle: "Autonomous daily keyword performance auditor & wasted spend mitigation engine",
     company: "Standard Roofs (In-House Production)",
@@ -42,10 +46,10 @@ const REAL_WORKS: RealWork[] = [
       { step: "04. Report Delivery", detail: "Generates and dispatches a color-coded HTML email to executive leadership via Gmail API by 7:00 AM IST before daily ad spend begins." },
     ],
     impactMetrics: [
-      { label: "Ad Waste Caught", value: "₹14,952 (97%)", highlight: true },
-      { label: "Daily Queries", value: "285+ Audited" },
-      { label: "Report Delivery", value: "07:00 AM IST" },
-      { label: "Operating Cost", value: "₹0 / mo" },
+      { label: "Ad Waste Caught", value: "₹14,952 (97%)", color: "text-rose-400" },
+      { label: "Daily Queries", value: "285+ Audited", color: "text-cyan-400" },
+      { label: "Report Delivery", value: "07:00 AM IST", color: "text-violet-300" },
+      { label: "Run Cost", value: "₹0 / mo", color: "text-emerald-400" },
     ],
     stack: ["Google Apps Script", "Google Ads Script API", "Gemini AI", "Google Sheets Warehouse", "Gmail API"],
     githubUrl: "https://github.com/Srimani26",
@@ -54,7 +58,9 @@ const REAL_WORKS: RealWork[] = [
     id: "zoho-quotation-engine",
     category: "ENTERPRISE CRM WORKFLOW AUTOMATION",
     badge: "95% DEPLOYED • TECH LEAD",
-    badgeType: "rose",
+    badgeColor: "from-amber-400 to-rose-500",
+    gradientHeader: "from-amber-500 via-orange-500 to-rose-500",
+    borderColor: "hover:border-amber-400 hover:shadow-amber-500/25",
     title: "Zoho CRM 4-Layer Quotation Automation Platform",
     subtitle: "Enterprise proposal generator & media sync engine slashing drafting time to < 48 seconds",
     company: "Standard Roofs (Tech Lead)",
@@ -69,10 +75,10 @@ const REAL_WORKS: RealWork[] = [
       { step: "Layer 4: Zoho Writer API", detail: "Compiles custom branded PDF documents and automatically attaches them directly to client CRM deal records." },
     ],
     impactMetrics: [
-      { label: "Quote Creation", value: "< 48 seconds", highlight: true },
-      { label: "CRM Fields", value: "30+ Automated" },
-      { label: "Workflow Rules", value: "14+ Active" },
-      { label: "Manual Errors", value: "0%" },
+      { label: "Quote Creation", value: "< 48 seconds", color: "text-emerald-400" },
+      { label: "CRM Fields", value: "30+ Automated", color: "text-cyan-400" },
+      { label: "Workflow Rules", value: "14+ Active", color: "text-amber-400" },
+      { label: "Manual Errors", value: "0%", color: "text-emerald-400" },
     ],
     stack: ["Zoho CRM Enterprise", "Deluge Functions", "Client Script (JS)", "Zoho Writer API", "Cloudinary"],
   },
@@ -80,7 +86,9 @@ const REAL_WORKS: RealWork[] = [
     id: "sri-ai-business-os",
     category: "FLAGSHIP MULTI-TENANT PLATFORM",
     badge: "PRODUCTION READY • FASTAPI",
-    badgeType: "indigo",
+    badgeColor: "from-violet-500 to-fuchsia-500",
+    gradientHeader: "from-violet-600 via-indigo-600 to-fuchsia-600",
+    borderColor: "hover:border-violet-400 hover:shadow-violet-500/25",
     title: "Sri AI Business OS",
     subtitle: "Autonomous multi-tenant operating system for enterprise intake, triage and governance",
     company: "Proprietary Architecture",
@@ -95,10 +103,10 @@ const REAL_WORKS: RealWork[] = [
       { step: "04. Developer Gateway", detail: "Cryptographic HMAC-SHA256 webhook dispatch, rate limiting, and secret API key management." },
     ],
     impactMetrics: [
-      { label: "API Latency", value: "< 45ms", highlight: true },
-      { label: "Intake Accuracy", value: "99.2%" },
-      { label: "Security", value: "HMAC-SHA256" },
-      { label: "Database", value: "Neon PostgreSQL" },
+      { label: "API Latency", value: "< 45ms", color: "text-emerald-400" },
+      { label: "Intake Accuracy", value: "99.2%", color: "text-cyan-400" },
+      { label: "Security", value: "HMAC-SHA256", color: "text-violet-300" },
+      { label: "Database", value: "Neon Cloud", color: "text-amber-400" },
     ],
     stack: ["FastAPI", "Python 3.12", "Neon PostgreSQL", "Next.js 16", "TypeScript", "TailwindCSS", "Gemini Flash"],
     githubUrl: "https://github.com/Srimani26/Sri-AI-Business-OS",
@@ -107,7 +115,9 @@ const REAL_WORKS: RealWork[] = [
     id: "shopify-storefront",
     category: "COMMERCE & FRONT-END LEADERSHIP",
     badge: "LIVE STOREFRONT • TECH LEAD",
-    badgeType: "teal",
+    badgeColor: "from-teal-400 to-cyan-500",
+    gradientHeader: "from-teal-500 via-cyan-500 to-blue-500",
+    borderColor: "hover:border-cyan-400 hover:shadow-cyan-500/25",
     title: "Shopify E-Commerce Commercial Storefront",
     subtitle: "High-ticket roofing storefront theme customization & conversion UX optimization",
     company: "Standard Roofs",
@@ -121,10 +131,10 @@ const REAL_WORKS: RealWork[] = [
       { step: "03. Executive Collaboration", detail: "Collaborated with business leadership to connect storefront inquiries directly into automated sales pipelines." },
     ],
     impactMetrics: [
-      { label: "Storefront", value: "Live Online", highlight: true },
-      { label: "Role", value: "Front-End Lead" },
-      { label: "Architecture", value: "Shopify Liquid" },
-      { label: "UX Metric", value: "Sub-2s CWV" },
+      { label: "Storefront", value: "Live Online", color: "text-emerald-400" },
+      { label: "Role", value: "Front-End Lead", color: "text-cyan-400" },
+      { label: "Architecture", value: "Shopify Liquid", color: "text-teal-300" },
+      { label: "UX Metric", value: "Sub-2s CWV", color: "text-emerald-400" },
     ],
     stack: ["Shopify Liquid", "Theme Development", "JavaScript", "CSS3", "Conversion UX"],
   },
@@ -132,7 +142,9 @@ const REAL_WORKS: RealWork[] = [
     id: "monsterfoods-app",
     category: "REAL-TIME WEB APPLICATION",
     badge: "DEPLOYED IN PRODUCTION",
-    badgeType: "teal",
+    badgeColor: "from-pink-500 to-rose-500",
+    gradientHeader: "from-pink-500 via-rose-500 to-purple-600",
+    borderColor: "hover:border-pink-400 hover:shadow-pink-500/25",
     title: "MonsterFoods Real-Time Food Ordering Portal",
     subtitle: "Vue.js component-based food ordering platform engineered at Macincode Technologies",
     company: "Macincode Technologies (Clops AI)",
@@ -146,10 +158,10 @@ const REAL_WORKS: RealWork[] = [
       { step: "03. API Integration", detail: "Tested and integrated backend REST API endpoints with robust error handling and loading skeletons." },
     ],
     impactMetrics: [
-      { label: "Framework", value: "Vue.js", highlight: true },
-      { label: "Role", value: "Front-End Dev" },
-      { label: "Type", value: "Real-time Web App" },
-      { label: "Status", value: "Deployed" },
+      { label: "Framework", value: "Vue.js", color: "text-pink-400" },
+      { label: "Role", value: "Front-End Dev", color: "text-cyan-400" },
+      { label: "Type", value: "Real-time Portal", color: "text-rose-300" },
+      { label: "Status", value: "Deployed", color: "text-emerald-400" },
     ],
     stack: ["Vue.js", "JavaScript", "HTML5", "CSS3", "REST APIs", "State Management"],
   },
@@ -161,41 +173,42 @@ export default function WorkShowcase() {
   const currentWork = REAL_WORKS.find((w) => w.id === activeTab) || REAL_WORKS[0];
 
   return (
-    <section id="works" className="py-28 bg-[#050713] text-white relative">
+    <section id="works" className="py-28 bg-[#030014] text-white relative">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <FadeIn>
           <div className="mb-14 border-b border-white/10 pb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
             <div>
-              <p className="text-xs font-mono font-bold uppercase tracking-widest text-cyan-400">
-                PROVEN ENGINEERING TRACK RECORD
+              <p className="text-xs font-mono font-bold uppercase tracking-widest text-cyan-400 flex items-center gap-1.5">
+                <Flame className="w-4 h-4 text-rose-400" />
+                VERIFIED REAL PRODUCTION WORKS &bull; ZERO FLUFF
               </p>
-              <h2 className="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-                Verified Production Works
+              <h2 className="mt-2 text-3xl sm:text-5xl font-black tracking-tight text-white">
+                Battle-Tested AI &amp; Systems
               </h2>
-              <p className="mt-3 text-sm sm:text-base text-slate-400 max-w-2xl font-normal">
-                Exclusively real, battle-tested systems actively deployed for businesses. Zero toy demos.
+              <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-2xl font-normal">
+                Strictly real systems deployed in commercial operations. Click each system below to inspect the real architecture.
               </p>
             </div>
 
             <div className="flex items-center gap-2">
-              <span className="px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                5 PRODUCTION BUILDS
+              <span className="px-3.5 py-1.5 rounded-full text-xs font-mono font-bold bg-gradient-to-r from-cyan-500/20 to-violet-500/20 text-cyan-300 border border-cyan-500/30">
+                5 VERIFIED BUILDS
               </span>
             </div>
           </div>
         </FadeIn>
 
-        {/* Project Selector Tabs */}
+        {/* Dynamic Glowing Project Switcher Tabs */}
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8">
           {REAL_WORKS.map((work) => (
             <button
               key={work.id}
               onClick={() => setActiveTab(work.id)}
-              className={`px-4 py-2.5 rounded-full text-xs font-semibold transition whitespace-nowrap cursor-pointer flex items-center gap-2 ${
+              className={`px-5 py-3 rounded-full text-xs font-black transition whitespace-nowrap cursor-pointer flex items-center gap-2 ${
                 activeTab === work.id
-                  ? "bg-white text-slate-950 font-bold shadow-lg shadow-white/10"
-                  : "bg-white/[0.03] text-slate-400 hover:text-white border border-white/5"
+                  ? `bg-gradient-to-r ${work.gradientHeader} text-slate-950 shadow-lg shadow-cyan-500/25 font-black`
+                  : "bg-white/[0.04] text-slate-400 hover:text-white border border-white/10"
               }`}
             >
               <span>{work.title}</span>
@@ -203,33 +216,30 @@ export default function WorkShowcase() {
           ))}
         </div>
 
-        {/* Selected Project In-Depth Case Study Card */}
+        {/* Selected Project Case Study Card */}
         <FadeIn key={currentWork.id}>
-          <div className="rounded-3xl premium-card p-6 sm:p-10 space-y-8">
+          <div className={`rounded-3xl galaxy-card p-6 sm:p-10 space-y-8 relative overflow-hidden transition-all duration-300 ${currentWork.borderColor}`}>
+            {/* Colorful top accent gradient bar */}
+            <div className={`absolute top-0 left-0 right-0 h-2 bg-gradient-to-r ${currentWork.gradientHeader}`} />
+
             {/* Top Bar: Title, Badge, Company */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6 pt-2">
               <div>
                 <div className="flex items-center gap-3 flex-wrap mb-2">
-                  <span className="text-[11px] font-mono text-cyan-400 font-bold uppercase">
+                  <span className="text-[11px] font-mono text-cyan-300 font-bold uppercase">
                     {currentWork.category}
                   </span>
                   <span
-                    className={`text-[10px] font-bold px-3 py-0.5 rounded-full border ${
-                      currentWork.badgeType === "emerald"
-                        ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
-                        : currentWork.badgeType === "rose"
-                        ? "bg-rose-500/10 text-rose-400 border-rose-500/30"
-                        : "bg-indigo-500/10 text-indigo-300 border-indigo-500/30"
-                    }`}
+                    className={`text-[10px] font-black px-3 py-1 rounded-full text-slate-950 bg-gradient-to-r ${currentWork.badgeColor} shadow-md`}
                   >
                     {currentWork.badge}
                   </span>
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
                   {currentWork.title}
                 </h3>
-                <p className="text-sm text-slate-400 mt-1 font-normal">
-                  {currentWork.subtitle} &bull; <strong className="text-slate-200">{currentWork.company}</strong>
+                <p className="text-sm text-slate-300 mt-1 font-medium">
+                  {currentWork.subtitle} &bull; <strong className="text-cyan-300">{currentWork.company}</strong>
                 </p>
               </div>
 
@@ -240,10 +250,10 @@ export default function WorkShowcase() {
                     href={currentWork.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 rounded-full border border-white/10 hover:border-white/20 bg-white/[0.03] text-slate-300 hover:text-white text-xs font-medium flex items-center gap-2 transition"
+                    className="px-4 py-2 rounded-full border border-white/10 hover:border-cyan-400 bg-white/[0.05] text-slate-200 hover:text-white text-xs font-bold flex items-center gap-2 transition"
                   >
-                    <GithubIcon className="w-3.5 h-3.5" />
-                    <span>View Repository</span>
+                    <GithubIcon className="w-3.5 h-3.5 text-cyan-400" />
+                    <span>View Code</span>
                   </a>
                 )}
                 {currentWork.liveUrl && (
@@ -251,7 +261,7 @@ export default function WorkShowcase() {
                     href={currentWork.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-4 py-2 rounded-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 text-xs font-bold flex items-center gap-1.5 transition"
+                    className="px-4 py-2 rounded-full bg-cyan-400 hover:bg-cyan-300 text-slate-950 text-xs font-black flex items-center gap-1.5 transition"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
                     <span>Live Demo</span>
@@ -262,8 +272,9 @@ export default function WorkShowcase() {
 
             {/* Problem & Solution Grid */}
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2">
-                <span className="text-xs font-mono font-bold uppercase text-rose-400 block">
+              <div className="p-5 rounded-2xl bg-black/40 border border-rose-500/20 space-y-2">
+                <span className="text-xs font-mono font-bold uppercase text-rose-400 flex items-center gap-1.5">
+                  <Flame className="w-3.5 h-3.5" />
                   The Business Bottleneck
                 </span>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
@@ -271,8 +282,9 @@ export default function WorkShowcase() {
                 </p>
               </div>
 
-              <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 space-y-2">
-                <span className="text-xs font-mono font-bold uppercase text-emerald-400 block">
+              <div className="p-5 rounded-2xl bg-black/40 border border-emerald-500/20 space-y-2">
+                <span className="text-xs font-mono font-bold uppercase text-emerald-400 flex items-center gap-1.5">
+                  <Zap className="w-3.5 h-3.5" />
                   The Engineered Solution
                 </span>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
@@ -283,12 +295,12 @@ export default function WorkShowcase() {
 
             {/* Architecture Stepper Breakdown */}
             <div className="space-y-3">
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400 block">
                 Technical Execution Architecture
               </span>
               <div className="grid sm:grid-cols-2 gap-3">
                 {currentWork.architecture.map((item, idx) => (
-                  <div key={idx} className="p-4 rounded-2xl bg-black/40 border border-white/5 space-y-1">
+                  <div key={idx} className="p-4 rounded-2xl bg-black/50 border border-white/10 space-y-1">
                     <span className="text-xs font-bold text-cyan-300 font-mono block">
                       {item.step}
                     </span>
@@ -301,18 +313,14 @@ export default function WorkShowcase() {
             </div>
 
             {/* Impact Metrics Row */}
-            <div className="p-5 rounded-2xl bg-gradient-to-r from-white/[0.03] to-white/[0.01] border border-white/10">
+            <div className="p-5 rounded-2xl bg-black/60 border border-white/10">
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
                 {currentWork.impactMetrics.map((m, idx) => (
                   <div key={idx} className="space-y-0.5">
-                    <span className="text-[10px] font-mono text-slate-400 uppercase block">
+                    <span className="text-[10px] font-mono text-slate-400 uppercase block font-semibold">
                       {m.label}
                     </span>
-                    <span
-                      className={`text-lg sm:text-xl font-mono font-extrabold ${
-                        m.highlight ? "text-emerald-400" : "text-white"
-                      }`}
-                    >
+                    <span className={`text-lg sm:text-xl font-mono font-black ${m.color}`}>
                       {m.value}
                     </span>
                   </div>
@@ -322,11 +330,11 @@ export default function WorkShowcase() {
 
             {/* Stack Pills */}
             <div className="pt-2 flex flex-wrap gap-2 items-center">
-              <span className="text-xs font-mono text-slate-400 mr-2">Tech Stack:</span>
+              <span className="text-xs font-mono text-slate-400 mr-2 font-bold">Tech Stack:</span>
               {currentWork.stack.map((t) => (
                 <span
                   key={t}
-                  className="px-3 py-1 rounded-full bg-white/[0.04] text-xs font-mono text-slate-300 border border-white/5"
+                  className="px-3 py-1 rounded-full bg-white/[0.06] text-xs font-mono text-slate-200 border border-white/10"
                 >
                   {t}
                 </span>

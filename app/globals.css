@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050713;
+  --background: #030014;
   --foreground: #f8fafc;
 }
 
@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  background-color: #050713;
+  background-color: #030014;
   color: #f8fafc;
   font-family: var(--font-sans);
   overflow-x: hidden;
@@ -31,58 +31,78 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Sleek Scrollbar */
+/* Neon Glow Scrollbar */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #050713;
+  background: #030014;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, #00f0ff 0%, #7c3aed 50%, #ec4899 100%);
   border-radius: 9999px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(99, 102, 241, 0.5);
-}
-
-/* Subtle Architectural Grid */
-.bg-subtle-grid {
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-/* Premium Glass & Spotlight Surface */
-.premium-card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.008) 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 20px 40px -15px rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+/* Cosmic Cyber Glow Cards */
+.galaxy-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(13, 10, 36, 0.85) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 0 10px 35px -10px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(124, 58, 237, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.premium-card:hover {
-  border-color: rgba(255, 255, 255, 0.18);
-  transform: translateY(-2px);
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.15), 0 30px 60px -20px rgba(99, 102, 241, 0.18);
+.galaxy-card:hover {
+  border-color: rgba(0, 240, 255, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 20px 50px -15px rgba(124, 58, 237, 0.3), 0 0 25px 2px rgba(0, 240, 255, 0.25);
 }
 
-/* Soft Radial Spotlights */
-.spotlight-top {
-  background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(99, 102, 241, 0.15), transparent 70%);
+/* Neon Borders & Text Glows */
+.glow-cyan {
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.35);
 }
 
-.spotlight-cyan {
-  background: radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.12), transparent 60%);
+.glow-violet {
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.35);
 }
 
-.spotlight-emerald {
-  background: radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.1), transparent 60%);
+.glow-pink {
+  box-shadow: 0 0 25px rgba(236, 72, 153, 0.35);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
+}
+
+.text-gradient-cosmic {
+  background: linear-gradient(135deg, #00f0ff 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-fire {
+  background: linear-gradient(135deg, #f43f5e 0%, #fb923c 50%, #facc15 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animated Aurora Shimmer */
+@keyframes auroraPulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.08); }
+}
+
+.animate-aurora {
+  animation: auroraPulse 8s ease-in-out infinite;
 }
