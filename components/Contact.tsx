@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, Phone, MapPin, Download, Copy, Check, Send, ArrowRight, Zap, Sparkles } from "lucide-react";
+import { Mail, Phone, MapPin, Download, Copy, Check, Send, ArrowRight } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./Icons";
 import FadeIn from "./FadeIn";
 
@@ -34,18 +34,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#030712] text-white relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="contact" className="py-28 bg-[#050713] text-white relative border-t border-white/5">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <FadeIn>
           <div className="mb-14 border-b border-white/10 pb-8 text-center max-w-3xl mx-auto">
-            <p className="text-cyan-400 uppercase tracking-widest text-xs font-semibold flex items-center justify-center gap-2">
-              <Zap className="w-3.5 h-3.5 text-cyan-400" />
-              LET'S BUILD USEFUL SYSTEMS
+            <p className="text-xs font-mono font-bold uppercase tracking-widest text-cyan-400">
+              LET'S BUILD SOMETHING RESILIENT
             </p>
             <h2 className="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
-              Ready to Ship? Get in Touch
+              Get in Touch
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-slate-300 font-normal">
+            <p className="mt-3 text-sm sm:text-base text-slate-400 font-normal">
               Open to high-impact AI Automation Engineer roles, enterprise CRM workflow projects,
               and AI pipeline consultations. No endless meetings — just high-velocity shipping.
             </p>
@@ -56,8 +55,7 @@ export default function Contact() {
           {/* Left Column: Contact Cards */}
           <div className="lg:col-span-5 space-y-4">
             <FadeIn>
-              {/* Email Card with Copy button */}
-              <div className="p-6 rounded-3xl bento-card space-y-2">
+              <div className="p-6 rounded-3xl premium-card space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
@@ -88,8 +86,7 @@ export default function Contact() {
             </FadeIn>
 
             <FadeIn>
-              {/* Phone Card with Copy button */}
-              <div className="p-6 rounded-3xl bento-card space-y-2">
+              <div className="p-6 rounded-3xl premium-card space-y-2">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
@@ -120,8 +117,7 @@ export default function Contact() {
             </FadeIn>
 
             <FadeIn>
-              {/* Location Card */}
-              <div className="p-6 rounded-3xl bento-card flex items-center gap-3">
+              <div className="p-6 rounded-3xl premium-card flex items-center gap-3">
                 <div className="w-10 h-10 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
                   <MapPin className="w-5 h-5" />
                 </div>
@@ -143,7 +139,7 @@ export default function Contact() {
                   href="https://github.com/Srimani26"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 rounded-2xl bento-card text-slate-300 hover:text-white transition flex items-center justify-center gap-2 text-xs font-semibold"
+                  className="p-4 rounded-2xl premium-card text-slate-300 hover:text-white transition flex items-center justify-center gap-2 text-xs font-semibold"
                 >
                   <GithubIcon className="w-4 h-4 text-cyan-400" />
                   <span>GitHub Profile</span>
@@ -153,7 +149,7 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/srimanikandan-t-942693246/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 rounded-2xl bento-card text-slate-300 hover:text-white transition flex items-center justify-center gap-2 text-xs font-semibold"
+                  className="p-4 rounded-2xl premium-card text-slate-300 hover:text-white transition flex items-center justify-center gap-2 text-xs font-semibold"
                 >
                   <LinkedinIcon className="w-4 h-4 text-indigo-400" />
                   <span>LinkedIn Profile</span>
@@ -167,7 +163,7 @@ export default function Contact() {
             <FadeIn>
               <form
                 onSubmit={handleSendMessage}
-                className="p-8 rounded-3xl bento-card space-y-4"
+                className="p-8 rounded-3xl premium-card space-y-4"
               >
                 <div className="border-b border-white/10 pb-4 mb-2">
                   <h3 className="text-lg font-bold text-white tracking-tight">
@@ -189,7 +185,7 @@ export default function Contact() {
                       onChange={(e) => setName(e.target.value)}
                       placeholder="e.g. Alex Morgan"
                       required
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white text-xs focus:border-cyan-400 focus:outline-none transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white text-xs focus:border-white focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -203,7 +199,7 @@ export default function Contact() {
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="e.g. alex@company.com"
                       required
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white text-xs focus:border-cyan-400 focus:outline-none transition-colors"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white text-xs focus:border-white focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -216,15 +212,15 @@ export default function Contact() {
                     rows={4}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Describe your AI automation requirements, systems challenge, or open engineering role..."
+                    placeholder="Describe your AI automation requirements, CRM systems challenge, or open engineering role..."
                     required
-                    className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white text-xs focus:border-cyan-400 focus:outline-none transition-colors resize-none"
+                    className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white text-xs focus:border-white focus:outline-none transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-xl bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-cyan-400/20"
+                  className="w-full py-3.5 rounded-xl bg-white hover:bg-slate-200 text-slate-950 font-bold text-xs transition flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-white/10"
                 >
                   <Send className="w-4 h-4 text-slate-950" />
                   <span>Send Message via Email Client</span>

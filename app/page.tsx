@@ -1,8 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Metrics from "@/components/Metrics";
-import CommandCenter from "@/components/CommandCenter";
-import Projects from "@/components/Projects";
+import WorkShowcase from "@/components/WorkShowcase";
+import LiveExecutionLab from "@/components/LiveExecutionLab";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
@@ -12,8 +11,8 @@ import CommandPalette from "@/components/CommandPalette";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#030712] text-white flex flex-col justify-between relative selection:bg-cyan-500/30 selection:text-cyan-200">
-      {/* Dynamic 60fps Interactive Neural Particles Background */}
+    <main className="min-h-screen bg-[#050713] text-white flex flex-col justify-between relative selection:bg-indigo-500/30 selection:text-indigo-200">
+      {/* 60fps Interactive Neural Particles Mesh */}
       <NeuralCanvas />
       
       {/* Quick Launch Command Palette (Cmd+K) */}
@@ -21,9 +20,8 @@ export default function Home() {
 
       <Navbar />
       <Hero />
-      <Metrics />
-      <CommandCenter />
-      <Projects />
+      <WorkShowcase />
+      <LiveExecutionLab />
       <Experience />
       <Skills />
       <Contact />

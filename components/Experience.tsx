@@ -4,18 +4,7 @@ import React from "react";
 import { Briefcase, Calendar, MapPin, CheckCircle2, GraduationCap, Award } from "lucide-react";
 import FadeIn from "./FadeIn";
 
-interface ExperienceItem {
-  role: string;
-  company: string;
-  location: string;
-  period: string;
-  badge?: string;
-  description: string;
-  bullets: string[];
-  skills: string[];
-}
-
-const EXPERIENCES: ExperienceItem[] = [
+const EXPERIENCES = [
   {
     role: "AI Engineer & Technical Team Lead",
     company: "Standard Roofs",
@@ -23,7 +12,7 @@ const EXPERIENCES: ExperienceItem[] = [
     period: "Jan 2026 – Present",
     badge: "CURRENT • FIRST TECHNICAL HIRE",
     description:
-      "First technical hire on a newly formed in-house tech squad; lead two engineers across enterprise CRM automation, Google Ads artificial intelligence, and e-commerce infrastructure.",
+      "First technical hire on a newly formed in-house tech team; lead two engineers across enterprise CRM automation, Google Ads artificial intelligence, and e-commerce infrastructure.",
     bullets: [
       "Architected and deployed an end-to-end Zoho CRM Quotation Automation System using a 4-layer tech stack (Workflow Rules, Deluge Functions, Client Scripts, Zoho Writer API), reducing quote generation time to under 1 minute with zero manual errors.",
       "Automated 30+ CRM fields across 14+ workflow rules — including serial number generation, client data auto-fetch, roofing spec autofill, product image sync via Cloudinary, and PDF generation.",
@@ -67,39 +56,34 @@ const EXPERIENCES: ExperienceItem[] = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 bg-[#030712] text-white relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="experience" className="py-28 bg-[#050713] text-white relative border-t border-white/5">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <FadeIn>
           <div className="mb-14 border-b border-white/10 pb-8">
-            <p className="text-cyan-400 uppercase tracking-widest text-xs font-semibold flex items-center gap-2">
-              <Award className="w-3.5 h-3.5 text-cyan-400" />
+            <p className="text-xs font-mono font-bold uppercase tracking-widest text-cyan-400">
               CAREER TRAJECTORY &amp; LEADERSHIP
             </p>
             <h2 className="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight text-white">
               Work Experience &amp; Impact
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-slate-300 max-w-2xl font-normal">
-              Track record of building, shipping, and leading production engineering initiatives with tangible business outcomes.
+            <p className="mt-3 text-sm sm:text-base text-slate-400 max-w-2xl font-normal">
+              Track record of building, shipping, and leading production engineering initiatives with verified business outcomes.
             </p>
           </div>
         </FadeIn>
 
-        <div className="space-y-8 relative">
-          {/* Vertical timeline line */}
-          <div className="absolute top-4 bottom-4 left-4 sm:left-6 w-0.5 bg-gradient-to-b from-cyan-500/40 via-indigo-500/20 to-transparent hidden md:block" />
-
+        <div className="space-y-6">
           {EXPERIENCES.map((exp) => (
             <FadeIn key={exp.company}>
-              <div className="md:ml-12 rounded-3xl bento-card p-6 sm:p-8 space-y-4">
-                {/* Header */}
+              <div className="rounded-3xl premium-card p-6 sm:p-8 space-y-4">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4">
                   <div>
-                    <div className="flex items-center gap-2.5 flex-wrap">
+                    <div className="flex items-center gap-3 flex-wrap">
                       <h3 className="text-xl font-bold text-white tracking-tight">
                         {exp.role}
                       </h3>
                       {exp.badge && (
-                        <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20">
+                        <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 font-mono">
                           {exp.badge}
                         </span>
                       )}
@@ -109,15 +93,10 @@ export default function Experience() {
                     </span>
                   </div>
 
-                  <div className="flex items-center gap-4 text-xs text-slate-400 font-medium">
-                    <span className="flex items-center gap-1.5">
-                      <Calendar className="w-3.5 h-3.5 text-cyan-400" />
-                      {exp.period}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-indigo-400" />
-                      {exp.location}
-                    </span>
+                  <div className="flex items-center gap-4 text-xs text-slate-400 font-mono">
+                    <span>{exp.period}</span>
+                    <span>&bull;</span>
+                    <span>{exp.location}</span>
                   </div>
                 </div>
 
@@ -125,7 +104,6 @@ export default function Experience() {
                   {exp.description}
                 </p>
 
-                {/* Bullets */}
                 <div className="space-y-2 pt-2">
                   {exp.bullets.map((bullet, i) => (
                     <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed font-normal">
@@ -135,12 +113,11 @@ export default function Experience() {
                   ))}
                 </div>
 
-                {/* Skills tags */}
                 <div className="pt-4 border-t border-white/10 flex flex-wrap gap-1.5">
                   {exp.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-2.5 py-1 rounded-lg bg-white/[0.03] text-xs font-mono text-slate-300 border border-white/5"
+                      className="px-2.5 py-1 rounded-full bg-white/[0.03] text-xs font-mono text-slate-300 border border-white/5"
                     >
                       {skill}
                     </span>
@@ -152,7 +129,7 @@ export default function Experience() {
 
           {/* Education Card */}
           <FadeIn>
-            <div className="md:ml-12 rounded-3xl bento-card p-6 sm:p-8 space-y-3">
+            <div className="rounded-3xl premium-card p-6 sm:p-8 space-y-2">
               <div className="flex items-center justify-between border-b border-white/10 pb-3">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
@@ -172,7 +149,7 @@ export default function Experience() {
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
-                Core foundation in digital signal processing, computing architecture, embedded systems, and software engineering principles.
+                Strong engineering foundation in digital signal processing, computing architecture, embedded systems, and systems automation.
               </p>
             </div>
           </FadeIn>
