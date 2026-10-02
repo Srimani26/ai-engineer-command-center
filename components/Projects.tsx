@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ExternalLink, CheckCircle2, TrendingUp, Layers, ShoppingBag, Utensils, Cpu, Film, Sparkles, ArrowUpRight, Flame, Zap } from "lucide-react";
+import { ExternalLink, CheckCircle2, TrendingUp, Layers, ShoppingBag, Utensils, Cpu, Film, Sparkles, ArrowUpRight, Flame, Zap, ShieldCheck } from "lucide-react";
 import { GithubIcon } from "./Icons";
 import FadeIn from "./FadeIn";
 
@@ -201,14 +201,14 @@ export default function Projects() {
       });
 
   return (
-    <section id="projects" className="py-24 bg-[#050816] text-white relative">
+    <section id="projects" className="py-24 bg-[#030712] text-white relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <FadeIn>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 border-b border-white/10 pb-8">
             <div>
               <p className="text-cyan-400 uppercase tracking-[0.25em] text-xs font-mono font-bold flex items-center gap-2">
                 <Flame className="w-3.5 h-3.5 text-rose-400" />
-                VERIFIED ENGINEERING PORTFOLIO • ZERO FLUFF
+                VERIFIED ENGINEERING PORTFOLIO &bull; ZERO FLUFF
               </p>
               <h2 className="mt-2 text-3xl sm:text-5xl font-black tracking-tight text-white">
                 Production Systems &amp; Flagship Projects
@@ -237,11 +237,11 @@ export default function Projects() {
           </div>
         </FadeIn>
 
-        {/* Projects Grid */}
+        {/* Projects Grid with Holographic Cyber-Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
             <FadeIn key={project.id}>
-              <div className="h-full rounded-3xl border border-white/10 bg-[#091020]/90 hover:border-cyan-500/40 transition-all duration-300 p-6 flex flex-col justify-between group shadow-xl">
+              <div className="h-full rounded-3xl border border-white/10 bg-[#070c18]/90 hover:border-cyan-500/40 transition-all duration-300 p-6 flex flex-col justify-between group shadow-xl hover:shadow-cyan-500/10 hover:-translate-y-1">
                 <div>
                   {/* Category & Badge */}
                   <div className="flex items-center justify-between gap-2 mb-3">
@@ -249,7 +249,7 @@ export default function Projects() {
                       {project.category}
                     </span>
                     <span
-                      className={`text-[9px] font-mono font-bold px-2 py-0.5 rounded-full border whitespace-nowrap ${
+                      className={`text-[9px] font-mono font-bold px-2.5 py-0.5 rounded-full border whitespace-nowrap ${
                         project.badgeColor === "emerald"
                           ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
                           : project.badgeColor === "cyan"
@@ -289,7 +289,7 @@ export default function Projects() {
                   </div>
 
                   {/* Key Metrics Grid */}
-                  <div className="grid grid-cols-2 gap-2 mt-5 p-3 rounded-2xl bg-[#060a14] border border-white/5">
+                  <div className="grid grid-cols-2 gap-2 mt-5 p-3 rounded-2xl bg-[#030611] border border-white/5">
                     {project.metrics.map((m, idx) => (
                       <div key={idx}>
                         <span className="text-[10px] text-slate-500 font-mono block">

@@ -13,23 +13,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Srimanikandan K | AI Automation Engineer & Systems Architect",
+  title: "Srimanikandan T | AI Automation Engineer & Systems Lead",
   description:
-    "AI Automation Engineer architecting business-critical automation systems, 4-layer CRM engines, and zero-cost Gemini AI Google Ads intelligence pipelines.",
+    "Tech Lead & AI Automation Engineer architecting production AI pipelines, 4-layer Zoho CRM engines, and zero-cost Gemini AI Google Ads intelligence systems.",
   keywords: [
-    "Srimanikandan K",
-    "AI Engineer",
+    "Srimanikandan T",
     "AI Automation Engineer",
+    "Tech Lead Standard Roofs",
     "Zoho CRM Automation",
     "Gemini AI Integration",
-    "Google Ads Intelligence",
+    "Google Ads Script AI",
     "FastAPI",
     "Next.js",
     "Erode Tamil Nadu",
   ],
-  authors: [{ name: "Srimanikandan K" }],
+  authors: [{ name: "Srimanikandan T" }],
   openGraph: {
-    title: "Srimanikandan K | AI Automation Engineer & Systems Architect",
+    title: "Srimanikandan T | AI Automation Engineer & Systems Lead",
     description:
       "Production AI systems, 4-layer CRM quotation engines & zero-cost business intelligence platforms.",
     type: "website",
@@ -46,7 +46,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col bg-[#050816] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
+      <body className="min-h-full flex flex-col bg-[#030712] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
         {children}
       </body>
     </html>
