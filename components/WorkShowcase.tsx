@@ -33,6 +33,36 @@ interface Project {
 
 const realProjects: Project[] = [
   {
+    id: "sri-ai-business-os",
+    badge: "AUTONOMOUS ENTERPRISE OS",
+    badgeColor: "from-cyan-500 via-indigo-500 to-fuchsia-600",
+    title: "Sri AI Business OS",
+    subtitle: "Full-stack multi-tenant autonomous business operating system with AI intake & governance gates",
+    description:
+      "Enterprise autonomous operating system coordinating unstructured customer requests, multi-tenant workspace isolation, and automated task execution. Features Gemini 2.5 Flash intake parsing, deterministic governance risk gating (TODO vs. NEEDS_REVIEW), role-based access control (RBAC), and persistent cloud PostgreSQL/SQLite storage.",
+    architectureSteps: [
+      "Inbound Customer Intake Webhook ingests raw customer inquiries and operational task requests.",
+      "Google Gemini AI entity extraction analyzes request urgency, matches project context, and assigns staff roles.",
+      "Deterministic Governance Gate automatically intercepts high-impact or ambiguous commercial actions for executive review.",
+      "Next.js App Router frontend provides real-time workspace dashboards, task triage boards, and audit logging.",
+    ],
+    metrics: [
+      { label: "Intake Processing", value: "< 1.5s", color: "text-cyan-400" },
+      { label: "Governance Accuracy", value: "99.2%", color: "text-emerald-400" },
+      { label: "Architecture", value: "Multi-Tenant", color: "text-purple-400" },
+    ],
+    techStack: [
+      "Next.js 15 (App Router)",
+      "FastAPI (Python 3.12)",
+      "Gemini AI API",
+      "PostgreSQL / Neon",
+      "Tailwind CSS",
+      "RBAC Security",
+    ],
+    githubUrl: "https://github.com/Srimani26/Sri-AI-Business-OS",
+    isFlagship: true,
+  },
+  {
     id: "zoho-quotation-engine",
     badge: "ENTERPRISE CRM AUTOMATION",
     badgeColor: "from-purple-500 to-fuchsia-600",
@@ -129,35 +159,7 @@ const realProjects: Project[] = [
     ],
     techStack: ["Vue.js", "JavaScript", "HTML5", "CSS3", "State Management", "REST APIs"],
   },
-  {
-    id: "sri-ai-business-os",
-    badge: "AUTONOMOUS AGENT PLATFORM",
-    badgeColor: "from-pink-500 to-rose-600",
-    title: "Sri AI Business OS",
-    subtitle: "Multi-tenant autonomous business operating system with AI intake & governance gates",
-    description:
-      "Enterprise autonomous operating system coordinating unstructured customer requests, multi-tenant workspace isolation, and automated task execution. Features Gemini 2.5 Flash intake parsing, deterministic governance risk gating (TODO vs. NEEDS_REVIEW), role-based access control (RBAC), and persistent cloud PostgreSQL/SQLite storage.",
-    architectureSteps: [
-      "Inbound Customer Intake Webhook ingests raw customer inquiries and operational task requests.",
-      "Google Gemini AI entity extraction analyzes request urgency, matches project context, and assigns staff roles.",
-      "Deterministic Governance Gate automatically intercepts high-impact or ambiguous commercial actions for executive review.",
-      "Next.js App Router frontend provides real-time workspace dashboards, task triage boards, and audit logging.",
-    ],
-    metrics: [
-      { label: "Intake Processing", value: "< 1.5s", color: "text-cyan-400" },
-      { label: "Governance Accuracy", value: "99.2%", color: "text-emerald-400" },
-      { label: "Architecture", value: "Multi-Tenant", color: "text-purple-400" },
-    ],
-    techStack: [
-      "Next.js 15 (App Router)",
-      "FastAPI (Python 3.12)",
-      "Gemini AI API",
-      "PostgreSQL / Neon",
-      "Tailwind CSS",
-      "RBAC Security",
-    ],
-    githubUrl: "https://github.com/Srimani26/Sri-AI-Business-OS",
-  },
+  
   {
     id: "smart-magic-mirror",
     badge: "ACADEMIC INNOVATION",
