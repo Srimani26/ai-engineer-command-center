@@ -2,15 +2,17 @@
 
 import React, { useState } from "react";
 import {
-  ExternalLink,
   CheckCircle2,
   Cpu,
   Layers,
   Sparkles,
   ArrowUpRight,
-  TrendingUp,
-  ShieldAlert,
-  Terminal,
+  TrendingDown,
+  Clock,
+  ShoppingBag,
+  Film,
+  Eye,
+  ExternalLink,
 } from "lucide-react";
 import { GithubIcon } from "./Icons";
 
@@ -31,130 +33,141 @@ interface Project {
 
 const realProjects: Project[] = [
   {
-    id: "google-ads-auditor",
-    badge: "PRODUCTION AI AUDITOR",
-    badgeColor: "from-cyan-500 to-blue-600",
-    title: "Google Ads AI Strategic Auditor v5.0",
-    subtitle: "Self-correcting LLM audit system analyzing millions in ad spend",
+    id: "zoho-quotation-engine",
+    badge: "ENTERPRISE CRM AUTOMATION",
+    badgeColor: "from-purple-500 to-fuchsia-600",
+    title: "Zoho CRM Quotation Automation System",
+    subtitle: "4-layer architecture cutting quote generation time to < 1 min with zero manual errors",
     description:
-      "Enterprise autonomous marketing diagnostic pipeline. Ingests Google Ads Script telemetry across thousands of search queries, identifies negative keyword bleed, quality-score degradation, and budget leakage with deterministic JSON validation.",
+      "Architected and deployed a full end-to-end Zoho CRM Quotation Automation System for Standard Roofs using a 4-layer tech stack (Workflow Rules, Deluge Functions, Client Scripts, Zoho Writer API). Automated 30+ CRM fields across 14+ workflow rules including serial number generation, client data auto-fetch, roofing spec autofill, product image sync via Cloudinary, and PDF generation via Zoho Writer API.",
     architectureSteps: [
-      "Step 1: Google Ads Script cron extracts raw metrics (CTR, CPC, Quality Score, Impression Share).",
-      "Step 2: Python / FastAPI microservice aggregates anomalies and builds structured evaluation context.",
-      "Step 3: Multi-layer prompt chaining with Gemini API & Claude evaluates waste with self-correcting validation schema.",
-      "Step 4: Autonomous generation of executive remediation summaries and direct bid adjustments.",
+      "Layer 1: Workflow Rules & Client Scripts (JavaScript) handling dynamic UI validation, serial number control, and client data auto-fetch.",
+      "Layer 2: Zoho Deluge backend functions executing automated mathematical BOM calculations and roofing spec autofill.",
+      "Layer 3: Cloudinary API integration synchronizing product specs and color-to-image previews.",
+      "Layer 4: Zoho Writer API generating formatted PDF quotes and automatically attaching them to CRM deal records.",
     ],
     metrics: [
-      { label: "Wasted Spend Identified", value: "32% Avg", color: "text-cyan-400" },
-      { label: "Schema Validation", value: "99.8%", color: "text-purple-400" },
-      { label: "Processing Speed", value: "< 4.2s", color: "text-pink-400" },
+      { label: "Quote Generation Time", value: "< 1 Minute", color: "text-emerald-400" },
+      { label: "Calculation Errors", value: "0.00%", color: "text-cyan-400" },
+      { label: "Automated Workflows", value: "14+ Rules / 30+ Fields", color: "text-purple-400" },
     ],
     techStack: [
-      "Gemini 1.5 Pro",
-      "Google Ads Scripts",
-      "Python / FastAPI",
-      "Pydantic Validation",
-      "TypeScript",
-      "Automated Reporting",
+      "Zoho CRM (Enterprise)",
+      "Zoho Deluge",
+      "Client Scripts (JavaScript)",
+      "Zoho Writer API",
+      "Cloudinary",
+    ],
+    isFlagship: true,
+  },
+  {
+    id: "google-ads-auditor",
+    badge: "PRODUCTION AI INTELLIGENCE",
+    badgeColor: "from-cyan-500 to-blue-600",
+    title: "AI-Powered Google Ads Auditor v5.0 (Live)",
+    subtitle: "Daily automated intelligence pipeline collecting 285+ search queries & delivering STOP/SCALE/FIX reports",
+    description:
+      "Fully automated Google Ads performance pipeline that collects 285+ keyword/search-term data at 6:00 AM IST daily, analyzes 7-day trends, and delivers a color-coded STOP/SCALE/FIX HTML email report via Gmail API by 7:00 AM IST. Identified ₹4,952 in wasted ad spend (97% of ₹5,113 tracked) within 8 days of deployment using automated AI analysis. Engineered a dual AI API key architecture with retry logic, 503 backoff, and static fallbacks at ₹0 monthly operating cost.",
+    architectureSteps: [
+      "Step 1: Google Ads Script cron extracts raw metrics (285+ search queries, CPC, spend, conversions) into Google Sheets at 6:00 AM IST.",
+      "Step 2: Google Apps Script parses 7-day performance trends and formats structured evaluation payloads.",
+      "Step 3: Gemini AI analyzes queries with prompt engineering and dual API key architecture with retry logic and 503 backoff handling.",
+      "Step 4: Autonomous delivery of color-coded STOP/SCALE/FIX HTML email reports via Gmail API by 7:00 AM IST.",
+    ],
+    metrics: [
+      { label: "Wasted Spend Flagged", value: "₹4,952 (97%)", color: "text-rose-400" },
+      { label: "Monthly Operating Cost", value: "₹0 / mo", color: "text-emerald-400" },
+      { label: "Daily Queries Analyzed", value: "285+ Real Queries", color: "text-cyan-400" },
+    ],
+    techStack: [
+      "Google Apps Script",
+      "Google Ads Script",
+      "Gemini AI Integration",
+      "Google Sheets",
+      "Gmail API",
     ],
     githubUrl: "https://github.com/Srimani26/Google-ads-ai-strategic-auditor-v5.0",
     isFlagship: true,
   },
   {
-    id: "zoho-quotation-engine",
-    badge: "MISSION-CRITICAL ERP ENGINE",
-    badgeColor: "from-purple-500 to-fuchsia-600",
-    title: "Zoho CRM 4-Layer Dynamic Quotation Engine",
-    subtitle: "Mathematical pricing engine powering multi-crore roofing contracts",
-    description:
-      "Engineered from scratch for Standard Roofs as first technical hire. Translates complex civil engineering dimensions into precise bills-of-materials with multi-tier supplier price matrices, dynamic margin calculations, and instantaneous PDF quote generation.",
-    architectureSteps: [
-      "Layer 1: Input Matrix captures roof square footage, slope angles, wind-load ratings, and profile type.",
-      "Layer 2: Bill-of-Materials (BOM) Calculation Engine computes sheets, purlins, fasteners, and guttering.",
-      "Layer 3: Live Steel & Raw Material Pricing Index applies tier discounts and dynamic margin rules.",
-      "Layer 4: Automated Zoho Deluge triggers sync CRM Deal records, generate client PDFs, and notify sales directors.",
-    ],
-    metrics: [
-      { label: "Quotation Turnaround", value: "15m -> 30s", color: "text-emerald-400" },
-      { label: "Human Calculation Errors", value: "0.00%", color: "text-cyan-400" },
-      { label: "Deal Volume Handled", value: "Multi-Crore", color: "text-purple-400" },
-    ],
-    techStack: [
-      "Zoho Deluge Scripting",
-      "Zoho CRM API",
-      "Mathematical BOM Logic",
-      "Webhooks Automation",
-      "Automated PDF Generation",
-    ],
-    isFlagship: true,
-  },
-  {
-    id: "sri-ai-business-os",
-    badge: "AUTONOMOUS AGENT PLATFORM",
-    badgeColor: "from-pink-500 to-rose-600",
-    title: "Sri AI Business OS",
-    subtitle: "Autonomous multi-agent enterprise command center",
-    description:
-      "Full-stack AI operating system coordinating specialized autonomous agents (Marketing Strategist, Retention Analyst, Sales Intelligence, Executive Briefing). Features persistent SQLite/PostgreSQL memory, real-time telemetry, and modular tool calling.",
-    architectureSteps: [
-      "FastAPI backend exposes asynchronous task orchestration with streaming LLM agents.",
-      "Modular agent registry isolates tool executions (web scraping, database analytics, document synthesis).",
-      "Next.js App Router frontend provides unified executive dashboard with real-time SSE streaming.",
-    ],
-    metrics: [
-      { label: "SaaS Tools Consolidated", value: "6 Tools -> 1", color: "text-pink-400" },
-      { label: "Agent Response Latency", value: "< 1.8s", color: "text-cyan-400" },
-      { label: "Autonomous Tasks Run", value: "24/7", color: "text-emerald-400" },
-    ],
-    techStack: [
-      "Next.js 16 (Turbopack)",
-      "FastAPI (Python 3.12)",
-      "Gemini 2.0 API",
-      "Tailwind CSS",
-      "SQLite / PostgreSQL",
-      "Server-Sent Events",
-    ],
-    githubUrl: "https://github.com/Srimani26/Sri-AI-Business-OS",
-  },
-  {
     id: "shopify-storefront",
-    badge: "HIGH-PERFORMANCE E-COMMERCE",
+    badge: "E-COMMERCE STOREFRONT",
     badgeColor: "from-emerald-500 to-teal-600",
-    title: "High-Conversion Headless Shopify Storefront",
-    subtitle: "Sub-second load times & custom cart logic for direct-to-consumer brand",
+    title: "Shopify E-Commerce Storefront Development",
+    subtitle: "Front-end theme development, conversion-focused UX decisions & performance optimization",
     description:
-      "Engineered bespoke Liquid templates, optimized bundle sizes, and custom AJAX cart drawers with tiered checkout upsells. Achieved 98+ Google Lighthouse performance scores and a 24% uplift in mobile conversion rates.",
+      "Leading front-end development for a live Shopify storefront, with additional backend and automation involvement, as part of the company's technical initiatives. Own theme customization, storefront performance, and conversion-focused UX decisions, collaborating directly with business stakeholders.",
     architectureSteps: [
-      "Micro-optimized Liquid codebase stripping unused legacy scripts and third-party blocking trackers.",
-      "Custom headless-style cart drawer with client-side state caching and instant checkout redirects.",
-      "Integrated dynamic currency converters and custom tracking pixels.",
+      "Custom Shopify Liquid theme development tailored for product discovery and responsive mobile UX.",
+      "Front-end performance tuning and component optimization for rapid catalog browsing.",
+      "Direct collaboration with operational stakeholders to translate business requirements into storefront features.",
     ],
     metrics: [
-      { label: "Google Lighthouse Score", value: "98/100", color: "text-emerald-400" },
-      { label: "Checkout Conversion Lift", value: "+24%", color: "text-cyan-400" },
-      { label: "Mobile First Load", value: "0.85s", color: "text-purple-400" },
+      { label: "Production Status", value: "Live Storefront", color: "text-emerald-400" },
+      { label: "Development Focus", value: "Theme & UX", color: "text-cyan-400" },
+      { label: "Technology", value: "Liquid & JS", color: "text-purple-400" },
     ],
-    techStack: ["Shopify Liquid", "Vanilla JavaScript", "AJAX Cart API", "Tailwind CSS", "Lighthouse CI"],
+    techStack: ["Shopify Liquid", "Theme Development", "JavaScript", "HTML5", "CSS3"],
   },
   {
-    id: "monsterfoods-portal",
-    badge: "OPERATIONAL FOOD-TECH APP",
+    id: "monsterfoods-app",
+    badge: "PRODUCTION WEB APP",
     badgeColor: "from-amber-500 to-orange-600",
-    title: "MonsterFoods Operational Platform",
-    subtitle: "High-volume order management and kitchen display operations engine",
+    title: "MonsterFoods Food Ordering Web Application",
+    subtitle: "Live, real-time food ordering web application frontend built with Vue.js",
     description:
-      "Interactive web application engineered with Vue.js, Pinia, and reactive state stores to coordinate real-time multi-location order dispatches, inventory status, and culinary workflow timelines.",
+      "Built and deployed the frontend of MonsterFoods — a live, real-time food ordering web application — using Vue.js during tenure at Macincode Technologies. Translated UI/UX designs into clean, functional front-end code applying component-based architecture, state management, and performance optimization.",
     architectureSteps: [
-      "Reactive event-driven store tracking orders across Pending, Kitchen In-Progress, and Dispatched states.",
-      "Real-time audio alert synthesis and low-latency UI re-rendering for kitchen staff.",
-      "Role-based permission gating for franchise operators vs kitchen staff.",
+      "Component-based architecture using Vue.js for intuitive customer ordering flows.",
+      "Reactive state management coordinating menu selection, real-time cart updates, and checkout.",
+      "Front-end performance optimization ensuring fast rendering and cross-device responsiveness.",
     ],
     metrics: [
-      { label: "Order Dispatch Speed", value: "4x Faster", color: "text-amber-400" },
-      { label: "Active Daily Orders", value: "High-Volume", color: "text-pink-400" },
-      { label: "UI Crash Rate", value: "0.00%", color: "text-emerald-400" },
+      { label: "Application State", value: "Live & Deployed", color: "text-amber-400" },
+      { label: "Core Framework", value: "Vue.js", color: "text-pink-400" },
+      { label: "Architecture", value: "Component-Based", color: "text-emerald-400" },
     ],
-    techStack: ["Vue.js 3", "Pinia Store", "TypeScript", "Vite", "Responsive UI"],
+    techStack: ["Vue.js", "JavaScript", "HTML5", "CSS3", "State Management", "REST APIs"],
+  },
+  {
+    id: "movie-list-app",
+    badge: "REACT.JS APPLICATION",
+    badgeColor: "from-indigo-500 to-blue-600",
+    title: "Movie List Explorer App",
+    subtitle: "Responsive React application for real-time movie browsing & search",
+    description:
+      "Responsive React app for browsing and searching movies in real time. Integrated external REST APIs with robust error handling and loading states; emphasized clean code, reusability, and efficient rendering using React Hooks.",
+    architectureSteps: [
+      "Integrated external movie REST APIs with asynchronous data handling and error fallbacks.",
+      "Implemented React Hooks for state management, debounce search, and view controls.",
+      "Structured reusable component hierarchy with accessible and responsive styling.",
+    ],
+    metrics: [
+      { label: "Search Latency", value: "Real-Time", color: "text-cyan-400" },
+      { label: "Code Quality", value: "Modular / Clean", color: "text-purple-400" },
+      { label: "State Management", value: "React Hooks", color: "text-emerald-400" },
+    ],
+    techStack: ["React.js", "REST APIs", "React Hooks", "JavaScript", "Responsive CSS"],
+  },
+  {
+    id: "smart-magic-mirror",
+    badge: "ACADEMIC INNOVATION",
+    badgeColor: "from-slate-500 to-zinc-600",
+    title: "Smart Magical Mirror using Image Processing",
+    subtitle: "Real-time image processing mirror displaying personalized contextual overlays",
+    description:
+      "Academic capstone project (Jan 2022 – May 2022) — engineered a smart mirror system using real-time image processing in Python to detect user presence and project personalized information overlays.",
+    architectureSteps: [
+      "Python and OpenCV pipeline processing video frames to recognize user interaction.",
+      "Contextual GUI displaying dynamic widgets (time, schedules, personalized updates).",
+      "Embedded display hardware synchronization with software controller.",
+    ],
+    metrics: [
+      { label: "Project Scope", value: "Academic Capstone", color: "text-cyan-400" },
+      { label: "Core Language", value: "Python", color: "text-purple-400" },
+      { label: "Discipline", value: "Image Processing", color: "text-emerald-400" },
+    ],
+    techStack: ["Python", "Image Processing", "OpenCV", "Embedded Computing"],
   },
 ];
 
@@ -164,11 +177,11 @@ export default function WorkShowcase() {
   const filteredProjects =
     activeTab === "all"
       ? realProjects
-      : activeTab === "ai"
-      ? realProjects.filter((p) => p.id === "google-ads-auditor" || p.id === "sri-ai-business-os")
-      : activeTab === "erp"
-      ? realProjects.filter((p) => p.id === "zoho-quotation-engine")
-      : realProjects.filter((p) => p.id === "shopify-storefront" || p.id === "monsterfoods-portal");
+      : activeTab === "automation"
+      ? realProjects.filter((p) => p.id === "zoho-quotation-engine" || p.id === "google-ads-auditor")
+      : activeTab === "web"
+      ? realProjects.filter((p) => p.id === "shopify-storefront" || p.id === "monsterfoods-app" || p.id === "movie-list-app")
+      : realProjects.filter((p) => p.id === "smart-magic-mirror");
 
   return (
     <section id="systems" className="py-24 px-4 md:px-8 max-w-6xl mx-auto relative z-10">
@@ -177,23 +190,23 @@ export default function WorkShowcase() {
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-semibold uppercase mb-3">
             <Cpu className="w-3.5 h-3.5" />
-            <span>MNC Production Architecture</span>
+            <span>Verified Production Work</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-heading font-black text-white tracking-tight">
-            Engineered Systems. <span className="text-gradient-vibrant">Real Production Impact.</span>
+            Original Systems. <span className="text-gradient-vibrant">Real Production Impact.</span>
           </h2>
           <p className="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-            No toy tutorials or filler repos. These are hardened, commercial-grade systems running in live business environments.
+            100% verified production systems, real client automations, and live deployed software from my professional career.
           </p>
         </div>
 
         {/* Filter Tabs */}
         <div className="flex items-center gap-1.5 p-1 rounded-full bg-[#0a0a20] border border-white/10 self-start md:self-end">
           {[
-            { id: "all", label: "All Systems (5)" },
-            { id: "ai", label: "AI & Agents" },
-            { id: "erp", label: "CRM & ERP Math" },
+            { id: "all", label: "All Projects (6)" },
+            { id: "automation", label: "Automation & AI" },
             { id: "web", label: "Web Apps & E-Com" },
+            { id: "academic", label: "Academic" },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -212,7 +225,7 @@ export default function WorkShowcase() {
 
       {/* Projects Grid */}
       <div className="space-y-10">
-        {filteredProjects.map((project, idx) => (
+        {filteredProjects.map((project) => (
           <div
             key={project.id}
             className="mnc-card rounded-3xl p-6 sm:p-9 relative overflow-hidden group"
@@ -269,7 +282,7 @@ export default function WorkShowcase() {
                 <div className="p-4 rounded-2xl bg-black/40 border border-white/[0.06] space-y-2">
                   <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-slate-400 font-bold">
                     <Layers className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>Production Architecture Breakdown</span>
+                    <span>Technical Architecture & Workflow</span>
                   </div>
                   <div className="space-y-2 pt-1">
                     {project.architectureSteps.map((step, sIdx) => (
@@ -301,7 +314,7 @@ export default function WorkShowcase() {
                 {/* Tech Stack Pills */}
                 <div>
                   <div className="text-[11px] font-mono uppercase tracking-wider text-slate-400 mb-2 font-bold">
-                    Technologies Deployed:
+                    Technologies Used:
                   </div>
                   <div className="flex flex-wrap gap-1.5">
                     {project.techStack.map((tech) => (

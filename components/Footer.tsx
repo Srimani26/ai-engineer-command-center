@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowUp, Terminal, ShieldCheck } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import { LinkedinIcon, GithubIcon } from "./Icons";
 
 export default function Footer() {
@@ -14,11 +14,11 @@ export default function Footer() {
       <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-3">
           <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-cyan-400 to-fuchsia-500 flex items-center justify-center font-mono font-black text-white text-[10px]">
-            ST
+            SK
           </div>
           <div>
-            <span className="text-white font-bold block">Srimanikandan T</span>
-            <span className="text-[11px]">Tech Lead &bull; Autonomous AI Systems</span>
+            <span className="text-white font-bold block">Srimanikandan K</span>
+            <span className="text-[11px]">AI Automation Engineer &bull; Erode, Tamil Nadu</span>
           </div>
         </div>
 
@@ -33,7 +33,7 @@ export default function Footer() {
             <span>GitHub</span>
           </a>
           <a
-            href="https://www.linkedin.com/in/srimanikandan-t-swe"
+            href="https://www.linkedin.com/in/srimanikandan-k-9a741620a"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-cyan-300 transition flex items-center gap-1.5"
@@ -43,7 +43,7 @@ export default function Footer() {
           </a>
           <button
             onClick={scrollToTop}
-            className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition flex items-center gap-1"
+            className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition flex items-center gap-1 cursor-pointer"
           >
             <ArrowUp className="w-3.5 h-3.5" />
             <span className="text-[10px] font-mono">TOP</span>
@@ -52,8 +52,8 @@ export default function Footer() {
       </div>
 
       <div className="mt-8 pt-6 border-t border-white/[0.05] flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-500">
-        <span>© 2026 Srimanikandan T. Built with Next.js 16 & Turbopack. All rights reserved.</span>
-        <span className="font-mono text-emerald-400/80">● SYSTEMS FULLY OPERATIONAL</span>
+        <span>© 2026 Srimanikandan K. All verified rights reserved.</span>
+        <span className="font-mono text-emerald-400/80">● AUTHENTIC RESUME GROUNDED DATA</span>
       </div>
     </footer>
   );

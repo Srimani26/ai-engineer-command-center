@@ -8,7 +8,7 @@ export default function Contact() {
   const [copied, setCopied] = useState(false);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("srimanikandan.swe@gmail.com");
+    navigator.clipboard.writeText("srimanikandanece2000@gmail.com");
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
@@ -20,48 +20,48 @@ export default function Contact() {
           <div className="md:col-span-7 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-semibold uppercase">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Direct Executive Gateway</span>
+              <span>Direct Connect</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-heading font-black text-white tracking-tight">
-              Ready to Build <span className="text-gradient-vibrant">Autonomous AI</span> Systems?
+              Let's Build <span className="text-gradient-vibrant">Reliable AI Automation</span> Systems.
             </h2>
             <p className="text-slate-300 text-sm leading-relaxed">
-              Whether you are an engineering director looking for a Tech Lead to orchestrate multi-agent architectures, or an enterprise scaling automated operations, let's talk directly.
+              Looking for an AI Automation Engineer with real, production-tested experience in enterprise CRM automation, AI diagnostic pipelines, and e-commerce storefront development? Let's connect directly.
             </p>
 
             <div className="space-y-2.5 pt-2 text-xs text-slate-300">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>Response SLA: Within 2 Hours Guaranteed</span>
+                <MapPin className="w-4 h-4 text-purple-400" />
+                <span>Location: Erode, Tamil Nadu</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-cyan-400" />
-                <span>Available for Full-Time Lead Roles, Fractional Architecture & Advisory</span>
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                <span>Open for Full-Time Roles & Scalable AI Automation Projects</span>
               </div>
             </div>
           </div>
 
           <div className="md:col-span-5 space-y-3">
             <a
-              href="https://wa.me/919361626177?text=Hi%20Srimanikandan,%20I%20reviewed%20your%20portfolio%20and%20want%20to%20discuss%20an%20opportunity."
+              href="https://wa.me/916382121634?text=Hi%20Srimanikandan,%20I%20reviewed%20your%20portfolio%20and%20want%20to%20discuss%20an%20opportunity."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-xs sm:text-sm flex items-center justify-between shadow-xl shadow-emerald-500/20 hover:opacity-95 transition"
             >
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4" />
-                <span>Chat on WhatsApp (+91 9361626177)</span>
+                <span>WhatsApp (+91 6382121634)</span>
               </div>
               <ArrowRight className="w-4 h-4" />
             </a>
 
             <button
               onClick={copyEmail}
-              className="w-full py-3.5 px-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-bold text-xs sm:text-sm flex items-center justify-between transition"
+              className="w-full py-3.5 px-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/15 text-white font-bold text-xs sm:text-sm flex items-center justify-between transition cursor-pointer"
             >
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-cyan-400" />
-                <span>srimanikandan.swe@gmail.com</span>
+                <span>srimanikandanece2000@gmail.com</span>
               </div>
               <span className="text-[11px] font-mono text-cyan-300">
                 {copied ? "Copied!" : "Click to Copy"}
@@ -69,7 +69,7 @@ export default function Contact() {
             </button>
 
             <a
-              href="https://www.linkedin.com/in/srimanikandan-t-swe"
+              href="https://www.linkedin.com/in/srimanikandan-k-9a741620a"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3.5 px-5 rounded-2xl bg-[#0077b5]/20 hover:bg-[#0077b5]/30 border border-[#0077b5]/40 text-cyan-100 font-bold text-xs sm:text-sm flex items-center justify-between transition"

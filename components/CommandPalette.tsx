@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Terminal, Search, Zap, ExternalLink, Download, FileText, TrendingUp, Cpu, X, Sparkles, Phone, Mail } from "lucide-react";
+import { Terminal, Search, Zap, Download, FileText, TrendingUp, Cpu, X, Phone, Mail } from "lucide-react";
 
 export default function CommandPalette() {
   const [open, setOpen] = useState(false);
@@ -23,44 +23,35 @@ export default function CommandPalette() {
 
   const actions = [
     {
-      title: "Launch Systems Command HUD",
-      desc: "Interactive live telemetry & simulation panel",
-      icon: <Terminal className="w-4 h-4 text-cyan-400" />,
-      action: () => {
-        window.location.hash = "#command-center";
-        setOpen(false);
-      },
-    },
-    {
-      title: "View Google Ads AI Auditor v5.0",
-      desc: "Flagged ₹14,952 in ad waste at 6:00 AM IST",
+      title: "View AI-Powered Google Ads Auditor v5.0",
+      desc: "Flagged ₹4,952 in ad waste (97% waste rate) at 6:00 AM IST",
       icon: <TrendingUp className="w-4 h-4 text-rose-400" />,
       action: () => {
-        window.location.hash = "#command-center";
+        window.location.hash = "#systems";
         setOpen(false);
       },
     },
     {
-      title: "Inspect Zoho 4-Layer Quotation Engine",
-      desc: "Crushed 30-min quote creation down to < 1 min",
+      title: "Inspect Zoho CRM Quotation Automation",
+      desc: "Reduced quote turnaround from multi-step manual process to < 1 min",
       icon: <FileText className="w-4 h-4 text-emerald-400" />,
       action: () => {
-        window.location.hash = "#projects";
+        window.location.hash = "#systems";
         setOpen(false);
       },
     },
     {
-      title: "Explore Sri AI Business OS",
-      desc: "Multi-tenant enterprise operating system",
-      icon: <Cpu className="w-4 h-4 text-indigo-400" />,
+      title: "Launch Telemetry Terminal",
+      desc: "Interactive live pipeline simulation console",
+      icon: <Terminal className="w-4 h-4 text-cyan-400" />,
       action: () => {
-        window.location.hash = "#projects";
+        window.location.hash = "#terminal";
         setOpen(false);
       },
     },
     {
       title: "Download Srimanikandan's Resume (PDF)",
-      desc: "Direct verified PDF download",
+      desc: "Official verified PDF resume",
       icon: <Download className="w-4 h-4 text-cyan-400" />,
       action: () => {
         window.open("/Srimanikandan_Resume_Professional.pdf", "_blank");
@@ -78,7 +69,7 @@ export default function CommandPalette() {
     },
     {
       title: "Quick WhatsApp / Call",
-      desc: "+91 63821 21634",
+      desc: "+91 6382121634",
       icon: <Phone className="w-4 h-4 text-emerald-400" />,
       action: () => {
         window.location.href = "tel:+916382121634";
@@ -97,10 +88,10 @@ export default function CommandPalette() {
 
   return (
     <>
-      {/* Floating launcher badge at bottom right */}
+      {/* Floating launcher badge at bottom left */}
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 right-6 z-40 px-3.5 py-2.5 rounded-2xl bg-[#091020]/90 hover:bg-[#0f1b36] border border-cyan-500/40 text-cyan-300 font-mono text-xs font-bold shadow-2xl shadow-cyan-950/60 backdrop-blur-xl flex items-center gap-2.5 transition-all hover:scale-105 cursor-pointer glow-cyan"
+        className="fixed bottom-6 left-6 z-40 px-3.5 py-2.5 rounded-2xl bg-[#091020]/90 hover:bg-[#0f1b36] border border-cyan-500/40 text-cyan-300 font-mono text-xs font-bold shadow-2xl shadow-cyan-950/60 backdrop-blur-xl flex items-center gap-2.5 transition-all hover:scale-105 cursor-pointer glow-cyan"
         title="Open AI Command HUD (Ctrl+K)"
       >
         <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping" />
@@ -128,7 +119,7 @@ export default function CommandPalette() {
               />
               <button
                 onClick={() => setOpen(false)}
-                className="p-1 rounded-lg text-slate-400 hover:text-white"
+                className="p-1 rounded-lg text-slate-400 hover:text-white cursor-pointer"
               >
                 <X className="w-4 h-4" />
               </button>

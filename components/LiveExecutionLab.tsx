@@ -1,50 +1,50 @@
 "use client";
 
 import React, { useState } from "react";
-import { Terminal, Play, RotateCcw, CheckCircle2, AlertTriangle, ShieldCheck, Zap } from "lucide-react";
+import { Terminal, Play, CheckCircle2, AlertTriangle, ShieldCheck, Mail } from "lucide-react";
 
 interface LogEntry {
   timestamp: string;
-  type: "info" | "success" | "warn" | "accent";
+  type: "info" | "warn" | "success" | "accent";
   message: string;
 }
 
 export default function LiveExecutionLab() {
-  const [activeSimulation, setActiveSimulation] = useState<"ads" | "quote" | "whoami">("ads");
+  const [activeSimulation, setActiveSimulation] = useState<string>("ads");
   const [isRunning, setIsRunning] = useState(false);
   const [logs, setLogs] = useState<LogEntry[]>([
     {
-      timestamp: "17:20:01.104",
+      timestamp: "06:00:01.104",
       type: "info",
-      message: "[SYSTEM BOOT] AI Systems Command Terminal Initialized.",
+      message: "[SYSTEM BOOT] Google Ads AI Intelligence Pipeline Initialized.",
     },
     {
-      timestamp: "17:20:01.218",
+      timestamp: "06:00:01.218",
       type: "accent",
-      message: "[READY] Select an autonomous pipeline above to trigger live diagnostic execution.",
+      message: "[READY] Click a pipeline button above to simulate live execution.",
     },
   ]);
 
   const runAdsAuditSimulation = () => {
     setIsRunning(true);
     setLogs([
-      { timestamp: "17:20:04.012", type: "info", message: "[TRIGGER] Ingesting Google Ads script telemetry..." },
+      { timestamp: "06:00:02.010", type: "info", message: "[CRON 6:00 AM IST] Google Ads Script extracting daily search query telemetry..." },
     ]);
 
     setTimeout(() => {
       setLogs((prev) => [
         ...prev,
-        { timestamp: "17:20:04.421", type: "info", message: "• Extracted 1,482 search term queries across 12 ad groups." },
-        { timestamp: "17:20:04.750", type: "warn", message: "• Anomaly Detected: 34 broad match queries triggering zero-intent spend ($420/wk leakage)." },
+        { timestamp: "06:00:02.850", type: "info", message: "• Collected 285+ keyword/search-term rows across active campaigns into Google Sheets." },
+        { timestamp: "06:00:03.400", type: "warn", message: "• Identified ₹4,952 in wasted ad spend (97% of ₹5,113 tracked) over 8 days." },
       ]);
     }, 400);
 
     setTimeout(() => {
       setLogs((prev) => [
         ...prev,
-        { timestamp: "17:20:05.310", type: "info", message: "[LLM REASONING] Gemini 1.5 Pro executing multi-tier negative keyword mapping..." },
-        { timestamp: "17:20:05.980", type: "success", message: "• Generated 18 verified negative exact keywords." },
-        { timestamp: "17:20:06.410", type: "success", message: "[COMPLETE] Projected Monthly Budget Savings: $1,680 (32.4% Optimization)." },
+        { timestamp: "06:00:04.100", type: "info", message: "[GEMINI AI ENGINE] Dual API key architecture parsing 7-day performance trends..." },
+        { timestamp: "06:00:04.750", type: "success", message: "• Retry logic & 503 backoff verified: ₹0 monthly infrastructure cost." },
+        { timestamp: "06:00:05.200", type: "success", message: "[COMPLETE] Color-coded STOP/SCALE/FIX HTML email report dispatched via Gmail API by 7:00 AM IST." },
       ]);
       setIsRunning(false);
     }, 1100);
@@ -53,23 +53,23 @@ export default function LiveExecutionLab() {
   const runQuoteEngineSimulation = () => {
     setIsRunning(true);
     setLogs([
-      { timestamp: "17:20:08.102", type: "info", message: "[TRIGGER] Ingesting Civil Engineering Roof BOM specifications..." },
+      { timestamp: "11:15:01.102", type: "info", message: "[TRIGGER] Ingesting client request & roofing specs in Zoho CRM..." },
     ]);
 
     setTimeout(() => {
       setLogs((prev) => [
         ...prev,
-        { timestamp: "17:20:08.380", type: "info", message: "• Parameters: 14,200 sq.ft industrial shed | 12° pitch | 0.50mm Galvalume profile." },
-        { timestamp: "17:20:08.710", type: "info", message: "• Layer 2 Calculation: 420 trapezoidal sheets, 1,680 self-drilling fasteners, 84 ridge caps." },
+        { timestamp: "11:15:01.450", type: "info", message: "• Layer 1: Serial number control & client data auto-fetch executed." },
+        { timestamp: "11:15:01.890", type: "info", message: "• Layer 2: Zoho Deluge BOM calculation engine computed sheets, fasteners, and dimensions." },
       ]);
     }, 400);
 
     setTimeout(() => {
       setLogs((prev) => [
         ...prev,
-        { timestamp: "17:20:09.250", type: "accent", message: "• Layer 3 Pricing Index: Applying live steel raw-material index (₹78.50/kg) + 14% target margin." },
-        { timestamp: "17:20:09.890", type: "success", message: "• Layer 4 Zoho Sync: Deal quote generated: ₹18,42,650 (All taxes & transport included)." },
-        { timestamp: "17:20:10.120", type: "success", message: "[COMPLETE] Client PDF dispatched to Zoho CRM deal record in 0.82 seconds." },
+        { timestamp: "11:15:02.350", type: "accent", message: "• Layer 3: Cloudinary API synced roofing spec images and color previews." },
+        { timestamp: "11:15:02.900", type: "success", message: "• Layer 4: Zoho Writer API generated formatted quote PDF & auto-attached to CRM record." },
+        { timestamp: "11:15:03.120", type: "success", message: "[COMPLETE] Total turnaround: < 1 minute (Reduced from multi-step manual process, 0 errors)." },
       ]);
       setIsRunning(false);
     }, 1100);
@@ -78,17 +78,17 @@ export default function LiveExecutionLab() {
   const runWhoamiSimulation = () => {
     setIsRunning(true);
     setLogs([
-      { timestamp: "17:20:12.001", type: "info", message: "Querying Engineer Profile & Credentials..." },
+      { timestamp: "11:20:00.001", type: "info", message: "Querying Engineer Profile & Verified Credentials..." },
     ]);
 
     setTimeout(() => {
       setLogs((prev) => [
         ...prev,
-        { timestamp: "17:20:12.300", type: "accent", message: "NAME: Srimanikandan T" },
-        { timestamp: "17:20:12.450", type: "accent", message: "ROLE: First Technical Hire & Tech Lead @ Standard Roofs" },
-        { timestamp: "17:20:12.600", type: "info", message: "SUPERPOWER: Autonomous AI pipelines, mathematical pricing engines, and zero-cost business OS." },
-        { timestamp: "17:20:12.800", type: "success", message: "STATUS: Available for Senior AI / Full-Stack Leadership opportunities." },
-        { timestamp: "17:20:12.950", type: "success", message: "CONTACT: srimanikandan.swe@gmail.com | +91 9361626177" },
+        { timestamp: "11:20:00.300", type: "accent", message: "NAME: Srimanikandan K" },
+        { timestamp: "11:20:00.450", type: "accent", message: "ROLE: AI Automation Engineer | Standard Roofs, Erode" },
+        { timestamp: "11:20:00.600", type: "info", message: "ACHIEVEMENTS: Flagged ₹4,952 in wasted ad spend (97%), reduced CRM quote turnaround to < 1 min." },
+        { timestamp: "11:20:00.800", type: "success", message: "EDUCATION: B.E. ECE (Anna University, CGPA: 7.6) | Cert of Merit: Java & Python" },
+        { timestamp: "11:20:00.950", type: "success", message: "CONTACT: srimanikandanece2000@gmail.com | +91 6382121634 | Erode, TN" },
       ]);
       setIsRunning(false);
     }, 500);
@@ -99,13 +99,13 @@ export default function LiveExecutionLab() {
       <div className="text-center mb-8">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-mono font-semibold uppercase mb-3">
           <Terminal className="w-3.5 h-3.5" />
-          <span>Interactive MNC Terminal</span>
+          <span>Interactive Diagnostic Console</span>
         </div>
         <h2 className="text-3xl sm:text-4xl font-heading font-black text-white">
-          Live AI Automation <span className="text-gradient-vibrant">Diagnostic Console</span>
+          Live Automation <span className="text-gradient-vibrant">Telemetry Terminal</span>
         </h2>
         <p className="text-slate-400 text-xs sm:text-sm mt-1">
-          Execute simulated runs of Srimanikandan's production pipelines directly in your browser.
+          Execute simulated runs of Srimanikandan's verified production pipelines.
         </p>
       </div>
 
@@ -118,7 +118,7 @@ export default function LiveExecutionLab() {
             <span className="w-3 h-3 rounded-full bg-amber-500/80" />
             <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
             <span className="ml-2 text-xs font-mono text-slate-400">
-              sri@ai-command-center:~ v5.0-prod
+              sri@automation-console:~ live
             </span>
           </div>
 
@@ -129,10 +129,10 @@ export default function LiveExecutionLab() {
                 runAdsAuditSimulation();
               }}
               disabled={isRunning}
-              className="px-3 py-1 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold transition flex items-center gap-1.5"
+              className="px-3 py-1 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-500/30 text-cyan-300 text-xs font-mono font-bold transition flex items-center gap-1.5 cursor-pointer"
             >
               <Play className="w-3 h-3" />
-              <span>run audit-ads</span>
+              <span>run ads-auditor</span>
             </button>
 
             <button
@@ -141,10 +141,10 @@ export default function LiveExecutionLab() {
                 runQuoteEngineSimulation();
               }}
               disabled={isRunning}
-              className="px-3 py-1 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 text-purple-300 text-xs font-mono font-bold transition flex items-center gap-1.5"
+              className="px-3 py-1 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 text-purple-300 text-xs font-mono font-bold transition flex items-center gap-1.5 cursor-pointer"
             >
               <Play className="w-3 h-3" />
-              <span>run quote-engine</span>
+              <span>run zoho-quote</span>
             </button>
 
             <button
@@ -153,7 +153,7 @@ export default function LiveExecutionLab() {
                 runWhoamiSimulation();
               }}
               disabled={isRunning}
-              className="px-3 py-1 rounded-lg bg-pink-500/20 hover:bg-pink-500/30 border border-pink-500/30 text-pink-300 text-xs font-mono font-bold transition flex items-center gap-1.5"
+              className="px-3 py-1 rounded-lg bg-pink-500/20 hover:bg-pink-500/30 border border-pink-500/30 text-pink-300 text-xs font-mono font-bold transition flex items-center gap-1.5 cursor-pointer"
             >
               <Play className="w-3 h-3" />
               <span>whoami</span>
@@ -185,7 +185,7 @@ export default function LiveExecutionLab() {
           {isRunning && (
             <div className="flex items-center gap-2 text-cyan-400 pt-2 animate-pulse">
               <span className="w-2 h-2 rounded-full bg-cyan-400" />
-              <span>Streaming pipeline telemetry...</span>
+              <span>Executing pipeline logic...</span>
             </div>
           )}
         </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Download, Menu, X, ArrowRight, Sparkles, Terminal, Briefcase, Zap } from "lucide-react";
+import { Download, Menu, X, ArrowRight, Phone } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -16,10 +16,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Production Systems", href: "#systems" },
+    { name: "Verified Projects", href: "#systems" },
     { name: "Live Terminal", href: "#terminal" },
-    { name: "Leadership", href: "#experience" },
-    { name: "Tech Stack", href: "#skills" },
+    { name: "Experience", href: "#experience" },
+    { name: "Skills & Education", href: "#skills" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -30,21 +30,21 @@ export default function Navbar() {
         <a href="#" className="flex items-center gap-3 group">
           <div className="relative">
             <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-cyan-400 via-violet-500 to-fuchsia-500 flex items-center justify-center font-mono font-extrabold text-white text-xs shadow-lg shadow-cyan-500/25 group-hover:scale-105 transition-transform">
-              ST
+              SK
             </div>
             <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 border-2 border-[#06061a] animate-pulse" />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
               <span className="font-heading font-bold text-sm tracking-tight text-white group-hover:text-cyan-300 transition-colors">
-                Srimanikandan T
+                Srimanikandan K
               </span>
               <span className="px-1.5 py-0.2 rounded-md bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-[10px] font-mono text-cyan-300 border border-cyan-500/30">
-                AI LEAD
+                AI AUTOMATION
               </span>
             </div>
             <span className="text-[11px] text-slate-400 block font-normal leading-none mt-0.5">
-              Tech Lead &bull; Standard Roofs
+              AI Automation Engineer &bull; Erode, Tamil Nadu
             </span>
           </div>
         </a>
@@ -74,13 +74,13 @@ export default function Navbar() {
           </a>
 
           <a
-            href="https://wa.me/919361626177?text=Hi%20Srimanikandan,%20I%20reviewed%20your%20AI%20Automation%20portfolio%20and%20would%20like%20to%20connect."
+            href="https://wa.me/916382121634?text=Hi%20Srimanikandan,%20I%20reviewed%20your%20resume%20and%20portfolio%20and%20would%20like%20to%20connect."
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-1.5 rounded-full bg-gradient-to-r from-cyan-400 via-violet-500 to-fuchsia-500 hover:opacity-95 text-white font-bold text-xs shadow-md shadow-fuchsia-500/20 transition flex items-center gap-1.5"
+            className="px-4 py-1.5 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:opacity-95 text-white font-bold text-xs shadow-md shadow-emerald-500/20 transition flex items-center gap-1.5"
           >
-            <Zap className="w-3.5 h-3.5 fill-current" />
-            <span>Fast Hire</span>
+            <Phone className="w-3.5 h-3.5 fill-current" />
+            <span>+91 6382121634</span>
           </a>
         </div>
 
@@ -120,14 +120,14 @@ export default function Navbar() {
             </a>
 
             <a
-              href="https://wa.me/919361626177?text=Hi%20Srimanikandan,%20I%20reviewed%20your%20portfolio."
+              href="https://wa.me/916382121634?text=Hi%20Srimanikandan,%20I%20reviewed%20your%20portfolio."
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-400 via-violet-500 to-fuchsia-500 text-white font-bold text-xs flex items-center justify-center gap-2"
+              className="w-full py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold text-xs flex items-center justify-center gap-2"
             >
-              <span>Instant WhatsApp Connect</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              <Phone className="w-3.5 h-3.5" />
+              <span>WhatsApp (+91 6382121634)</span>
             </a>
           </div>
         </div>

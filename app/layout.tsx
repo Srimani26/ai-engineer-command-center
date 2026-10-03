@@ -1,48 +1,47 @@
 import type { Metadata } from "next";
-import { Outfit, Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-body",
   display: "swap",
 });
 
 const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-heading",
   display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-mono",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Srimanikandan T — Lead AI Systems & Automation Architect",
+  title: "Srimanikandan K - AI Automation Engineer",
   description:
-    "First technical hire & Tech Lead @ Standard Roofs. Architecting autonomous AI pipelines, 4-layer CRM quotation engines, and high-ROI multi-agent business operating systems.",
+    "Official portfolio of Srimanikandan K. AI Automation Engineer with hands-on experience building 4-layer Zoho CRM quotation automation systems, AI-powered Google Ads audit pipelines (Gemini AI), and live Shopify storefronts.",
   keywords: [
-    "Srimanikandan T",
-    "AI Systems Architect",
+    "Srimanikandan K",
     "AI Automation Engineer",
-    "Tech Lead Standard Roofs",
-    "Multi-Agent AI",
-    "Zoho CRM Quotation Engine",
-    "Gemini API",
-    "FastAPI",
-    "Next.js",
+    "Zoho CRM Automation",
+    "Zoho Deluge",
+    "Google Ads AI Auditor",
+    "Gemini AI",
+    "Google Apps Script",
+    "Shopify Storefront Development",
+    "React.js",
+    "Vue.js",
+    "Erode Tamil Nadu",
   ],
-  authors: [{ name: "Srimanikandan T" }],
+  authors: [{ name: "Srimanikandan K" }],
   openGraph: {
-    title: "Srimanikandan T — Lead AI Systems & Automation Architect",
+    title: "Srimanikandan K - AI Automation Engineer",
     description:
-      "Production AI architectures, multi-layer quotation engines & high-impact autonomous systems.",
+      "Official portfolio of Srimanikandan K. Hands-on AI automation, Zoho CRM systems, and Google Ads intelligence pipelines.",
     type: "website",
   },
 };
@@ -53,11 +52,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${outfit.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased dark scroll-smooth`}
-    >
-      <body className="min-h-full flex flex-col bg-[#03030c] font-sans text-slate-100 selection:bg-cyan-400/30 selection:text-cyan-200">
+    <html lang="en" className="dark scroll-smooth">
+      <body
+        className={`${plusJakarta.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-body bg-[#03030c] text-slate-100 antialiased selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden`}
+      >
         {children}
       </body>
     </html>

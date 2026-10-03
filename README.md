@@ -1,4 +1,4 @@
-# ⚡ Srimanikandan T — Production AI Systems & Engineering Command Center
+# ⚡ Srimanikandan K — Production AI Systems & Engineering Command Center
 
 > **Tech Lead & First Technical Hire @ Standard Roofs • AI Automation & Systems Engineer**  
 > Architecting production AI pipelines, enterprise CRM engines, and autonomous systems that drive verified business ROI.
@@ -16,7 +16,7 @@
 ### 1. 🤖 AI-Powered Google Ads Auditor (v5.0 — Live)
 - **Problem**: Marketing ad spend hemorrhaging budget on junk, non-converting search keywords.
 - **Solution**: Autonomous cron engine executing daily at 6:00 AM IST via Google Apps Script and Ads Script API. Pulls 285+ real search queries, analyzes 7-day conversion/CTR metrics using Gemini AI, and dispatches a color-coded STOP/SCALE/FIX HTML audit report directly to management by 7:00 AM IST.
-- **Impact**: **Flagged ₹14,952 in wasted ad spend (97% of ₹15,113 tracked)** in just 8 days at **₹0/mo operating infrastructure cost**.
+- **Impact**: **Flagged ₹4,952 in wasted ad spend (97% of ₹5,113 tracked)** in just 8 days at **₹0/mo operating infrastructure cost**.
 
 ### 2. ⚡ Zoho CRM 4-Layer Quotation Automation Engine
 - **Problem**: 30+ minute manual quotation drafting riddled with arithmetic and specification errors.
@@ -38,7 +38,7 @@
 
 | Metric | Achievement | Impact Detail |
 |---|---|---|
-| **Ad Waste Flagged** | **₹14,952** | 97% waste rate caught across 14 high-burn keywords |
+| **Ad Waste Flagged** | **₹4,952** | 97% waste rate caught across 14 high-burn keywords |
 | **Quote Creation Time** | **< 1 min** | Reduced from 30+ min manual calculation slog |
 | **Daily Queries Audited** | **285+** | Autonomous 6:00 AM cron with zero manual oversight |
 | **Operating Infra Cost** | **₹0 / mo** | Dual Gemini API key failover with exponential backoff |
@@ -59,4 +59,4 @@
 - **Email**: [srimanikandanece2000@gmail.com](mailto:srimanikandanece2000@gmail.com)
 - **Phone / WhatsApp**: [+91 63821 21634](tel:+916382121634)
 - **GitHub**: [github.com/Srimani26](https://github.com/Srimani26)
-- **LinkedIn**: [linkedin.com/in/srimanikandan-t-942693246](https://www.linkedin.com/in/srimanikandan-t-942693246/)
+- **LinkedIn**: [linkedin.com/in/srimanikandan-k-9a741620a](https://www.linkedin.com/in/srimanikandan-k-9a741620a)
