@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Download, Menu, X, ArrowRight, Phone, Mail, Sparkles } from "lucide-react";
+import { Download, Menu, X, ArrowRight, Phone } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -16,46 +16,46 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Flagship Projects", href: "#systems" },
-    { name: "Diagnostic Console", href: "#terminal" },
+    { name: "Projects", href: "#systems" },
+    { name: "Console", href: "#terminal" },
     { name: "Experience", href: "#experience" },
-    { name: "Tech Stack", href: "#skills" },
-    { name: "Contact & Hire", href: "#contact" },
+    { name: "Skills", href: "#skills" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <header className="fixed top-5 left-0 right-0 z-50 px-4 md:px-8 pointer-events-none">
-      <div className="max-w-6xl mx-auto flex items-center justify-between pointer-events-auto rounded-full px-6 py-3 bg-[#06061c]/90 backdrop-blur-2xl border border-white/[0.12] shadow-2xl shadow-black/90 transition-all duration-300">
-        {/* Brand Mark */}
-        <a href="#" className="flex items-center gap-3.5 group">
-          <div className="relative">
+    <header className="fixed top-4 left-0 right-0 z-50 px-4 md:px-8 pointer-events-none">
+      <div className="max-w-6xl mx-auto flex items-center justify-between pointer-events-auto rounded-full px-5 sm:px-7 py-2.5 sm:py-3 bg-[#06061c]/90 backdrop-blur-2xl border border-white/[0.12] shadow-2xl shadow-black/90 transition-all duration-300">
+        {/* Brand Mark - Guaranteed No Wrapping */}
+        <a href="#" className="flex items-center gap-3 shrink-0 group">
+          <div className="relative shrink-0">
             <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-400 via-violet-500 to-fuchsia-500 flex items-center justify-center font-mono font-extrabold text-white text-xs shadow-lg shadow-cyan-500/25 group-hover:scale-105 transition-transform">
               SK
             </div>
-            <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-[#06061c] animate-pulse" />
+            <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-emerald-400 border-2 border-[#06061c] animate-pulse" />
           </div>
-          <div>
+          <div className="flex flex-col whitespace-nowrap">
             <div className="flex items-center gap-2">
-              <span className="font-heading font-black text-base tracking-tight text-white group-hover:text-cyan-300 transition-colors">
+              <span className="font-heading font-black text-sm sm:text-base tracking-tight text-white group-hover:text-cyan-300 transition-colors whitespace-nowrap">
                 Srimanikandan K
               </span>
-              <span className="px-2 py-0.5 rounded-md bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-[10px] font-mono font-bold text-cyan-300 border border-cyan-500/30">
-                AVAILABLE FOR HIRE
+              <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-mono font-bold border border-emerald-500/35 whitespace-nowrap">
+                AVAILABLE
               </span>
             </div>
-            <span className="text-xs text-slate-400 block font-normal leading-none mt-0.5">
-              AI Automation Engineer &bull; Erode, Tamil Nadu
+            <span className="text-[11px] text-slate-400 block font-normal leading-none mt-0.5 whitespace-nowrap">
+              AI Automation Engineer &bull; Erode, TN
             </span>
           </div>
         </a>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        {/* Desktop Nav - Clean Single Words to prevent linebreaks */}
+        <nav className="hidden lg:flex items-center gap-7 xl:gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-xs font-semibold text-slate-300 hover:text-cyan-300 transition-colors tracking-wide"
+              className="text-xs xl:text-sm font-semibold text-slate-300 hover:text-cyan-300 transition-colors tracking-wide whitespace-nowrap"
             >
               {link.name}
             </a>
@@ -63,24 +63,24 @@ export default function Navbar() {
         </nav>
 
         {/* Action Buttons */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden sm:flex items-center gap-3 shrink-0">
           <a
             href="/Srimanikandan_Resume_Professional.pdf"
             download="Srimanikandan_Resume_Professional.pdf"
-            className="px-4 py-2 rounded-full border border-cyan-500/30 hover:border-cyan-400/60 text-cyan-200 text-xs font-bold transition flex items-center gap-2 bg-cyan-950/20 hover:bg-cyan-950/50 cursor-pointer"
+            className="px-4 py-2 rounded-full border border-cyan-500/30 hover:border-cyan-400/60 text-cyan-200 text-xs font-bold transition flex items-center gap-2 bg-cyan-950/20 hover:bg-cyan-950/50 cursor-pointer whitespace-nowrap"
           >
-            <Download className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Resume (PDF)</span>
+            <Download className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+            <span>Resume</span>
           </a>
 
           <a
-            href="https://wa.me/916382121634?text=Hi%20Srimanikandan,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20hire/connect%20with%20you."
+            href="https://wa.me/916382121634?text=Hi%20Srimanikandan,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20connect/hire%20you."
             target="_blank"
             rel="noopener noreferrer"
-            className="px-5 py-2 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:opacity-95 text-white font-bold text-xs shadow-lg shadow-emerald-500/25 transition flex items-center gap-2 cursor-pointer hover:scale-105"
+            className="px-5 py-2 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:opacity-95 text-white font-bold text-xs shadow-lg shadow-emerald-500/25 transition flex items-center gap-2 cursor-pointer hover:scale-105 whitespace-nowrap"
           >
-            <Phone className="w-3.5 h-3.5 fill-current" />
-            <span>Hire Me / WhatsApp</span>
+            <Phone className="w-3.5 h-3.5 fill-current shrink-0" />
+            <span>Hire Me</span>
           </a>
         </div>
 

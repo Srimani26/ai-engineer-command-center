@@ -38,27 +38,27 @@ export default function Hero() {
     <section className="relative min-h-[92vh] flex flex-col justify-center pt-36 pb-20 px-4 md:px-8 max-w-6xl mx-auto z-10">
       {/* Top Cosmic Status Pill */}
       <div className="flex items-center justify-center mb-8">
-        <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-cyan-500/10 border border-cyan-400/35 text-cyan-300 text-xs font-mono font-bold backdrop-blur-2xl shadow-xl shadow-cyan-500/15">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+        <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-cyan-500/10 border border-cyan-400/35 text-cyan-300 text-xs font-mono font-bold backdrop-blur-2xl shadow-xl shadow-cyan-500/15 whitespace-nowrap">
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping shrink-0" />
           <span>PRODUCTION AI AUTOMATION & SYSTEMS ENGINEER</span>
         </div>
       </div>
 
       {/* Main Spacious Headline */}
       <div className="text-center space-y-6 max-w-5xl mx-auto">
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-heading font-black tracking-tight text-white leading-[1.12]">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-heading font-black tracking-tight text-white leading-[1.14]">
           Architecting <span className="text-gradient-vibrant">Autonomous AI</span> Systems & Business Engines.
         </h1>
 
-        <p className="text-slate-300 text-base sm:text-xl max-w-3xl mx-auto leading-relaxed font-normal">
-          Hi, I&apos;m <strong>Srimanikandan K</strong>. I engineer business-critical autonomous systems: creator of <strong>Sri AI Business OS</strong>, architect of a <strong>4-layer Zoho CRM quotation automation system</strong> (&lt;1 min generation, 0 manual errors), and engineer of a live <strong>Google Ads AI Auditor</strong> that identified ₹4,952 in wasted ad spend in 8 days at ₹0 operating cost.
-        </p>
+        <div className="text-slate-300 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed font-normal">
+          Hi, I&apos;m <strong>Srimanikandan K</strong>. I engineer business-critical automation systems: creator of <strong>Sri AI Business OS</strong>, architect of a <strong>4-layer Zoho CRM quotation automation system</strong> (&lt;1 min turnaround, 0 manual errors), and engineer of a live <strong>Google Ads AI Auditor</strong> that flagged ₹4,952 in wasted ad spend in 8 days at ₹0 operating cost.
+        </div>
 
         {/* Primary Call to Action Buttons */}
         <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
           <a
             href="#systems"
-            className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-400 via-violet-500 to-fuchsia-500 text-white font-bold text-sm sm:text-base shadow-2xl shadow-fuchsia-500/30 hover:opacity-95 hover:scale-[1.03] transition-all flex items-center gap-2.5 cursor-pointer"
+            className="px-8 py-4 rounded-full bg-gradient-to-r from-cyan-400 via-violet-500 to-fuchsia-500 text-white font-bold text-sm sm:text-base shadow-2xl shadow-fuchsia-500/30 hover:opacity-95 hover:scale-[1.03] transition-all flex items-center gap-2.5 cursor-pointer whitespace-nowrap"
           >
             <span>Explore Flagship Production Systems</span>
             <ArrowRight className="w-4 h-4" />
@@ -67,7 +67,7 @@ export default function Hero() {
           <a
             href="/Srimanikandan_Resume_Professional.pdf"
             download="Srimanikandan_Resume_Professional.pdf"
-            className="px-8 py-4 rounded-full bg-slate-900/90 hover:bg-slate-800/90 border border-white/20 text-slate-100 font-bold text-sm sm:text-base transition-all flex items-center gap-2.5 backdrop-blur-2xl hover:border-cyan-400/60 shadow-xl cursor-pointer"
+            className="px-8 py-4 rounded-full bg-slate-900/90 hover:bg-slate-800/90 border border-white/20 text-slate-100 font-bold text-sm sm:text-base transition-all flex items-center gap-2.5 backdrop-blur-2xl hover:border-cyan-400/60 shadow-xl cursor-pointer whitespace-nowrap"
           >
             <Download className="w-4 h-4 text-cyan-400" />
             <span>Download Official Resume (PDF)</span>
@@ -89,10 +89,10 @@ export default function Hero() {
                 </div>
                 <div>
                   <div className="flex flex-wrap items-center gap-2.5">
-                    <h2 className="font-heading text-2xl sm:text-3xl font-black text-white tracking-tight">
+                    <h2 className="font-heading text-2xl sm:text-3xl font-black text-white tracking-tight whitespace-nowrap">
                       Srimanikandan K
                     </h2>
-                    <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-mono font-bold border border-emerald-500/40">
+                    <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-mono font-bold border border-emerald-500/40 whitespace-nowrap">
                       OPEN FOR IMMEDIATE HIRE
                     </span>
                   </div>
@@ -100,7 +100,7 @@ export default function Hero() {
                     AI Automation Engineer &bull; First Technical Hire @ Standard Roofs
                   </p>
                   <p className="text-xs sm:text-sm text-slate-400 mt-1 flex items-center gap-1.5">
-                    <MapPin className="w-3.5 h-3.5 text-purple-400" />
+                    <MapPin className="w-3.5 h-3.5 text-purple-400 shrink-0" />
                     <span>Erode, Tamil Nadu &bull; Immediate Joiner &bull; Remote / Hybrid / On-Site</span>
                   </p>
                 </div>
@@ -111,11 +111,11 @@ export default function Hero() {
                 href="https://wa.me/916382121634?text=Hi%20Srimanikandan,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20AI%20Automation%20opportunity%20with%20you."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white font-black text-sm flex items-center gap-2.5 shadow-xl shadow-emerald-500/25 hover:opacity-95 hover:scale-105 transition shrink-0"
+                className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white font-black text-sm flex items-center gap-2.5 shadow-xl shadow-emerald-500/25 hover:opacity-95 hover:scale-105 transition shrink-0 whitespace-nowrap"
               >
-                <Phone className="w-4 h-4 fill-current" />
-                <span>Chat on WhatsApp (+91 6382121634)</span>
-                <ArrowRight className="w-4 h-4" />
+                <Phone className="w-4 h-4 fill-current shrink-0" />
+                <span>Chat on WhatsApp (+91 63821 21634)</span>
+                <ArrowRight className="w-4 h-4 shrink-0" />
               </a>
             </div>
 
@@ -128,7 +128,7 @@ export default function Hero() {
                   className="flex items-center gap-2.5 text-slate-200 hover:text-emerald-400 transition"
                 >
                   <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span className="font-mono text-xs sm:text-sm font-bold">+91 63821 21634</span>
+                  <span className="font-mono text-xs sm:text-sm font-bold whitespace-nowrap">+91 63821 21634</span>
                 </a>
                 <button
                   onClick={handleCopyPhone}
@@ -165,10 +165,10 @@ export default function Hero() {
                 className="p-3.5 rounded-2xl bg-[#0077b5]/15 border border-[#0077b5]/35 flex items-center justify-between text-slate-200 hover:text-white hover:border-[#0077b5]/70 transition"
               >
                 <div className="flex items-center gap-2.5">
-                  <LinkedinIcon className="w-4 h-4 text-[#0077b5]" />
-                  <span className="text-xs sm:text-sm font-bold">Connect on LinkedIn</span>
+                  <LinkedinIcon className="w-4 h-4 text-[#0077b5] shrink-0" />
+                  <span className="text-xs sm:text-sm font-bold whitespace-nowrap">Connect on LinkedIn</span>
                 </div>
-                <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+                <ExternalLink className="w-3.5 h-3.5 text-slate-400 shrink-0" />
               </a>
             </div>
 
