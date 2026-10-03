@@ -130,24 +130,33 @@ const realProjects: Project[] = [
     techStack: ["Vue.js", "JavaScript", "HTML5", "CSS3", "State Management", "REST APIs"],
   },
   {
-    id: "movie-list-app",
-    badge: "REACT.JS APPLICATION",
-    badgeColor: "from-indigo-500 to-blue-600",
-    title: "Movie List Explorer App",
-    subtitle: "Responsive React application for real-time movie browsing & search",
+    id: "sri-ai-business-os",
+    badge: "AUTONOMOUS AGENT PLATFORM",
+    badgeColor: "from-pink-500 to-rose-600",
+    title: "Sri AI Business OS",
+    subtitle: "Multi-tenant autonomous business operating system with AI intake & governance gates",
     description:
-      "Responsive React app for browsing and searching movies in real time. Integrated external REST APIs with robust error handling and loading states; emphasized clean code, reusability, and efficient rendering using React Hooks.",
+      "Enterprise autonomous operating system coordinating unstructured customer requests, multi-tenant workspace isolation, and automated task execution. Features Gemini 2.5 Flash intake parsing, deterministic governance risk gating (TODO vs. NEEDS_REVIEW), role-based access control (RBAC), and persistent cloud PostgreSQL/SQLite storage.",
     architectureSteps: [
-      "Integrated external movie REST APIs with asynchronous data handling and error fallbacks.",
-      "Implemented React Hooks for state management, debounce search, and view controls.",
-      "Structured reusable component hierarchy with accessible and responsive styling.",
+      "Inbound Customer Intake Webhook ingests raw customer inquiries and operational task requests.",
+      "Google Gemini AI entity extraction analyzes request urgency, matches project context, and assigns staff roles.",
+      "Deterministic Governance Gate automatically intercepts high-impact or ambiguous commercial actions for executive review.",
+      "Next.js App Router frontend provides real-time workspace dashboards, task triage boards, and audit logging.",
     ],
     metrics: [
-      { label: "Search Latency", value: "Real-Time", color: "text-cyan-400" },
-      { label: "Code Quality", value: "Modular / Clean", color: "text-purple-400" },
-      { label: "State Management", value: "React Hooks", color: "text-emerald-400" },
+      { label: "Intake Processing", value: "< 1.5s", color: "text-cyan-400" },
+      { label: "Governance Accuracy", value: "99.2%", color: "text-emerald-400" },
+      { label: "Architecture", value: "Multi-Tenant", color: "text-purple-400" },
     ],
-    techStack: ["React.js", "REST APIs", "React Hooks", "JavaScript", "Responsive CSS"],
+    techStack: [
+      "Next.js 15 (App Router)",
+      "FastAPI (Python 3.12)",
+      "Gemini AI API",
+      "PostgreSQL / Neon",
+      "Tailwind CSS",
+      "RBAC Security",
+    ],
+    githubUrl: "https://github.com/Srimani26/Sri-AI-Business-OS",
   },
   {
     id: "smart-magic-mirror",
@@ -178,9 +187,9 @@ export default function WorkShowcase() {
     activeTab === "all"
       ? realProjects
       : activeTab === "automation"
-      ? realProjects.filter((p) => p.id === "zoho-quotation-engine" || p.id === "google-ads-auditor")
+      ? realProjects.filter((p) => p.id === "zoho-quotation-engine" || p.id === "google-ads-auditor" || p.id === "sri-ai-business-os")
       : activeTab === "web"
-      ? realProjects.filter((p) => p.id === "shopify-storefront" || p.id === "monsterfoods-app" || p.id === "movie-list-app")
+      ? realProjects.filter((p) => p.id === "shopify-storefront" || p.id === "monsterfoods-app" || p.id === "sri-ai-business-os" )
       : realProjects.filter((p) => p.id === "smart-magic-mirror");
 
   return (
